@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORO Home Appliances | Coming Soon</title>
+    <!-- Google Fonts for a premium, geometric look -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #B8860B; /* Dark Goldenrod / Bronze */
+            --primary-light: #D4AF37; /* Metallic Gold */
+            --bg-dark: #0A0F16; /* Deep Navy/Charcoal */
+            --bg-card: rgba(15, 23, 36, 0.7);
+            --text-main: #F5F7FA;
+            --text-muted: #A0AABF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Subtle futuristic background grid/gradient */
+            background-image: 
+                radial-gradient(circle at 50% 0%, #1a2639 0%, transparent 50%),
+                linear-gradient(0deg, rgba(10,15,22,1) 0%, rgba(10,15,22,1) 100%);
+            overflow: hidden;
+        }
+
+        /* Animated background elements */
+        .glow-circle {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+            opacity: 0.15;
+            border-radius: 50%;
+            top: -100px;
+            left: -100px;
+            z-index: 0;
+            animation: pulse 6s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.1; }
+            100% { transform: scale(1.2); opacity: 0.2; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 3rem;
+            max-width: 800px;
+            width: 90%;
+            background: var(--bg-card);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo-container {
+            margin-bottom: 2rem;
+        }
+
+        .logo-text {
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: 5px;
+            color: #fff;
+            margin: 0;
+            text-transform: uppercase;
+            /* Gradient text effect for the logo */
+            background: linear-gradient(45deg, var(--primary-light), #fff, var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-sub {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: -5px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .notify-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .input-group {
+            display: flex;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 50px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: rgba(0, 0, 0, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group:focus-within {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        input[type="email"] {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            background: transparent;
+            color: var(--text-main);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        input[type="email"]::placeholder {
+            color: rgba(160, 170, 191, 0.6);
+        }
+
+        button {
+            padding: 1rem 2rem;
+            border: none;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+            color: #000;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .social-links {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .input-group {
+                flex-direction: column;
+                border-radius: 15px;
+                border: none;
+                gap: 10px;
+                background: transparent;
+            }
+            
+            input[type="email"], button {
+                width: 100%;
+                border-radius: 50px;
+            }
+            
+            input[type="email"] {
+                border: 1px solid rgba(212, 175, 55, 0.3);
+                background: rgba(0, 0, 0, 0.3);
+            }
+
+            .logo-text {
+                font-size: 3rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-circle"></div>
+
+    <div class="container">
+        <div class="logo-container">
+            <!-- Text-based logo mimicking the circular premium design layout -->
+            <h2 class="logo-text">ORO</h2>
+            <div class="logo-sub">Home Appliances</div>
+        </div>
+
+        <h1>Redefining Home Services</h1>
+        <p>We are building a premium, seamless experience for your home appliance needs. Expert care, futuristic efficiency, and unmatched reliability. Get ready for the upgrade.</p>
+
+        <div class="notify-container">
+            <div class="input-group">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="button" onclick="alert('Thank you! You will be notified when we launch.')">Notify Me</button>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">Facebook</a>
+        </div>
+    </div>
+
+</body>
+</html>
