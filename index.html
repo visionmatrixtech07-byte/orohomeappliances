@@ -73,28 +73,16 @@
 
         .logo-container {
             margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
         }
 
-        .logo-text {
-            font-size: 4rem;
-            font-weight: 700;
-            letter-spacing: 5px;
-            color: #fff;
-            margin: 0;
-            text-transform: uppercase;
-            /* Gradient text effect for the logo */
-            background: linear-gradient(45deg, var(--primary-light), #fff, var(--primary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .logo-sub {
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 4px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            margin-top: -5px;
+        /* CSS for your new image logo */
+        .main-logo {
+            max-width: 250px; /* Adjust this value if you want the logo bigger or smaller */
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3)); /* Adds a subtle premium shadow to the image */
         }
 
         h1 {
@@ -207,12 +195,12 @@
                 background: rgba(0, 0, 0, 0.3);
             }
 
-            .logo-text {
-                font-size: 3rem;
-            }
-
             h1 {
                 font-size: 2rem;
+            }
+            
+            .main-logo {
+                max-width: 200px;
             }
         }
     </style>
@@ -223,9 +211,8 @@
 
     <div class="container">
         <div class="logo-container">
-            <!-- Text-based logo mimicking the circular premium design layout -->
-            <h2 class="logo-text">ORO</h2>
-            <div class="logo-sub">Home Appliances</div>
+            <!-- This image tag now pulls oro.png from your repository -->
+            <img src="oro.png" alt="ORO Home Appliances Logo" class="main-logo">
         </div>
 
         <h1>Redefining Home Services</h1>
