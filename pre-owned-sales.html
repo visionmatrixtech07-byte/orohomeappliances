@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certified Pre-Owned Appliance Sales | ORO Home Appliances</title>
+    <style>
+        /* Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        /* Premium CSS Variables */
+        :root {
+            --bg-dark: #070b10;
+            --bg-card: rgba(20, 27, 36, 0.7);
+            --text-light: #ffffff;
+            --text-muted: #a0aec0;
+            --brand-gold: #f59e0b;
+            --brand-gold-hover: #d97706;
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+
+        a:hover { color: var(--brand-gold); }
+
+        .container {
+            width: 90%;
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 0;
+            background: rgba(7, 11, 16, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* --- Logo + Brand Text Styling --- */
+        .brand-logo-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            height: 48px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .footer-logo {
+            height: 55px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .brand-text span {
+            color: var(--brand-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* --- Subpage Banner --- */
+        .page-header {
+            padding: 160px 0 60px 0;
+            background: linear-gradient(to bottom, rgba(20,27,36,0.8), rgba(7,11,16,1)),
+                        url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            border-bottom: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: var(--brand-gold);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- Content Layout --- */
+        .page-content {
+            padding: 80px 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .page-content h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .page-content p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .step-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .step-list li {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .step-list h3 {
+            color: var(--brand-gold);
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .step-list p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #05080c;
+            padding: 60px 0 20px 0;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-grid h4 {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-grid ul { list-style: none; }
+        .footer-grid li { margin-bottom: 12px; }
+        .footer-grid li a { color: var(--text-muted); }
+        .footer-grid li a:hover { color: var(--brand-gold); }
+
+        .footer-bottom {
+            text-align: center;
+            color: #4a5568;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media (max-width: 900px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2.2rem; }
+            .brand-text { font-size: 1.1rem; }
+            .nav-links { display: none; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="brand-logo-link">
+                    <img src="oro.png" alt="ORO Logo" class="nav-logo">
+                    <div class="brand-text"><span>ORO</span> HOME APPLIANCES</div>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html#expert-services">Services</a>
+                    <a href="index.html#pillars">Why ORO</a>
+                    <a href="index.html#book">Book Repair</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-header">
+        <div class="container">
+            <p>Certified Quality & Reliability</p>
+            <h1>Pre-Owned Appliance Sales</h1>
+        </div>
+    </section>
+
+    <!-- Content Area -->
+    <section class="container page-content">
+        <h2>Upgrade Your Home Responsibly</h2>
+        <p>Why compromise on premium household appliances when you can shop smart? ORO Home Appliances offers a curated inventory of certified pre-owned refrigerators, washing machines, televisions, and kitchen appliances. Every unit we sell is meticulously tested, restored, and certified by our in-house engineering team to perform like new.</p>
+
+        <h2>Our 4-Step Certification SOP</h2>
+        <p>Unlike unverified second-hand dealers, every pre-owned appliance at ORO undergoes a strict Standard Operating Procedure (SOP) before it ever reaches your home:</p>
+        
+        <ul class="step-list">
+            <li>
+                <h3>1. Selective Sourcing & Procurement</h3>
+                <p>We selectively acquire gently used appliances from trusted authorized networks and corporate upgrades. We reject units with structural rust, flood damage, or history of major compressor/motor replacement.</p>
+            </li>
+            <li>
+                <h3>2. Comprehensive Multi-Point Inspection</h3>
+                <p>Every appliance undergoes a rigorous 50-point technical check. Our engineers test cooling retention, motor torque, spin balance, PCB health, voltage stability, and sensor accuracy under maximum load.</p>
+            </li>
+            <li>
+                <h3>3. Authentic OEM Refurbishment</h3>
+                <p>Any worn-out components, door seals, belts, or filters are replaced exclusively with 100% genuine Original Equipment Manufacturer (OEM) parts. We deep-clean, sanitize, and professionally detail both internal cavity and exterior panels.</p>
+            </li>
+            <li>
+                <h3>4. Quality Sign-Off & Warranty Issuance</h3>
+                <p>Once an appliance passes final quality assurance, it receives the ORO Certified Seal. Every sale is backed by a comprehensive warranty covering mechanical and electrical performance for complete buyer confidence.</p>
+            </li>
+        </ul>
+
+        <h2>Inquire About Current Inventory</h2>
+        <p>Our certified pre-owned inventory updates regularly. Whether you are looking for an inverter double-door refrigerator or a front-load washing machine, our sales team can help you find the perfect appliance for your budget.</p>
+        <p style="text-align: center; margin-top: 30px;">
+            <strong>To check available stock and pricing, reach out to our team:</strong><br>
+            <span style="color: var(--brand-gold); font-size: 1.2rem;">📞 +91 XXXXX XXXXX | ✉️ support@oroservices.co.in</span>
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand-logo-link" style="margin-bottom: 15px;">
+                    <img src="oro.png" alt="ORO Logo" class="footer-logo">
+                    <div class="brand-text"><span>ORO</span> HOME APPLIANCES</div>
+                </a>
+                <p style="color: var(--text-muted); margin-top: 15px; font-size: 0.95rem;">
+                    Smart Choice. Better Living. Providing premium home appliance repairs, servicing, and certified pre-owned sales across India.
+                </p>
+                <div style="margin-top: 20px;">
+                    <p style="color: var(--text-light); font-weight: 600;">📞 +91 XXXXX XXXXX</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">support@oroservices.co.in</p>
+                </div>
+            </div>
+            
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="refrigerator.html">Refrigerator Repair</a></li>
+                    <li><a href="washing-machine.html">Washing Machine Service</a></li>
+                    <li><a href="tv-repair.html">TV Installation & Repair</a></li>
+                    <li><a href="microwave-oven.html">Microwave & Ovens</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="pre-owned-sales.html">Pre-Owned Appliance Sales</a></li>
+                    <li><a href="technicians.html">Our Technicians</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="payment-refunds.html">Payment & Refunds</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 ORO Home Appliances. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
