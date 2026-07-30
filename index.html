@@ -11,10 +11,10 @@
         /* Premium CSS Variables */
         :root {
             --bg-dark: #070b10;
-            --bg-card: rgba(20, 27, 36, 0.7); /* Glassmorphism base */
+            --bg-card: rgba(20, 27, 36, 0.7);
             --text-light: #ffffff;
             --text-muted: #a0aec0;
-            --brand-gold: #f59e0b; /* Premium Gold/Orange */
+            --brand-gold: #f59e0b;
             --brand-gold-hover: #d97706;
             --glass-border: rgba(255, 255, 255, 0.08);
         }
@@ -47,7 +47,7 @@
             margin: 0 auto;
         }
 
-        /* --- Header (Glassmorphism) --- */
+        /* --- Header --- */
         header {
             position: fixed;
             top: 0;
@@ -81,9 +81,8 @@
             font-size: 0.95rem;
         }
 
-        /* --- Premium Hero Banner --- */
+        /* --- Hero Banner --- */
         .hero {
-            /* Replace the URL below with a real image of a modern kitchen or technician */
             background: linear-gradient(to right, rgba(7,11,16,0.95) 20%, rgba(7,11,16,0.6) 100%), 
                         url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
             padding: 180px 0 120px 0;
@@ -92,9 +91,7 @@
             align-items: center;
         }
 
-        .hero-content {
-            max-width: 700px;
-        }
+        .hero-content { max-width: 700px; }
 
         .hero h1 {
             font-size: 3.8rem;
@@ -147,7 +144,7 @@
             box-shadow: none;
         }
 
-        /* --- Brands Marquee (Available in India) --- */
+        /* --- Brands Marquee --- */
         .brands-section {
             padding: 40px 0;
             background: #0a0f16;
@@ -188,7 +185,7 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* --- Services Grid (Fridge, Washing Machine, etc.) --- */
+        /* --- Services Grid (Images instead of icons) --- */
         .section-title {
             text-align: center;
             font-size: 2.5rem;
@@ -211,18 +208,19 @@
 
         .appliance-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
 
         .appliance-card {
             background: var(--bg-card);
             border: 1px solid var(--glass-border);
-            padding: 40px 20px;
             border-radius: 8px;
+            overflow: hidden;
             text-align: center;
             transition: all 0.4s ease;
             backdrop-filter: blur(5px);
+            padding-bottom: 30px;
         }
 
         .appliance-card:hover {
@@ -231,15 +229,25 @@
             background: rgba(20, 27, 36, 0.9);
         }
 
-        .appliance-icon {
-            font-size: 2.5rem;
+        .appliance-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
             margin-bottom: 20px;
-            display: block;
+            border-bottom: 1px solid var(--glass-border);
         }
 
         .appliance-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
+            padding: 0 20px;
+        }
+
+        .appliance-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 10px;
+            padding: 0 20px;
         }
 
         /* --- 3 Pillars --- */
@@ -375,7 +383,7 @@
     <section class="hero">
         <div class="container hero-content">
             <h1>Smart Choice.<br><span>Better Living.</span></h1>
-            <p>Redefining home services in India. We provide premium repairs, certified used sales, and trusted installations for your luxury and everyday appliances.</p>
+            <p>Redefining home services in India. We provide premium repairs, certified pre-owned sales, and trusted installations for your everyday appliances.</p>
             <div class="hero-btns">
                 <a href="#book" class="btn">Book a Technician</a>
                 <a href="#expert-services" class="btn btn-outline">Explore Services</a>
@@ -388,7 +396,6 @@
         <div class="container">
             <div class="brands-title">Authorized / Expert Service For All Major Brands</div>
         </div>
-        <!-- Duplicated content inside container for seamless loop -->
         <div class="marquee-container">
             <span class="brand-item">Samsung</span>
             <span class="brand-item">LG</span>
@@ -402,7 +409,7 @@
             <span class="brand-item">Sony</span>
             <span class="brand-item">Mi</span>
             <span class="brand-item">Daikin</span>
-            <!-- Repeat for smooth scroll -->
+            <!-- Repeated for seamless scrolling loop -->
             <span class="brand-item">Samsung</span>
             <span class="brand-item">LG</span>
             <span class="brand-item">Whirlpool</span>
@@ -412,36 +419,31 @@
         </div>
     </section>
 
-    <!-- Specific Appliances Grid -->
+    <!-- Specific Appliances Grid (Using Images) -->
     <section class="appliances container" id="expert-services">
         <div class="section-subtitle">Our Expertise</div>
         <h2 class="section-title">What We Repair & Service</h2>
         
         <div class="appliance-grid">
             <div class="appliance-card">
-                <span class="appliance-icon">❄️</span>
+                <img src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?q=80&w=800&auto=format&fit=crop" alt="Refrigerator Repair" class="appliance-image">
                 <h3>Refrigerators</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Single, Double Door & Side-by-Side</p>
+                <p>Single, Double Door & Side-by-Side</p>
             </div>
             <div class="appliance-card">
-                <span class="appliance-icon">🧺</span>
+                <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=800&auto=format&fit=crop" alt="Washing Machine Repair" class="appliance-image">
                 <h3>Washing Machines</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Front Load, Top Load & Semi-Auto</p>
+                <p>Front Load, Top Load & Semi-Auto</p>
             </div>
             <div class="appliance-card">
-                <span class="appliance-icon">📺</span>
+                <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=800&auto=format&fit=crop" alt="Television Repair" class="appliance-image">
                 <h3>Televisions</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">LED, OLED, QLED & Smart TVs</p>
+                <p>LED, OLED, QLED & Smart TVs</p>
             </div>
             <div class="appliance-card">
-                <span class="appliance-icon">♨️</span>
+                <img src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?q=80&w=800&auto=format&fit=crop" alt="Microwave and Oven Repair" class="appliance-image">
                 <h3>Microwaves & Ovens</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Solo, Grill & Convection OTGs</p>
-            </div>
-            <div class="appliance-card">
-                <span class="appliance-icon">⚡</span>
-                <h3>Other Electricals</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Geysers, Purifiers & Small Appliances</p>
+                <p>Solo, Grill & Convection OTGs</p>
             </div>
         </div>
     </section>
@@ -454,15 +456,15 @@
         <div class="pillars">
             <div class="pillar-box">
                 <h3><span style="color: var(--brand-gold);">⚙️</span> Premium Service</h3>
-                <p>Fast, futuristic efficiency. Our certified technicians diagnose and resolve issues with precision using genuine spare parts to ensure the longevity of your appliances.</p>
+                <p>Fast, futuristic efficiency. Our certified technicians diagnose and resolve issues with precision using genuine spare parts to ensure longevity.</p>
             </div>
             <div class="pillar-box">
                 <h3><span style="color: var(--brand-gold);">🏷️</span> Certified Sales</h3>
-                <p>Upgrade responsibly. We offer a curated selection of fully-inspected, pre-owned appliances that fit your budget without compromising on quality or performance.</p>
+                <p>Looking to buy? We offer a curated selection of fully-inspected, premium pre-owned appliances that fit your budget without compromising on quality.</p>
             </div>
             <div class="pillar-box">
                 <h3><span style="color: var(--brand-gold);">🛡️</span> Unmatched Trust</h3>
-                <p>Verified, expert technicians you can confidently invite into your home. Background-checked professionals delivering reliability and peace of mind guaranteed.</p>
+                <p>Verified, expert technicians you can confidently invite into your home. Background-checked professionals delivering reliability guaranteed.</p>
             </div>
         </div>
     </section>
@@ -491,7 +493,6 @@
                             <option value="washing_machine">Washing Machine</option>
                             <option value="tv">Television (TV)</option>
                             <option value="oven">Microwave / Oven</option>
-                            <option value="other_electrical">Other Electricals</option>
                         </select>
                     </div>
                     
@@ -510,10 +511,10 @@
 
                     <div class="full-width">
                         <select name="service_type" required>
-                            <option value="" disabled selected>Type of Service Required</option>
+                            <option value="" disabled selected>Type of Service</option>
                             <option value="repair">Repair / Fix an Issue</option>
                             <option value="installation">Installation / Uninstallation</option>
-                            <option value="buy_used">Inquire about Buying Used Appliances</option>
+                            <option value="buy_used">Purchase a Pre-Owned Appliance</option>
                         </select>
                     </div>
 
@@ -521,7 +522,7 @@
                         <textarea name="description" rows="4" placeholder="Briefly describe the issue (e.g., 'Fridge not cooling', 'TV screen flickering')..."></textarea>
                     </div>
                     <div class="full-width" style="margin-top: 10px;">
-                        <button type="submit" class="btn" style="width: 100%; padding: 18px; font-size: 1.1rem;">Book Technician Now</button>
+                        <button type="submit" class="btn" style="width: 100%; padding: 18px; font-size: 1.1rem;">Submit Request</button>
                     </div>
                 </form>
             </div>
@@ -549,7 +550,6 @@
                     <li><a href="#">Washing Machine Service</a></li>
                     <li><a href="#">TV Installation & Repair</a></li>
                     <li><a href="#">Microwave & Ovens</a></li>
-                    <li><a href="#">Electrical Appliances</a></li>
                 </ul>
             </div>
 
@@ -557,7 +557,7 @@
                 <h4>Company</h4>
                 <ul>
                     <li><a href="#pillars">About Us</a></li>
-                    <li><a href="#">Used Appliances Sales</a></li>
+                    <li><a href="#">Pre-Owned Appliance Sales</a></li>
                     <li><a href="#">Our Technicians</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
