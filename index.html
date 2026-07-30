@@ -52,7 +52,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 0;
+            padding: 15px 0;
             background: rgba(7, 11, 16, 0.85);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -66,13 +66,21 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: 2px;
+        /* Logo Styling */
+        .nav-logo {
+            height: 50px;
+            width: auto;
+            display: block;
+            object-fit: contain;
         }
 
-        .logo span { color: var(--brand-gold); }
+        .footer-logo {
+            height: 60px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
 
         .nav-links {
             display: flex;
@@ -185,7 +193,7 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* --- Services Grid (Images instead of icons) --- */
+        /* --- Services Grid --- */
         .section-title {
             text-align: center;
             font-size: 2.5rem;
@@ -368,7 +376,9 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo"><span>ORO</span> APPLIANCES</div>
+                <a href="index.html">
+                    <img src="oro.png" alt="ORO Home Appliances" class="nav-logo">
+                </a>
                 <div class="nav-links">
                     <a href="#expert-services">Services</a>
                     <a href="#pillars">Why ORO</a>
@@ -391,7 +401,7 @@
         </div>
     </section>
 
-    <!-- Brands Marquee (Indian Market Brands) -->
+    <!-- Brands Marquee -->
     <section class="brands-section">
         <div class="container">
             <div class="brands-title">Authorized / Expert Service For All Major Brands</div>
@@ -419,7 +429,7 @@
         </div>
     </section>
 
-    <!-- Specific Appliances Grid (Using Images) -->
+    <!-- Specific Appliances Grid -->
     <section class="appliances container" id="expert-services">
         <div class="section-subtitle">Our Expertise</div>
         <h2 class="section-title">What We Repair & Service</h2>
@@ -533,7 +543,9 @@
     <footer id="contact">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <div class="logo"><span>ORO</span> APPLIANCES</div>
+                <a href="index.html">
+                    <img src="oro.png" alt="ORO Home Appliances" class="footer-logo">
+                </a>
                 <p style="color: var(--text-muted); margin-top: 15px; font-size: 0.95rem;">
                     Smart Choice. Better Living. Providing premium home appliance repairs, servicing, and certified pre-owned sales across India.
                 </p>
@@ -546,30 +558,30 @@
             <div>
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="#">Refrigerator Repair</a></li>
-                    <li><a href="#">Washing Machine Service</a></li>
-                    <li><a href="#">TV Installation & Repair</a></li>
-                    <li><a href="#">Microwave & Ovens</a></li>
+                    <li><a href="refrigerator.html">Refrigerator Repair</a></li>
+                    <li><a href="washing-machine.html">Washing Machine Service</a></li>
+                    <li><a href="tv-repair.html">TV Installation & Repair</a></li>
+                    <li><a href="microwave-oven.html">Microwave & Ovens</a></li>
                 </ul>
             </div>
 
             <div>
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="#pillars">About Us</a></li>
-                    <li><a href="#">Pre-Owned Appliance Sales</a></li>
-                    <li><a href="#">Our Technicians</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="pre-owned-sales.html">Pre-Owned Appliance Sales</a></li>
+                    <li><a href="technicians.html">Our Technicians</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
 
             <div>
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Payment & Refunds</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="payment-refunds.html">Payment & Refunds</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
