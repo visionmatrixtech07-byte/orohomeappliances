@@ -171,7 +171,7 @@
             box-shadow: none;
         }
 
-        /* --- Brands Marquee --- */
+        /* --- Brands Marquee with Real Colored Logos --- */
         .brands-section {
             padding: 40px 0;
             background: #0a0f16;
@@ -190,22 +190,35 @@
         }
 
         .marquee-container {
-            display: inline-block;
-            animation: marquee 25s linear infinite;
+            display: inline-flex;
+            align-items: center;
+            animation: marquee 30s linear infinite;
         }
 
-        .brand-item {
-            display: inline-block;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #4a5568;
-            margin: 0 40px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: color 0.3s;
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 10px 25px;
+            margin: 0 20px;
+            height: 55px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
         }
 
-        .brand-item:hover { color: var(--text-light); }
+        .brand-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .brand-logo-img {
+            height: 28px;
+            width: auto;
+            max-width: 110px;
+            object-fit: contain;
+            display: block;
+        }
 
         @keyframes marquee {
             0% { transform: translateX(0); }
@@ -432,31 +445,35 @@
         </div>
     </section>
 
-    <!-- Brands Marquee -->
+    <!-- Brands Marquee with Official Colored Logos -->
     <section class="brands-section">
         <div class="container">
             <div class="brands-title">Authorized / Expert Service For All Major Brands</div>
         </div>
         <div class="marquee-container">
-            <span class="brand-item">Samsung</span>
-            <span class="brand-item">LG</span>
-            <span class="brand-item">Whirlpool</span>
-            <span class="brand-item">Bosch</span>
-            <span class="brand-item">IFB</span>
-            <span class="brand-item">Godrej</span>
-            <span class="brand-item">Panasonic</span>
-            <span class="brand-item">Haier</span>
-            <span class="brand-item">Voltas</span>
-            <span class="brand-item">Sony</span>
-            <span class="brand-item">Mi</span>
-            <span class="brand-item">Daikin</span>
-            <!-- Repeated for seamless scrolling loop -->
-            <span class="brand-item">Samsung</span>
-            <span class="brand-item">LG</span>
-            <span class="brand-item">Whirlpool</span>
-            <span class="brand-item">Bosch</span>
-            <span class="brand-item">IFB</span>
-            <span class="brand-item">Godrej</span>
+            <!-- First Set -->
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" class="brand-logo-img"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/LG_logo_%left%282015%right%29.svg" alt="LG" class="brand-logo-img"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Whirlpool_Corporation_Logo.png" alt="Whirlpool" class="brand-logo-img" style="height: 22px;"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Bosch-Logo.svg" alt="Bosch" class="brand-logo-img"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Sony_logo.svg" alt="Sony" class="brand-logo-img" style="height: 18px;"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Panasonic_logo_%28Blue%29.svg" alt="Panasonic" class="brand-logo-img"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Haier_logo.svg" alt="Haier" class="brand-logo-img"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Xiaomi_logo_%282021-%29.svg" alt="Xiaomi" class="brand-logo-img" style="height: 32px;"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Godrej_Logo.svg" alt="Godrej" class="brand-logo-img"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Daikin_logo.svg" alt="Daikin" class="brand-logo-img"></div>
+
+            <!-- Repeated Set for Seamless Loop -->
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" class="brand-logo-img"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/LG_logo_%left%282015%right%29.svg" alt="LG" class="brand-logo-img"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Whirlpool_Corporation_Logo.png" alt="Whirlpool" class="brand-logo-img" style="height: 22px;"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Bosch-Logo.svg" alt="Bosch" class="brand-logo-img"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Sony_logo.svg" alt="Sony" class="brand-logo-img" style="height: 18px;"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Panasonic_logo_%28Blue%29.svg" alt="Panasonic" class="brand-logo-img"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Haier_logo.svg" alt="Haier" class="brand-logo-img"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Xiaomi_logo_%282021-%29.svg" alt="Xiaomi" class="brand-logo-img" style="height: 32px;"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Godrej_Logo.svg" alt="Godrej" class="brand-logo-img"></div>
+            <div class="brand-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Daikin_logo.svg" alt="Daikin" class="brand-logo-img"></div>
         </div>
     </section>
 
