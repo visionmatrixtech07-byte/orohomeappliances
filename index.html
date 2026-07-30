@@ -118,13 +118,27 @@
             align-items: center;
         }
 
-        .hero-content { max-width: 700px; }
+        .hero-content { max-width: 800px; }
+
+        .hero-title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .hero-logo {
+            height: 110px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
 
         .hero h1 {
             font-size: 3.8rem;
             line-height: 1.1;
-            margin-bottom: 20px;
             font-weight: 700;
+            margin-bottom: 0;
         }
 
         .hero h1 span { color: var(--brand-gold); }
@@ -405,6 +419,12 @@
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
+            .hero-title-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .hero-logo { height: 80px; }
             .hero h1 { font-size: 2.8rem; }
             .brand-text { font-size: 1.1rem; }
             form { grid-template-columns: 1fr; }
@@ -437,7 +457,10 @@
     <!-- Premium Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Smart Choice.<br><span>Better Living.</span></h1>
+            <div class="hero-title-wrapper">
+                <img src="oro.png" alt="ORO Logo" class="hero-logo">
+                <h1>Smart Choice.<br><span>Better Living.</span></h1>
+            </div>
             <p>Redefining home services in India. We provide premium repairs, certified pre-owned sales, and trusted installations for your everyday appliances.</p>
             <div class="hero-btns">
                 <a href="#book" class="btn">Book a Technician</a>
