@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Technicians & Expertise | ORO Home Appliances</title>
+    <style>
+        /* Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        /* Premium CSS Variables */
+        :root {
+            --bg-dark: #070b10;
+            --bg-card: rgba(20, 27, 36, 0.7);
+            --text-light: #ffffff;
+            --text-muted: #a0aec0;
+            --brand-gold: #f59e0b;
+            --brand-gold-hover: #d97706;
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+
+        a:hover { color: var(--brand-gold); }
+
+        .container {
+            width: 90%;
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 0;
+            background: rgba(7, 11, 16, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* --- Logo + Brand Text Styling --- */
+        .brand-logo-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            height: 48px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .footer-logo {
+            height: 55px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .brand-text span {
+            color: var(--brand-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* --- Subpage Banner --- */
+        .page-header {
+            padding: 160px 0 60px 0;
+            background: linear-gradient(to bottom, rgba(20,27,36,0.8), rgba(7,11,16,1)),
+                        url('https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            border-bottom: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: var(--brand-gold);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- Content Layout --- */
+        .page-content {
+            padding: 80px 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .page-content h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .page-content p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .standard-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .standard-card h3 {
+            color: var(--brand-gold);
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .standard-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #05080c;
+            padding: 60px 0 20px 0;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-grid h4 {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-grid ul { list-style: none; }
+        .footer-grid li { margin-bottom: 12px; }
+        .footer-grid li a { color: var(--text-muted); }
+        .footer-grid li a:hover { color: var(--brand-gold); }
+
+        .footer-bottom {
+            text-align: center;
+            color: #4a5568;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media (max-width: 900px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2.2rem; }
+            .brand-text { font-size: 1.1rem; }
+            .nav-links { display: none; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="brand-logo-link">
+                    <img src="oro.png" alt="ORO Logo" class="nav-logo">
+                    <div class="brand-text"><span>ORO</span> HOME APPLIANCES</div>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html#expert-services">Services</a>
+                    <a href="index.html#pillars">Why ORO</a>
+                    <a href="index.html#book">Book Repair</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-header">
+        <div class="container">
+            <p>Verified & Highly Skilled</p>
+            <h1>The Experts Behind the ORO Standard</h1>
+        </div>
+    </section>
+
+    <!-- Content Area -->
+    <section class="container page-content">
+        <h2>Unmatched Trust in Every Home</h2>
+        <p>Your home is your sanctuary, and inviting a service technician inside requires complete trust. At ORO Home Appliances, our technicians are not just routine repairmen—they are certified appliance engineers who represent our highest standards of professionalism, integrity, and technical skill.</p>
+
+        <h2>Our 4-Point Vetting & Professional Standard</h2>
+        <p>To ensure unmatched reliability across India, every engineer representing ORO must adhere to our rigorous onboarding and operating protocols:</p>
+        
+        <div class="standards-grid">
+            <div class="standard-card">
+                <h3>🛡️ Rigorous Background Vetting</h3>
+                <p>Every technician undergoes comprehensive identity checks, police record verification, and professional reference reviews before joining our national service fleet.</p>
+            </div>
+            <div class="standard-card">
+                <h3>⚙️ Continuous Tech Training</h3>
+                <p>Appliance technology changes rapidly. Our teams receive mandatory training on modern inverter compressors, PCB chip-level diagnostics, and smart IoT-enabled appliances.</p>
+            </div>
+            <div class="standard-card">
+                <h3>👔 Professional Code of Conduct</h3>
+                <p>Our engineers arrive on time in company-issued uniforms, wear clean shoe covers inside your home, and maintain clean, organized workspaces during repairs.</p>
+            </div>
+            <div class="standard-card">
+                <h3>🧰 Calibrated Tool Standardization</h3>
+                <p>No guesswork. Every technician carries a standardized, high-precision diagnostic toolkit and anti-static gear to ensure accurate, safe repairs on the first visit.</p>
+            </div>
+        </div>
+
+        <h2>Transparent, Upfront Explanations</h2>
+        <p>A great technician communicates clearly. Before touching a single screw, our engineers explain the exact root cause of your appliance's failure, show you the damaged component, and walk you through the transparent cost of replacement parts. No hidden fees, no unnecessary part replacements.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand-logo-link" style="margin-bottom: 15px;">
+                    <img src="oro.png" alt="ORO Logo" class="footer-logo">
+                    <div class="brand-text"><span>ORO</span> HOME APPLIANCES</div>
+                </a>
+                <p style="color: var(--text-muted); margin-top: 15px; font-size: 0.95rem;">
+                    Smart Choice. Better Living. Providing premium home appliance repairs, servicing, and certified pre-owned sales across India.
+                </p>
+                <div style="margin-top: 20px;">
+                    <p style="color: var(--text-light); font-weight: 600;">📞 +91 XXXXX XXXXX</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">support@oroservices.co.in</p>
+                </div>
+            </div>
+            
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="refrigerator.html">Refrigerator Repair</a></li>
+                    <li><a href="washing-machine.html">Washing Machine Service</a></li>
+                    <li><a href="tv-repair.html">TV Installation & Repair</a></li>
+                    <li><a href="microwave-oven.html">Microwave & Ovens</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="pre-owned-sales.html">Pre-Owned Appliance Sales</a></li>
+                    <li><a href="technicians.html">Our Technicians</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="payment-refunds.html">Payment & Refunds</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 ORO Home Appliances. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
