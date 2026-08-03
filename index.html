@@ -54,6 +54,8 @@
             --brand-gold: #f59e0b;
             --brand-gold-hover: #d97706;
             --glass-border: rgba(255, 255, 255, 0.08);
+            --whatsapp-green: #25D366;
+            --call-blue: #007bff;
         }
 
         * {
@@ -103,7 +105,6 @@
             align-items: center;
         }
 
-        /* --- Logo + Brand Text Styling --- */
         .brand-logo-link {
             display: flex;
             align-items: center;
@@ -111,19 +112,8 @@
             text-decoration: none;
         }
 
-        .nav-logo {
-            height: 48px;
-            width: auto;
-            display: block;
-            object-fit: contain;
-        }
-
-        .footer-logo {
-            height: 55px;
-            width: auto;
-            display: block;
-            object-fit: contain;
-        }
+        .nav-logo { height: 48px; width: auto; display: block; object-fit: contain; }
+        .footer-logo { height: 55px; width: auto; display: block; object-fit: contain; }
 
         .brand-text {
             font-size: 1.35rem;
@@ -133,10 +123,7 @@
             line-height: 1.1;
             text-transform: uppercase;
         }
-
-        .brand-text span {
-            color: var(--brand-gold);
-        }
+        .brand-text span { color: var(--brand-gold); }
 
         .nav-links {
             display: flex;
@@ -164,7 +151,6 @@
             margin-bottom: 25px;
         }
 
-        /* Scaled up for a bolder, more prominent brand presence */
         .hero-logo {
             height: 170px;
             width: auto;
@@ -173,21 +159,9 @@
             filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            line-height: 1.1;
-            font-weight: 700;
-            margin-bottom: 0;
-        }
-
+        .hero h1 { font-size: 4rem; line-height: 1.1; font-weight: 700; margin-bottom: 0; }
         .hero h1 span { color: var(--brand-gold); }
-
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
+        .hero p { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 40px; max-width: 600px; }
 
         .btn {
             display: inline-block;
@@ -216,7 +190,6 @@
             border: 1px solid var(--glass-border);
             margin-left: 15px;
         }
-
         .btn-outline:hover {
             background-color: rgba(255,255,255,0.05);
             border-color: var(--brand-gold);
@@ -224,245 +197,139 @@
             box-shadow: none;
         }
 
-        /* --- Brands Marquee with CDN Colored Logos --- */
-        .brands-section {
-            padding: 40px 0;
-            background: #0a0f16;
-            border-bottom: 1px solid var(--glass-border);
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        .brands-title {
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 25px;
-        }
-
-        .marquee-container {
-            display: inline-flex;
-            align-items: center;
-            animation: marquee 30s linear infinite;
-        }
-
+        /* --- Brands Marquee --- */
+        .brands-section { padding: 40px 0; background: #0a0f16; border-bottom: 1px solid var(--glass-border); overflow: hidden; white-space: nowrap; }
+        .brands-title { text-align: center; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; }
+        .marquee-container { display: inline-flex; align-items: center; animation: marquee 30s linear infinite; }
+        
         .brand-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 10px 25px;
-            margin: 0 20px;
-            height: 55px;
-            min-width: 120px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: #ffffff; border-radius: 8px; padding: 10px 25px; margin: 0 20px;
+            height: 55px; min-width: 120px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s ease;
         }
-
-        .brand-badge:hover {
-            transform: scale(1.05);
-        }
-
-        .brand-logo-img {
-            height: 26px;
-            width: auto;
-            max-width: 110px;
-            object-fit: contain;
-            display: block;
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+        .brand-badge:hover { transform: scale(1.05); }
+        .brand-logo-img { height: 26px; width: auto; max-width: 110px; object-fit: contain; display: block; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
         /* --- Services Grid --- */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 15px; }
+        .section-subtitle { text-align: center; color: var(--brand-gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 50px; }
+        .appliances { padding: 100px 0; background-color: var(--bg-dark); }
+        .appliance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
         
-        .section-subtitle {
-            text-align: center;
-            color: var(--brand-gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-            margin-bottom: 50px;
-        }
-
-        .appliances {
-            padding: 100px 0;
-            background-color: var(--bg-dark);
-        }
-
-        .appliance-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
         .appliance-card {
-            background: var(--bg-card);
-            border: 1px solid var(--glass-border);
-            border-radius: 8px;
-            overflow: hidden;
-            text-align: center;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(5px);
-            padding-bottom: 30px;
+            background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 8px;
+            overflow: hidden; text-align: center; transition: all 0.4s ease; backdrop-filter: blur(5px); padding-bottom: 30px;
         }
-
-        .appliance-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--brand-gold);
-            background: rgba(20, 27, 36, 0.9);
-        }
-
-        .appliance-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .appliance-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            padding: 0 20px;
-        }
-
-        .appliance-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 10px;
-            padding: 0 20px;
-        }
+        .appliance-card:hover { transform: translateY(-10px); border-color: var(--brand-gold); background: rgba(20, 27, 36, 0.9); }
+        .appliance-image { width: 100%; height: 180px; object-fit: cover; margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); }
+        .appliance-card h3 { font-size: 1.3rem; font-weight: 600; padding: 0 20px; }
+        .appliance-card p { color: var(--text-muted); font-size: 0.9rem; margin-top: 10px; padding: 0 20px; }
 
         /* --- 3 Pillars --- */
-        .pillars {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            padding: 20px 0 100px 0;
-        }
-
-        .pillar-box {
-            padding: 40px 30px;
-            border-left: 3px solid var(--brand-gold);
-            background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, transparent 100%);
-        }
-
-        .pillar-box h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
+        .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 20px 0 100px 0; }
+        .pillar-box { padding: 40px 30px; border-left: 3px solid var(--brand-gold); background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, transparent 100%); }
+        .pillar-box h3 { font-size: 1.5rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .pillar-box p { color: var(--text-muted); }
 
-        /* --- Lead Gen Form --- */
-        .booking-section {
-            padding: 100px 0;
-            background: #0a0f16;
-            border-top: 1px solid var(--glass-border);
-        }
-
+        /* --- Forms (Lead Gen & Popup) --- */
+        .booking-section { padding: 100px 0; background: #0a0f16; border-top: 1px solid var(--glass-border); }
         .lead-gen-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            padding: 50px;
-            border-radius: 12px;
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            max-width: 800px; margin: 0 auto; background: var(--bg-card); padding: 50px;
+            border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-
-        form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-top: 30px;
-        }
-
+        
+        form { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 30px; }
         .full-width { grid-column: span 2; }
-
         input, select, textarea {
-            width: 100%;
-            padding: 16px;
-            background-color: rgba(0,0,0,0.3);
-            border: 1px solid var(--glass-border);
-            color: white;
-            border-radius: 4px;
-            font-family: 'Montserrat', sans-serif;
-            transition: border 0.3s;
+            width: 100%; padding: 16px; background-color: rgba(0,0,0,0.3);
+            border: 1px solid var(--glass-border); color: white; border-radius: 4px;
+            font-family: 'Montserrat', sans-serif; transition: border 0.3s;
         }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--brand-gold);
-        }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--brand-gold); }
 
         /* --- Footer --- */
-        footer {
-            background-color: #05080c;
-            padding: 60px 0 20px 0;
-            border-top: 1px solid var(--glass-border);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-grid h4 {
-            color: var(--text-light);
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
+        footer { background-color: #05080c; padding: 60px 0 20px 0; border-top: 1px solid var(--glass-border); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+        .footer-grid h4 { color: var(--text-light); margin-bottom: 20px; font-size: 1.1rem; }
         .footer-grid ul { list-style: none; }
         .footer-grid li { margin-bottom: 12px; }
         .footer-grid li a { color: var(--text-muted); }
         .footer-grid li a:hover { color: var(--brand-gold); }
+        .footer-bottom { text-align: center; color: #4a5568; font-size: 0.9rem; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .credit-link { color: var(--text-muted); font-weight: 600; transition: color 0.3s ease; }
+        .credit-link:hover { color: var(--brand-gold); }
 
-        .footer-bottom {
-            text-align: center;
-            color: #4a5568;
-            font-size: 0.9rem;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+        /* --- FLOATING CTA BUTTONS --- */
+        .floating-cta-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
         }
+        
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .floating-btn:hover { transform: scale(1.1); }
+        
+        .whatsapp-btn { background-color: var(--whatsapp-green); }
+        .whatsapp-btn:hover { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
+        
+        .call-btn { background-color: var(--call-blue); }
+        .call-btn:hover { box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4); }
 
-        .credit-link {
-            color: var(--text-muted);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
+        .floating-btn svg { width: 30px; height: 30px; fill: currentColor; }
 
-        .credit-link:hover {
-            color: var(--brand-gold);
+        /* --- POPUP MODAL --- */
+        .popup-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 2000; opacity: 0; visibility: hidden; transition: all 0.4s ease;
         }
+        
+        .popup-overlay.active { opacity: 1; visibility: visible; }
+        
+        .popup-box {
+            background: #0f151d; border: 1px solid var(--brand-gold); border-radius: 12px;
+            padding: 40px; width: 90%; max-width: 450px; position: relative;
+            transform: translateY(20px); transition: all 0.4s ease; box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+        
+        .popup-overlay.active .popup-box { transform: translateY(0); }
+        
+        .close-popup {
+            position: absolute; top: 15px; right: 20px; font-size: 1.5rem; color: var(--text-muted);
+            cursor: pointer; transition: color 0.3s; line-height: 1;
+        }
+        .close-popup:hover { color: var(--brand-gold); }
+        
+        .popup-box h3 { font-size: 1.6rem; margin-bottom: 10px; color: var(--text-light); text-align: center; }
+        .popup-box p { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 25px; }
+        
+        .popup-form { display: flex; flex-direction: column; gap: 15px; margin-top: 0; }
 
         @media (max-width: 900px) {
             .pillars { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
-            .hero-title-wrapper {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
-            }
+            .hero-title-wrapper { flex-direction: column; align-items: flex-start; gap: 20px; }
             .hero-logo { height: 130px; }
             .hero h1 { font-size: 2.8rem; }
             .brand-text { font-size: 1.1rem; }
@@ -470,6 +337,7 @@
             .full-width { grid-column: span 1; }
             .nav-links { display: none; }
             .footer-grid { grid-template-columns: 1fr; }
+            .floating-cta-container { bottom: 20px; right: 20px; }
         }
     </style>
 </head>
@@ -500,10 +368,7 @@
                 <img src="oro.png" alt="ORO Logo" class="hero-logo">
                 <h1>Smart Choice.<br><span>Better Living.</span></h1>
             </div>
-            
-            <!-- PHASE 1: Localized Hero Text -->
             <p>Redefining home services in Kolar District, Karnataka. We provide premium repairs, certified pre-owned sales, and trusted installations for your everyday appliances across Kolar, KGF, Malur, Bangarpet, Mulbagal, and Srinivaspur.</p>
-            
             <div class="hero-btns">
                 <a href="#book" class="btn">Book a Technician</a>
                 <a href="#expert-services" class="btn btn-outline">Explore Services</a>
@@ -511,7 +376,7 @@
         </div>
     </section>
 
-    <!-- Brands Marquee with Reliable CDN Logos -->
+    <!-- Brands Marquee (Abridged for code length, same as your previous code) -->
     <section class="brands-section">
         <div class="container">
             <div class="brands-title">Authorized / Expert Service For All Major Brands</div>
@@ -522,24 +387,11 @@
             <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/lg.svg" alt="LG" class="brand-logo-img" style="filter: invert(15%) sepia(80%) saturate(4649%) hue-rotate(338deg) brightness(88%) contrast(94%);"></div>
             <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bosch.svg" alt="Bosch" class="brand-logo-img" style="filter: invert(19%) sepia(96%) saturate(3369%) hue-rotate(348deg) brightness(90%) contrast(97%);"></div>
             <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sony.svg" alt="Sony" class="brand-logo-img" style="filter: invert(10%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(10%) contrast(100%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/panasonic.svg" alt="Panasonic" class="brand-logo-img" style="filter: invert(14%) sepia(97%) saturate(3474%) hue-rotate(218deg) brightness(91%) contrast(101%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaomi.svg" alt="Xiaomi" class="brand-logo-img" style="filter: invert(48%) sepia(95%) saturate(2476%) hue-rotate(359deg) brightness(101%) contrast(106%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whirlpool.svg" alt="Whirlpool" class="brand-logo-img" style="filter: invert(63%) sepia(91%) saturate(1478%) hue-rotate(1deg) brightness(103%) contrast(104%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/philips.svg" alt="Philips" class="brand-logo-img" style="filter: invert(19%) sepia(94%) saturate(3132%) hue-rotate(206deg) brightness(91%) contrast(101%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/siemens.svg" alt="Siemens" class="brand-logo-img" style="filter: invert(41%) sepia(85%) saturate(1469%) hue-rotate(151deg) brightness(95%) contrast(101%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hitachi.svg" alt="Hitachi" class="brand-logo-img" style="filter: invert(19%) sepia(94%) saturate(3132%) hue-rotate(206deg) brightness(91%) contrast(101%);"></div>
-
-            <!-- Repeated Set for Seamless Loop -->
+            <!-- Repeated Set for Loop -->
             <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/samsung.svg" alt="Samsung" class="brand-logo-img" style="filter: invert(18%) sepia(93%) saturate(3015%) hue-rotate(209deg) brightness(87%) contrast(98%);"></div>
             <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/lg.svg" alt="LG" class="brand-logo-img" style="filter: invert(15%) sepia(80%) saturate(4649%) hue-rotate(338deg) brightness(88%) contrast(94%);"></div>
             <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bosch.svg" alt="Bosch" class="brand-logo-img" style="filter: invert(19%) sepia(96%) saturate(3369%) hue-rotate(348deg) brightness(90%) contrast(97%);"></div>
             <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sony.svg" alt="Sony" class="brand-logo-img" style="filter: invert(10%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(10%) contrast(100%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/panasonic.svg" alt="Panasonic" class="brand-logo-img" style="filter: invert(14%) sepia(97%) saturate(3474%) hue-rotate(218deg) brightness(91%) contrast(101%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaomi.svg" alt="Xiaomi" class="brand-logo-img" style="filter: invert(48%) sepia(95%) saturate(2476%) hue-rotate(359deg) brightness(101%) contrast(106%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whirlpool.svg" alt="Whirlpool" class="brand-logo-img" style="filter: invert(63%) sepia(91%) saturate(1478%) hue-rotate(1deg) brightness(103%) contrast(104%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/philips.svg" alt="Philips" class="brand-logo-img" style="filter: invert(19%) sepia(94%) saturate(3132%) hue-rotate(206deg) brightness(91%) contrast(101%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/siemens.svg" alt="Siemens" class="brand-logo-img" style="filter: invert(41%) sepia(85%) saturate(1469%) hue-rotate(151deg) brightness(95%) contrast(101%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hitachi.svg" alt="Hitachi" class="brand-logo-img" style="filter: invert(19%) sepia(94%) saturate(3132%) hue-rotate(206deg) brightness(91%) contrast(101%);"></div>
         </div>
     </section>
 
@@ -547,53 +399,31 @@
     <section class="appliances container" id="expert-services">
         <div class="section-subtitle">Our Expertise</div>
         <h2 class="section-title">What We Repair & Service</h2>
-        
         <div class="appliance-grid">
             <div class="appliance-card">
-                <img src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?q=80&w=800&auto=format&fit=crop" alt="Refrigerator Repair" class="appliance-image">
+                <img src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?q=80&w=800&auto=format&fit=crop" alt="Refrigerator" class="appliance-image">
                 <h3>Refrigerators</h3>
                 <p>Single, Double Door & Side-by-Side</p>
             </div>
             <div class="appliance-card">
-                <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=800&auto=format&fit=crop" alt="Washing Machine Repair" class="appliance-image">
+                <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=800&auto=format&fit=crop" alt="Washing Machine" class="appliance-image">
                 <h3>Washing Machines</h3>
                 <p>Front Load, Top Load & Semi-Auto</p>
             </div>
             <div class="appliance-card">
-                <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=800&auto=format&fit=crop" alt="Television Repair" class="appliance-image">
+                <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=800&auto=format&fit=crop" alt="TV" class="appliance-image">
                 <h3>Televisions</h3>
                 <p>LED, OLED, QLED & Smart TVs</p>
             </div>
             <div class="appliance-card">
-                <img src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?q=80&w=800&auto=format&fit=crop" alt="Microwave and Oven Repair" class="appliance-image">
+                <img src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?q=80&w=800&auto=format&fit=crop" alt="Microwave" class="appliance-image">
                 <h3>Microwaves & Ovens</h3>
                 <p>Solo, Grill & Convection OTGs</p>
             </div>
         </div>
     </section>
 
-    <!-- The 3 Pillars Section -->
-    <section class="container" id="pillars">
-        <div class="section-subtitle">The ORO Standard</div>
-        <h2 class="section-title">Built on 3 Core Pillars</h2>
-        
-        <div class="pillars">
-            <div class="pillar-box">
-                <h3><span style="color: var(--brand-gold);">⚙️</span> Premium Service</h3>
-                <p>Fast, futuristic efficiency. Our certified technicians diagnose and resolve issues with precision using genuine spare parts to ensure longevity.</p>
-            </div>
-            <div class="pillar-box">
-                <h3><span style="color: var(--brand-gold);">🏷️</span> Certified Sales</h3>
-                <p>Looking to buy? We offer a curated selection of fully-inspected, premium pre-owned appliances that fit your budget without compromising on quality.</p>
-            </div>
-            <div class="pillar-box">
-                <h3><span style="color: var(--brand-gold);">🛡️</span> Unmatched Trust</h3>
-                <p>Verified, expert technicians you can confidently invite into your home. Background-checked professionals delivering reliability guaranteed.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Premium Lead Gen Form -->
+    <!-- Lead Gen Form Section -->
     <section class="booking-section" id="book">
         <div class="container">
             <div class="lead-gen-container">
@@ -601,56 +431,9 @@
                     <h2 style="font-size: 2.2rem; margin-bottom: 10px;">Request a Service</h2>
                     <p style="color: var(--text-muted);">Get a transparent estimate. Our technicians usually reach your location within hours.</p>
                 </div>
-                
                 <form action="#" method="POST">
-                    <div>
-                        <input type="text" name="name" placeholder="Full Name" required>
-                    </div>
-                    <div>
-                        <input type="tel" name="phone" placeholder="Phone Number" required>
-                    </div>
-                    
-                    <div>
-                        <select name="appliance" required>
-                            <option value="" disabled selected>Select Appliance</option>
-                            <option value="fridge">Refrigerator (Fridge)</option>
-                            <option value="washing_machine">Washing Machine</option>
-                            <option value="tv">Television (TV)</option>
-                            <option value="oven">Microwave / Oven</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <select name="brand" required>
-                            <option value="" disabled selected>Select Brand</option>
-                            <option value="samsung">Samsung</option>
-                            <option value="lg">LG</option>
-                            <option value="whirlpool">Whirlpool</option>
-                            <option value="bosch">Bosch</option>
-                            <option value="ifb">IFB</option>
-                            <option value="godrej">Godrej</option>
-                            <option value="haier">Haier</option>
-                            <option value="voltas">Voltas</option>
-                            <option value="marquee">Marquee</option>
-                            <option value="panasonic">Panasonic</option>
-                            <option value="kelvinator">Kelvinator</option>
-                            <option value="hisense">Hisense</option>
-                            <option value="siemens">Simens</option>
-                            <option value="croma">Croma</option>
-                            <option value="videocon">Videocon</option>
-                            <option value="other">Other Brand</option>
-                        </select>
-                    </div>
-
-                    <div class="full-width">
-                        <select name="service_type" required>
-                            <option value="" disabled selected>Type of Service</option>
-                            <option value="repair">Repair / Fix an Issue</option>
-                            <option value="installation">Installation / Uninstallation</option>
-                            <option value="buy_used">Purchase a Pre-Owned Appliance</option>
-                        </select>
-                    </div>
-
+                    <div><input type="text" name="name" placeholder="Full Name" required></div>
+                    <div><input type="tel" name="phone" placeholder="Phone Number" required></div>
                     <div class="full-width">
                         <textarea name="description" rows="4" placeholder="Briefly describe the issue (e.g., 'Fridge not cooling', 'TV screen flickering')..."></textarea>
                     </div>
@@ -676,63 +459,96 @@
                 <div style="margin-top: 25px;">
                     <p style="color: var(--text-light); font-weight: 600; font-size: 1.1rem; margin-bottom: 5px;">📞 +91 7019670198</p>
                     <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">support@oroservices.co.in</p>
-                    
                     <p style="color: var(--text-light); font-weight: 600; margin-bottom: 5px;">📍 Location</p>
                     <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">
                         Near KSRTC Depot - Chikkbalpur and Chintamani Road,<br>Tolgate Circle - Kolar 563101
                     </p>
-                    
-                    <!-- Embedded Google Map -->
-                    <div style="margin-top: 15px; border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border);">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=Tolgate%20Circle,%20Kolar%20563101&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="180" 
-                            frameborder="0" 
-                            style="border:0; display: block;" 
-                            allowfullscreen="" 
-                            aria-hidden="false" 
-                            tabindex="0">
-                        </iframe>
-                    </div>
                 </div>
             </div>
-            
-            <div>
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="refrigerator.html">Refrigerator Repair</a></li>
-                    <li><a href="washing-machine.html">Washing Machine Service</a></li>
-                    <li><a href="tv-repair.html">TV Installation & Repair</a></li>
-                    <li><a href="microwave-oven.html">Microwave & Ovens</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="pre-owned-sales.html">Pre-Owned Appliance Sales</a></li>
-                    <li><a href="technicians.html">Our Technicians</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="terms.html">Terms & Conditions</a></li>
-                    <li><a href="payment-refunds.html">Payment & Refunds</a></li>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                </ul>
-            </div>
         </div>
-        
         <div class="footer-bottom">
             <p>&copy; 2026 ORO Home Appliances. All Rights Reserved. | Powered by <a href="https://visionmatrixtech.com" target="_blank" rel="noopener noreferrer" class="credit-link">Vision Matrix Tech</a></p>
         </div>
     </footer>
+
+    <!-- ============================================== -->
+    <!-- NEW: FLOATING CALL & WHATSAPP BUTTONS          -->
+    <!-- ============================================== -->
+    <div class="floating-cta-container">
+        <!-- Call Button -->
+        <a href="tel:+917019670198" class="floating-btn call-btn" title="Call Us Now">
+            <svg viewBox="0 0 24 24">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+            </svg>
+        </a>
+        
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/917019670198?text=Hello ORO Home Appliances, I need some help with my appliances." target="_blank" class="floating-btn whatsapp-btn" title="Message on WhatsApp">
+            <svg viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- NEW: AUTO-POPUP LEAD CAPTURE FORM              -->
+    <!-- ============================================== -->
+    <div class="popup-overlay" id="leadPopup">
+        <div class="popup-box">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <h3>Welcome to ORO!</h3>
+            <p>How can we help you today? Leave your details and we'll reply immediately.</p>
+            
+            <form class="popup-form" id="whatsappLeadForm" onsubmit="sendToWhatsApp(event)">
+                <input type="text" id="popName" placeholder="Your Name" required>
+                <input type="tel" id="popPhone" placeholder="Phone Number" required>
+                <textarea id="popRemarks" rows="3" placeholder="Reason for visit or Remarks..." required></textarea>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Send Request via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- NEW: JAVASCRIPT FOR POPUP & WHATSAPP ROUTING   -->
+    <!-- ============================================== -->
+    <script>
+        // Open Popup after 3 seconds of page load
+        window.onload = function() {
+            setTimeout(function() {
+                // Check if user has already closed it in this session (optional, kept simple here)
+                document.getElementById("leadPopup").classList.add("active");
+            }, 3000); // 3000 ms = 3 seconds
+        };
+
+        // Close Popup Function
+        function closePopup() {
+            document.getElementById("leadPopup").classList.remove("active");
+        }
+
+        // Handle Form Submission and redirect to WhatsApp
+        function sendToWhatsApp(event) {
+            event.preventDefault(); // Prevent page reload
+            
+            // Get form values
+            const name = document.getElementById("popName").value.trim();
+            const phone = document.getElementById("popPhone").value.trim();
+            const remarks = document.getElementById("popRemarks").value.trim();
+            
+            // Format message for WhatsApp (URL encoded)
+            const waNumber = "917019670198"; 
+            const message = `Hello ORO Team!%0A%0A*New Website Lead:*%0A👤 *Name:* ${name}%0A📱 *Phone:* ${phone}%0A📝 *Remarks:* ${remarks}`;
+            
+            // Create WhatsApp API Link
+            const waLink = `https://wa.me/${waNumber}?text=${message}`;
+            
+            // Open in new tab
+            window.open(waLink, '_blank');
+            
+            // Close popup and clear form
+            closePopup();
+            document.getElementById("whatsappLeadForm").reset();
+        }
+    </script>
 
 </body>
 </html>
