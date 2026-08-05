@@ -53,7 +53,12 @@
             --text-muted: #a0aec0;
             --brand-gold: #f59e0b;
             --brand-gold-hover: #d97706;
+            --brand-gold-glow: rgba(245, 158, 11, 0.3);
             --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         * {
@@ -73,10 +78,13 @@
         a {
             text-decoration: none;
             color: var(--text-light);
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        a:hover { color: var(--brand-gold); }
+        a:hover { 
+            color: var(--brand-gold); 
+            text-shadow: 0 0 8px var(--brand-gold-glow);
+        }
 
         .container {
             width: 90%;
@@ -84,23 +92,37 @@
             margin: 0 auto;
         }
 
-        /* --- Header --- */
+        /* --- Header & Navigation --- */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 15px 0;
-            background: rgba(7, 11, 16, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
+            background: rgba(7, 11, 16, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 2px solid var(--brand-gold);
             z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
         }
 
-        nav {
+        /* Yellow Top Announcement Bar */
+        .top-bar {
+            background: var(--brand-gold);
+            color: #000;
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .main-nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 12px 0;
         }
 
         /* --- Logo + Brand Text Styling --- */
@@ -111,11 +133,16 @@
             text-decoration: none;
         }
 
+        .brand-logo-link:hover {
+            transform: scale(1.02);
+        }
+
         .nav-logo {
             height: 48px;
             width: auto;
             display: block;
             object-fit: contain;
+            filter: drop-shadow(0 0 5px var(--brand-gold-glow));
         }
 
         .footer-logo {
@@ -140,16 +167,54 @@
 
         .nav-links {
             display: flex;
-            gap: 30px;
-            font-weight: 500;
+            gap: 35px;
+            font-weight: 600;
             font-size: 0.95rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--brand-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu Icon */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle .bar {
+            width: 30px;
+            height: 3px;
+            background-color: var(--brand-gold);
+            border-radius: 3px;
+            transition: all 0.4s ease-in-out;
         }
 
         /* --- Hero Banner --- */
         .hero {
             background: linear-gradient(to right, rgba(7,11,16,0.95) 20%, rgba(7,11,16,0.6) 100%), 
                         url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop') top center/cover no-repeat;
-            padding: 210px 0 120px 0;
+            padding: 240px 0 120px 0;
             min-height: 85vh;
             display: flex;
             align-items: center;
@@ -164,71 +229,102 @@
             margin-bottom: 25px;
         }
 
-        /* Scaled up for a bolder, more prominent brand presence */
         .hero-logo {
             height: 170px;
             width: auto;
             object-fit: contain;
             flex-shrink: 0;
-            filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0 15px 30px var(--brand-gold-glow));
+            animation: float 6s ease-in-out infinite;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 4.2rem;
             line-height: 1.1;
             font-weight: 700;
             margin-bottom: 0;
         }
 
-        .hero h1 span { color: var(--brand-gold); }
+        .hero h1 span { 
+            color: var(--brand-gold);
+            text-shadow: 0 0 20px var(--brand-gold-glow);
+        }
 
         .hero p {
             color: var(--text-muted);
-            font-size: 1.2rem;
-            margin-bottom: 40px;
+            font-size: 1.25rem;
+            margin-bottom: 45px;
             max-width: 600px;
         }
 
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(245, 158, 11, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Buttons */
         .btn {
             display: inline-block;
-            padding: 15px 35px;
+            padding: 16px 38px;
             background-color: var(--brand-gold);
             color: #000;
-            font-weight: 600;
-            border-radius: 4px;
+            font-weight: 700;
+            border-radius: 6px;
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            animation: pulse 2.5s infinite;
         }
 
         .btn:hover {
             background-color: var(--brand-gold-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 25px var(--brand-gold-glow);
+            animation: none;
         }
 
         .btn-outline {
             background-color: transparent;
-            color: var(--text-light);
-            border: 1px solid var(--glass-border);
-            margin-left: 15px;
+            color: var(--brand-gold);
+            border: 2px solid var(--brand-gold);
+            margin-left: 20px;
+            animation: none;
         }
 
         .btn-outline:hover {
-            background-color: rgba(255,255,255,0.05);
-            border-color: var(--brand-gold);
-            color: var(--brand-gold);
-            box-shadow: none;
+            background-color: var(--brand-gold);
+            color: #000;
+            box-shadow: 0 10px 20px var(--brand-gold-glow);
         }
 
-        /* --- Brands Marquee with CDN Colored Logos --- */
+        /* --- Brands Marquee --- */
         .brands-section {
             padding: 40px 0;
             background: #0a0f16;
             border-bottom: 1px solid var(--glass-border);
+            border-top: 1px solid var(--glass-border);
             overflow: hidden;
             white-space: nowrap;
         }
@@ -236,10 +332,11 @@
         .brands-title {
             text-align: center;
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: var(--brand-gold);
             text-transform: uppercase;
             letter-spacing: 3px;
             margin-bottom: 25px;
+            font-weight: 600;
         }
 
         .marquee-container {
@@ -259,11 +356,12 @@
             height: 55px;
             min-width: 120px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .brand-badge:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px var(--brand-gold-glow);
         }
 
         .brand-logo-img {
@@ -279,22 +377,40 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* --- Services Grid --- */
+        /* --- Shared Headings --- */
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background-color: var(--brand-gold);
+            bottom: -10px;
+            left: 20%;
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--brand-gold-glow);
+        }
+
         .section-subtitle {
             text-align: center;
             color: var(--brand-gold);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-            margin-bottom: 50px;
+            letter-spacing: 3px;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
 
+        /* --- Services Grid --- */
         .appliances {
             padding: 100px 0;
             background-color: var(--bg-dark);
@@ -302,70 +418,105 @@
 
         .appliance-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
         }
 
         .appliance-card {
             background: var(--bg-card);
             border: 1px solid var(--glass-border);
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
             text-align: center;
             transition: all 0.4s ease;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
             padding-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .appliance-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
             border-color: var(--brand-gold);
-            background: rgba(20, 27, 36, 0.9);
+            background: rgba(20, 27, 36, 0.95);
+            box-shadow: 0 20px 40px var(--brand-gold-glow);
         }
 
         .appliance-image {
             width: 100%;
             height: auto;
             object-fit: contain;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--glass-border);
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--glass-border);
+            transition: transform 0.5s ease;
+        }
+
+        .appliance-card:hover .appliance-image {
+            border-bottom-color: var(--brand-gold);
+            transform: scale(1.03);
         }
 
         .appliance-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 600;
             padding: 0 20px;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        .appliance-card:hover h3 {
+            color: var(--brand-gold);
         }
 
         .appliance-card p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-top: 10px;
             padding: 0 20px;
         }
 
         /* --- 3 Pillars --- */
+        .pillars-section {
+            padding: 100px 0;
+            background: #0a0f16;
+            border-top: 1px solid var(--glass-border);
+        }
+
         .pillars {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            padding: 20px 0 100px 0;
+            gap: 35px;
+            margin-top: 60px;
         }
 
         .pillar-box {
             padding: 40px 30px;
-            border-left: 3px solid var(--brand-gold);
-            background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            border-bottom: 4px solid var(--brand-gold);
+            background: linear-gradient(145deg, rgba(20, 27, 36, 0.8) 0%, rgba(7, 11, 16, 0.9) 100%);
+            transition: all 0.4s ease;
+        }
+
+        .pillar-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px var(--brand-gold-glow);
+            border-color: var(--brand-gold);
         }
         
-        /* Updated CSS class for the 3 pillar images - No cropping */
         .pillar-image {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 6px;
+            border-radius: 8px;
             margin-bottom: 25px;
             border: 1px solid var(--glass-border);
+            transition: transform 0.4s ease;
+        }
+
+        .pillar-box:hover .pillar-image {
+            transform: scale(1.02);
+            border-color: var(--brand-gold);
         }
 
         .pillar-box h3 {
@@ -373,14 +524,14 @@
             margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .pillar-box p { color: var(--text-muted); }
+        .pillar-box p { color: var(--text-muted); line-height: 1.7; }
 
         /* --- Team Section --- */
         .team-section {
-            padding: 20px 0 100px 0;
+            padding: 100px 0;
         }
         
         .team-layout {
@@ -388,16 +539,23 @@
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
-            margin-top: 40px;
+            margin-top: 60px;
         }
         
         .team-image {
             width: 100%;
             height: auto;
             border-radius: 12px;
-            border: 1px solid var(--glass-border);
+            border: 2px solid var(--glass-border);
             display: block;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            transition: all 0.4s ease;
+        }
+
+        .team-image:hover {
+            border-color: var(--brand-gold);
+            box-shadow: 0 20px 50px var(--brand-gold-glow);
+            transform: scale(1.02);
         }
         
         .team-content {
@@ -405,147 +563,227 @@
         }
 
         .team-content h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--brand-gold);
             margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--brand-gold-glow);
         }
 
         .team-content p {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             line-height: 1.8;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         /* --- Lead Gen Form --- */
         .booking-section {
-            padding: 100px 0;
-            background: #0a0f16;
+            padding: 120px 0;
+            background: linear-gradient(180deg, #0a0f16 0%, var(--bg-dark) 100%);
             border-top: 1px solid var(--glass-border);
+            position: relative;
         }
 
         .lead-gen-container {
             max-width: 800px;
             margin: 0 auto;
             background: var(--bg-card);
-            padding: 50px;
-            border-radius: 12px;
+            padding: 60px;
+            border-radius: 16px;
             border: 1px solid var(--glass-border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-top: 4px solid var(--brand-gold);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Glow effect behind form */
+        .lead-gen-container::before {
+            content: '';
+            position: absolute;
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
+            background: var(--brand-gold);
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: -1;
+            border-radius: 20px;
         }
 
         form {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 25px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .full-width { grid-column: span 2; }
 
         input, select, textarea {
             width: 100%;
-            padding: 16px;
-            background-color: rgba(0,0,0,0.3);
-            border: 1px solid var(--glass-border);
+            padding: 18px;
+            background-color: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             color: white;
-            border-radius: 4px;
+            border-radius: 8px;
             font-family: 'Montserrat', sans-serif;
-            transition: border 0.3s;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--brand-gold);
+            box-shadow: 0 0 15px var(--brand-gold-glow);
+            background-color: rgba(0,0,0,0.6);
         }
 
         /* --- Footer --- */
         footer {
             background-color: #05080c;
-            padding: 60px 0 20px 0;
+            padding: 80px 0 20px 0;
             border-top: 1px solid var(--glass-border);
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 50px;
+            gap: 50px;
+            margin-bottom: 60px;
         }
 
         .footer-grid h4 {
             color: var(--text-light);
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-grid h4::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: -8px;
+            width: 30px; height: 3px;
+            background: var(--brand-gold);
+            border-radius: 2px;
         }
 
         .footer-grid ul { list-style: none; }
-        .footer-grid li { margin-bottom: 12px; }
-        .footer-grid li a { color: var(--text-muted); }
-        .footer-grid li a:hover { color: var(--brand-gold); }
+        .footer-grid li { margin-bottom: 15px; }
+        .footer-grid li a { color: var(--text-muted); font-size: 0.95rem; }
+        .footer-grid li a:hover { color: var(--brand-gold); padding-left: 5px; }
 
         .footer-bottom {
             text-align: center;
             color: #4a5568;
-            font-size: 0.9rem;
-            padding-top: 20px;
+            font-size: 0.95rem;
+            padding-top: 25px;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         .credit-link {
-            color: var(--text-muted);
+            color: var(--brand-gold);
             font-weight: 600;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .credit-link:hover {
-            color: var(--brand-gold);
+            text-shadow: 0 0 10px var(--brand-gold-glow);
         }
 
+        /* --- Responsive Design --- */
         @media (max-width: 900px) {
             .pillars { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-            .team-layout { grid-template-columns: 1fr; text-align: center; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+            .team-layout { grid-template-columns: 1fr; text-align: center; gap: 30px;}
             .team-content { text-align: center; }
+            .hero { padding-top: 200px; }
         }
+        
         @media (max-width: 768px) {
+            /* Mobile Nav Config */
+            .menu-toggle { display: flex; }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(7, 11, 16, 0.98);
+                backdrop-filter: blur(15px);
+                flex-direction: column;
+                padding: 30px 0;
+                gap: 25px;
+                text-align: center;
+                border-bottom: 3px solid var(--brand-gold);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: clip-path 0.4s ease-in-out;
+                box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+            }
+            .nav-links.mobile-active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            
+            /* Hamburger Animations */
+            .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); background-color: white;}
+            .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+            .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background-color: white;}
+            
+            /* General Adjustments */
+            .top-bar { font-size: 0.75rem; padding: 10px; }
             .hero-title-wrapper {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
                 gap: 20px;
+                text-align: center;
             }
-            .hero-logo { height: 130px; }
-            .hero h1 { font-size: 2.8rem; }
+            .hero-logo { height: 130px; animation: none; }
+            .hero h1 { font-size: 3rem; }
+            .hero p { text-align: center; font-size: 1.1rem; }
+            .hero-btns { text-align: center; display: flex; flex-direction: column; gap: 15px;}
+            .btn-outline { margin-left: 0; }
             .brand-text { font-size: 1.1rem; }
             form { grid-template-columns: 1fr; }
             .full-width { grid-column: span 1; }
-            .nav-links { display: none; }
-            .footer-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-grid h4::after { left: 50%; transform: translateX(-50%); }
+            .lead-gen-container { padding: 30px 20px; }
+            .section-title { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="brand-logo-link">
-                    <img src="oro.png" alt="ORO Logo" class="nav-logo">
-                    <div class="brand-text"><span>ORO</span> HOME APPLIANCES</div>
-                </a>
-                <div class="nav-links">
-                    <a href="#expert-services">Services</a>
-                    <a href="#pillars">Why ORO</a>
-                    <a href="#book">Book Repair</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </nav>
+    <!-- Header & Announcement Bar -->
+    <header id="main-header">
+        <div class="top-bar">
+            ⚡ Fast & Expert Appliance Repairs | Call Now: +91 7019670198
+        </div>
+        <div class="container main-nav-container">
+            <a href="index.html" class="brand-logo-link">
+                <img src="oro.png" alt="ORO Logo" class="nav-logo">
+                <div class="brand-text"><span>ORO</span> HOME APPLIANCES</div>
+            </a>
+            
+            <!-- Mobile Hamburger Icon -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="nav-links" id="nav-links">
+                <a href="#expert-services">Services</a>
+                <a href="#pillars">Why ORO</a>
+                <a href="#team">Our Experts</a>
+                <a href="#contact">Contact</a>
+                <a href="#book" class="btn" style="padding: 10px 25px; animation: none; font-size: 0.85rem;">Book Repair</a>
+            </div>
         </div>
     </header>
 
     <!-- Premium Hero Section -->
-    <section class="hero">
+    <section class="hero reveal">
         <div class="container hero-content">
             <div class="hero-title-wrapper">
                 <img src="oro.png" alt="ORO Logo" class="hero-logo">
@@ -563,7 +801,7 @@
     </section>
 
     <!-- Brands Marquee with Reliable CDN Logos -->
-    <section class="brands-section">
+    <section class="brands-section reveal">
         <div class="container">
             <div class="brands-title">Authorized / Expert Service For All Major Brands</div>
         </div>
@@ -596,21 +834,21 @@
 
     <!-- Specific Appliances Grid -->
     <section class="appliances container" id="expert-services">
-        <div class="section-subtitle">Our Expertise</div>
-        <h2 class="section-title">What We Repair & Service</h2>
+        <div class="section-subtitle reveal">Our Expertise</div>
+        <h2 class="section-title reveal">What We Repair & Service</h2>
         
         <div class="appliance-grid">
-            <div class="appliance-card">
+            <div class="appliance-card reveal">
                 <img src="assets/fridges.png" alt="Refrigerator Repair" class="appliance-image">
                 <h3>Refrigerators</h3>
                 <p>Single, Double Door & Side-by-Side</p>
             </div>
-            <div class="appliance-card">
+            <div class="appliance-card reveal">
                 <img src="assets/washing.png" alt="Washing Machine Repair" class="appliance-image">
                 <h3>Washing Machines</h3>
                 <p>Front Load, Top Load & Semi-Auto</p>
             </div>
-            <div class="appliance-card">
+            <div class="appliance-card reveal">
                 <img src="assets/tv.png" alt="Television Repair" class="appliance-image">
                 <h3>Televisions</h3>
                 <p>LED, OLED, QLED & Smart TVs</p>
@@ -619,35 +857,37 @@
     </section>
 
     <!-- The 3 Pillars Section -->
-    <section class="container" id="pillars">
-        <div class="section-subtitle">The ORO Standard</div>
-        <h2 class="section-title">Built on 3 Core Pillars</h2>
-        
-        <div class="pillars">
-            <div class="pillar-box">
-                <img src="assets/premiumservice.png" alt="Premium Service" class="pillar-image">
-                <h3><span style="color: var(--brand-gold);">⚙️</span> Premium Service</h3>
-                <p>Fast, futuristic efficiency. Our certified technicians diagnose and resolve issues with precision using genuine spare parts to ensure longevity.</p>
-            </div>
-            <div class="pillar-box">
-                <img src="assets/certified.png" alt="Certified Sales" class="pillar-image">
-                <h3><span style="color: var(--brand-gold);">🏷️</span> Certified Sales</h3>
-                <p>Looking to buy? We offer a curated selection of fully-inspected, premium pre-owned appliances that fit your budget without compromising on quality.</p>
-            </div>
-            <div class="pillar-box">
-                <img src="assets/trust.png" alt="Unmatched Trust" class="pillar-image">
-                <h3><span style="color: var(--brand-gold);">🛡️</span> Unmatched Trust</h3>
-                <p>Verified, expert technicians you can confidently invite into your home. Background-checked professionals delivering reliability guaranteed.</p>
+    <section class="pillars-section" id="pillars">
+        <div class="container">
+            <div class="section-subtitle reveal">The ORO Standard</div>
+            <h2 class="section-title reveal">Built on 3 Core Pillars</h2>
+            
+            <div class="pillars">
+                <div class="pillar-box reveal">
+                    <img src="assets/premiumservice.png" alt="Premium Service" class="pillar-image">
+                    <h3><span style="color: var(--brand-gold);">⚙️</span> Premium Service</h3>
+                    <p>Fast, futuristic efficiency. Our certified technicians diagnose and resolve issues with precision using genuine spare parts to ensure longevity.</p>
+                </div>
+                <div class="pillar-box reveal">
+                    <img src="assets/certified.png" alt="Certified Sales" class="pillar-image">
+                    <h3><span style="color: var(--brand-gold);">🏷️</span> Certified Sales</h3>
+                    <p>Looking to buy? We offer a curated selection of fully-inspected, premium pre-owned appliances that fit your budget without compromising on quality.</p>
+                </div>
+                <div class="pillar-box reveal">
+                    <img src="assets/trust.png" alt="Unmatched Trust" class="pillar-image">
+                    <h3><span style="color: var(--brand-gold);">🛡️</span> Unmatched Trust</h3>
+                    <p>Verified, expert technicians you can confidently invite into your home. Background-checked professionals delivering reliability guaranteed.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Our Team Section -->
     <section class="container team-section" id="team">
-        <div class="section-subtitle">Our Experts</div>
-        <h2 class="section-title">Meet Our Technicians</h2>
+        <div class="section-subtitle reveal">Our Experts</div>
+        <h2 class="section-title reveal">Meet Our Technicians</h2>
         
-        <div class="team-layout">
+        <div class="team-layout reveal">
             <img src="assets/myteam.png" alt="ORO Technicians Team" class="team-image">
             <div class="team-content">
                 <h3>Expert Care You Can Trust</h3>
@@ -660,10 +900,10 @@
     <!-- Premium Lead Gen Form -->
     <section class="booking-section" id="book">
         <div class="container">
-            <div class="lead-gen-container">
+            <div class="lead-gen-container reveal">
                 <div style="text-align: center;">
-                    <h2 style="font-size: 2.2rem; margin-bottom: 10px;">Request a Service</h2>
-                    <p style="color: var(--text-muted);">Get a transparent estimate. Our technicians usually reach your location within hours.</p>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 10px; color: var(--brand-gold);">Request a Service</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">Get a transparent estimate. Our technicians usually reach your location within hours.</p>
                 </div>
                 
                 <form action="#" method="POST">
@@ -718,8 +958,8 @@
                     <div class="full-width">
                         <textarea name="description" rows="4" placeholder="Briefly describe the issue (e.g., 'Fridge not cooling', 'TV screen flickering')..."></textarea>
                     </div>
-                    <div class="full-width" style="margin-top: 10px;">
-                        <button type="submit" class="btn" style="width: 100%; padding: 18px; font-size: 1.1rem;">Submit Request</button>
+                    <div class="full-width" style="margin-top: 15px;">
+                        <button type="submit" class="btn" style="width: 100%; padding: 20px; font-size: 1.2rem; letter-spacing: 2px;">Submit Request</button>
                     </div>
                 </form>
             </div>
@@ -728,26 +968,26 @@
 
     <!-- Footer -->
     <footer id="contact">
-        <div class="container footer-grid">
+        <div class="container footer-grid reveal">
             <div class="footer-brand">
-                <a href="index.html" class="brand-logo-link" style="margin-bottom: 15px;">
+                <a href="index.html" class="brand-logo-link" style="margin-bottom: 20px;">
                     <img src="oro.png" alt="ORO Logo" class="footer-logo">
                     <div class="brand-text"><span>ORO</span> HOME APPLIANCES</div>
                 </a>
-                <p style="color: var(--text-muted); margin-top: 15px; font-size: 0.95rem;">
+                <p style="color: var(--text-muted); margin-top: 15px; font-size: 0.95rem; line-height: 1.8;">
                     Smart Choice. Better Living. Providing premium home appliance repairs, servicing, and certified pre-owned sales across India.
                 </p>
                 <div style="margin-top: 25px;">
-                    <p style="color: var(--text-light); font-weight: 600; font-size: 1.1rem; margin-bottom: 5px;">📞 +91 7019670198</p>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">support@oroservices.co.in</p>
+                    <p style="color: var(--brand-gold); font-weight: 700; font-size: 1.2rem; margin-bottom: 5px;">📞 +91 7019670198</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px;">support@oroservices.co.in</p>
                     
-                    <p style="color: var(--text-light); font-weight: 600; margin-bottom: 5px;">📍 Location</p>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">
+                    <p style="color: var(--text-light); font-weight: 600; margin-bottom: 10px; font-size: 1.1rem;">📍 Location</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
                         Near KSRTC Depot - Chikkbalpur and Chintamani Road,<br>Tolgate Circle - Kolar 563101
                     </p>
                     
                     <!-- Embedded Google Map -->
-                    <div style="margin-top: 15px; border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border);">
+                    <div style="margin-top: 20px; border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
                         <iframe 
                             src="https://maps.google.com/maps?q=Tolgate%20Circle,%20Kolar%20563101&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
@@ -798,5 +1038,48 @@
         </div>
     </footer>
 
+    <!-- Interactive Scripts for Mobile Menu & Animations -->
+    <script>
+        // Mobile Menu Toggle Logic
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('is-active');
+            navLinks.classList.toggle('mobile-active');
+        });
+
+        // Close mobile menu when a link is clicked
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.remove('is-active');
+                navLinks.classList.remove('mobile-active');
+            });
+        });
+
+        // Scroll Reveal Animation Logic
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+        
+        revealElements.forEach(el => {
+            revealOnScroll.observe(el);
+        });
+    </script>
 </body>
 </html>
