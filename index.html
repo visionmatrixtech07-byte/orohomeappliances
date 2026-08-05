@@ -73,6 +73,7 @@
             color: var(--text-light);
             line-height: 1.6;
             overflow-x: hidden;
+            width: 100%;
         }
 
         a {
@@ -428,21 +429,20 @@
         .section-title {
             text-align: center;
             font-size: 2.8rem;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
+            color: var(--text-light);
         }
         
         .section-title::after {
             content: '';
             position: absolute;
-            width: 60%;
+            width: 80px;
             height: 4px;
             background-color: var(--brand-gold);
-            bottom: -10px;
-            left: 20%;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
             border-radius: 2px;
             box-shadow: 0 0 10px var(--brand-gold-glow);
         }
@@ -465,7 +465,7 @@
 
         .appliance-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-top: 60px;
         }
@@ -738,13 +738,12 @@
             text-shadow: 0 0 10px var(--brand-gold-glow);
         }
 
-        /* --- Responsive Design --- */
+        /* --- Responsive Design (MOBILE FIXES) --- */
         @media (max-width: 900px) {
             .pillars { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
             .team-layout { grid-template-columns: 1fr; text-align: center; gap: 30px;}
             .team-content { text-align: center; }
-            .hero { padding-top: 200px; }
         }
         
         @media (max-width: 768px) {
@@ -775,40 +774,52 @@
             .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
             .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background-color: white;}
             
-            /* General Adjustments */
-            .top-bar { font-size: 0.75rem; padding: 10px; }
+            /* Typography & Layout Adjustments */
+            .top-bar { font-size: 0.7rem; padding: 10px 5px; }
+            .brand-text { font-size: 1.1rem; }
+            
+            /* Hero Section Fixes */
+            .hero { padding: 150px 15px 60px 15px; min-height: auto; }
             .hero-title-wrapper {
                 flex-direction: column;
                 align-items: center;
-                gap: 20px;
+                gap: 15px;
                 text-align: center;
             }
-            .hero-logo { height: 130px; animation: none; }
-            .hero h1 { font-size: 3rem; }
-            .hero p { text-align: center; font-size: 1.1rem; }
-            .hero-btns { text-align: center; display: flex; flex-direction: column; gap: 15px;}
+            .hero-logo { height: 75px; animation: none; margin-bottom: 5px; filter: drop-shadow(0 5px 15px var(--brand-gold-glow)); }
+            .hero h1 { font-size: 2.5rem; line-height: 1.15; }
+            .hero p { text-align: center; font-size: 1rem; margin-bottom: 30px; padding: 0 10px; }
+            
+            /* Button Fixes */
+            .hero-btns { display: flex; flex-direction: column; width: 100%; gap: 15px;}
+            .btn { width: 100%; text-align: center; }
             .btn-outline { margin-left: 0; }
-            .brand-text { font-size: 1.1rem; }
-            form { grid-template-columns: 1fr; }
+            
+            /* Headings Fixes */
+            .section-title { font-size: 2rem; line-height: 1.3; margin-bottom: 20px; }
+            
+            /* Form & Grid Fixes */
+            form { grid-template-columns: 1fr; gap: 15px; }
             .full-width { grid-column: span 1; }
+            .lead-gen-container { padding: 30px 20px; }
+            
+            /* Footer Fixes */
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .footer-grid h4::after { left: 50%; transform: translateX(-50%); }
-            .lead-gen-container { padding: 30px 20px; }
-            .section-title { font-size: 2.2rem; }
             
             /* Mobile Floating CTAs */
             .floating-ctas {
-                bottom: 20px;
-                right: 20px;
+                bottom: 15px;
+                right: 15px;
                 gap: 10px;
             }
             .float-btn {
-                width: 50px;
-                height: 50px;
+                width: 48px;
+                height: 48px;
             }
             .float-btn svg {
-                width: 24px;
-                height: 24px;
+                width: 20px;
+                height: 20px;
             }
         }
     </style>
