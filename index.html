@@ -381,18 +381,40 @@
         /* --- Team Section --- */
         .team-section {
             padding: 20px 0 100px 0;
-            text-align: center;
+        }
+        
+        .team-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 40px;
         }
         
         .team-image {
             width: 100%;
-            max-width: 1000px;
             height: auto;
             border-radius: 12px;
             border: 1px solid var(--glass-border);
-            margin: 40px auto 0;
             display: block;
             box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+        
+        .team-content {
+            text-align: left;
+        }
+
+        .team-content h3 {
+            font-size: 1.8rem;
+            color: var(--brand-gold);
+            margin-bottom: 20px;
+        }
+
+        .team-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
         }
 
         /* --- Lead Gen Form --- */
@@ -483,6 +505,8 @@
         @media (max-width: 900px) {
             .pillars { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
+            .team-layout { grid-template-columns: 1fr; text-align: center; }
+            .team-content { text-align: center; }
         }
         @media (max-width: 768px) {
             .hero-title-wrapper {
@@ -622,7 +646,15 @@
     <section class="container team-section" id="team">
         <div class="section-subtitle">Our Experts</div>
         <h2 class="section-title">Meet Our Technicians</h2>
-        <img src="assets/myteam.png" alt="ORO Technicians Team" class="team-image">
+        
+        <div class="team-layout">
+            <img src="assets/myteam.png" alt="ORO Technicians Team" class="team-image">
+            <div class="team-content">
+                <h3>Expert Care You Can Trust</h3>
+                <p>At ORO Home Appliances, we know that your home depends on perfectly functioning appliances. That is why our team consists of highly trained, certified, and experienced technicians equipped to handle any issue with precision.</p>
+                <p>We treat your home and your appliances with the utmost care, ensuring every repair is done right the first time. With our background-checked professionals, you can confidently rely on us to deliver honest, transparent, and high-quality service right at your doorstep.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Premium Lead Gen Form -->
