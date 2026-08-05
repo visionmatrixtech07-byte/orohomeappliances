@@ -357,6 +357,17 @@
             border-left: 3px solid var(--brand-gold);
             background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, transparent 100%);
         }
+        
+        /* New CSS class for the 3 pillar images */
+        .pillar-image {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            border: 1px solid var(--glass-border);
+        }
 
         .pillar-box h3 {
             font-size: 1.5rem;
@@ -574,14 +585,17 @@
         
         <div class="pillars">
             <div class="pillar-box">
+                <img src="assets/premiumservice.png" alt="Premium Service" class="pillar-image">
                 <h3><span style="color: var(--brand-gold);">⚙️</span> Premium Service</h3>
                 <p>Fast, futuristic efficiency. Our certified technicians diagnose and resolve issues with precision using genuine spare parts to ensure longevity.</p>
             </div>
             <div class="pillar-box">
+                <img src="assets/certified.png" alt="Certified Sales" class="pillar-image">
                 <h3><span style="color: var(--brand-gold);">🏷️</span> Certified Sales</h3>
                 <p>Looking to buy? We offer a curated selection of fully-inspected, premium pre-owned appliances that fit your budget without compromising on quality.</p>
             </div>
             <div class="pillar-box">
+                <img src="assets/trust.png" alt="Unmatched Trust" class="pillar-image">
                 <h3><span style="color: var(--brand-gold);">🛡️</span> Unmatched Trust</h3>
                 <p>Verified, expert technicians you can confidently invite into your home. Background-checked professionals delivering reliability guaranteed.</p>
             </div>
