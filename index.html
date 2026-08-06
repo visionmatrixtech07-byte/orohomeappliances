@@ -867,6 +867,66 @@
             text-shadow: 0 0 10px var(--brand-gold-glow);
         }
 
+        /* --- Welcome Popup --- */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(7, 11, 16, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .popup-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .welcome-popup {
+            background: var(--bg-dark);
+            border: 1px solid var(--brand-gold);
+            border-top: 4px solid var(--brand-gold);
+            border-radius: 12px;
+            width: 90%;
+            max-width: 450px;
+            padding: 40px 30px;
+            position: relative;
+            transform: translateY(30px) scale(0.95);
+            transition: all 0.5s ease;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 30px var(--brand-gold-glow);
+            text-align: center;
+        }
+
+        .popup-overlay.show .welcome-popup {
+            transform: translateY(0) scale(1);
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 28px;
+            cursor: pointer;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+
+        .close-popup:hover {
+            color: var(--brand-gold);
+        }
+
         /* --- Responsive Design (MOBILE FIXES) --- */
         @media (max-width: 900px) {
             .pillars { grid-template-columns: 1fr; }
@@ -968,6 +1028,30 @@
     </style>
 </head>
 <body>
+
+    <!-- Welcome Popup -->
+    <div class="popup-overlay" id="welcomePopup">
+        <div class="welcome-popup">
+            <button class="close-popup" id="closePopup" aria-label="Close Popup">&times;</button>
+            <div class="popup-content">
+                <h2 style="color: var(--brand-gold); margin-bottom: 10px; font-size: 1.8rem;">Welcome to ORO!</h2>
+                <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.2rem;">Thank you for visiting us.</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Kolar's most trusted experts for fast, reliable repair of Refrigerators, Washing Machines, Televisions, and Microwaves.</p>
+                
+                <div style="background: rgba(245, 158, 11, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(245, 158, 11, 0.3); margin-bottom: 25px;">
+                    <p style="color: var(--brand-gold); font-weight: 700; margin-bottom: 5px; font-size: 1rem;">Unlock Exclusive Festive Offers! 🎉</p>
+                    <p style="color: var(--text-light); font-size: 0.85rem; margin-bottom: 0;">Drop your details below to claim your free checkup and stay updated on our latest discounts.</p>
+                </div>
+                
+                <!-- Popup Form -->
+                <form id="popupForm" onsubmit="event.preventDefault(); closeWelcomePopup();" style="display: flex; flex-direction: column; gap: 15px; margin-top: 0;">
+                    <input type="text" placeholder="Your Full Name" required style="width: 100%; padding: 15px; border-radius: 6px;">
+                    <input type="tel" placeholder="Your Mobile Number" required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" style="width: 100%; padding: 15px; border-radius: 6px;">
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px; justify-content: center;">Claim Offer</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Header & Announcement Bar -->
     <header id="main-header">
@@ -1305,7 +1389,7 @@
         </a>
     </div>
 
-    <!-- Interactive Scripts for Mobile Menu & Animations -->
+    <!-- Interactive Scripts for Mobile Menu, Animations & Popup -->
     <script>
         // Mobile Menu Toggle Logic
         const mobileMenu = document.getElementById('mobile-menu');
@@ -1346,6 +1430,36 @@
         
         revealElements.forEach(el => {
             revealOnScroll.observe(el);
+        });
+
+        // Welcome Popup Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const popup = document.getElementById('welcomePopup');
+            const closeBtn = document.getElementById('closePopup');
+
+            // Check if user has already seen the popup in this session
+            if (!sessionStorage.getItem('oroPopupShown')) {
+                // Show popup after 2.5 seconds
+                setTimeout(() => {
+                    popup.classList.add('show');
+                }, 2500);
+            }
+
+            // Close popup function
+            window.closeWelcomePopup = function() {
+                popup.classList.remove('show');
+                sessionStorage.setItem('oroPopupShown', 'true');
+            };
+
+            // Close on click 'X'
+            closeBtn.addEventListener('click', closeWelcomePopup);
+
+            // Close on click outside the box
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    closeWelcomePopup();
+                }
+            });
         });
     </script>
 </body>
