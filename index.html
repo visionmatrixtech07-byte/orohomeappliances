@@ -600,6 +600,15 @@
             backdrop-filter: blur(10px);
             padding-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: block;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        /* Reset global anchor hover styles specifically for the cards */
+        a.appliance-card:hover {
+            color: var(--text-light);
+            text-shadow: none;
         }
 
         .appliance-card:hover {
@@ -1082,21 +1091,21 @@
         <h2 class="section-title reveal">What We Repair & Service</h2>
         
         <div class="appliance-grid">
-            <div class="appliance-card reveal">
+            <a href="refrigerator.html" class="appliance-card reveal">
                 <img src="assets/fridges.png" alt="Refrigerator Repair" class="appliance-image">
                 <h3>Refrigerators</h3>
                 <p>Single, Double Door & Side-by-Side</p>
-            </div>
-            <div class="appliance-card reveal">
+            </a>
+            <a href="washing-machine.html" class="appliance-card reveal">
                 <img src="assets/washing.png" alt="Washing Machine Repair" class="appliance-image">
                 <h3>Washing Machines</h3>
                 <p>Front Load, Top Load & Semi-Auto</p>
-            </div>
-            <div class="appliance-card reveal">
+            </a>
+            <a href="tv-repair.html" class="appliance-card reveal">
                 <img src="assets/tv.png" alt="Television Repair" class="appliance-image">
                 <h3>Televisions</h3>
                 <p>LED, OLED, QLED & Smart TVs</p>
-            </div>
+            </a>
         </div>
     </section>
 
