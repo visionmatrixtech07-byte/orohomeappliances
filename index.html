@@ -478,7 +478,7 @@
             color: #000;
         }
 
-        /* --- Brands Marquee --- */
+        /* --- Brands Marquee (2 Lines, Text Only) --- */
         .brands-section {
             padding: 40px 0;
             background: #0a0f16;
@@ -498,10 +498,17 @@
             font-weight: 600;
         }
 
-        .marquee-container {
+        .marquee-container-1 {
             display: inline-flex;
             align-items: center;
             animation: marquee 30s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .marquee-container-2 {
+            display: inline-flex;
+            align-items: center;
+            animation: marqueeReverse 30s linear infinite;
         }
 
         .brand-badge {
@@ -509,31 +516,33 @@
             align-items: center;
             justify-content: center;
             background: #ffffff;
+            color: #070b10;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 1.5px;
             border-radius: 8px;
-            padding: 10px 25px;
-            margin: 0 20px;
+            padding: 10px 30px;
+            margin: 0 15px;
             height: 55px;
-            min-width: 120px;
+            min-width: 160px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
         }
 
         .brand-badge:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
+            background: var(--brand-gold);
             box-shadow: 0 10px 25px var(--brand-gold-glow);
-        }
-
-        .brand-logo-img {
-            height: 26px;
-            width: auto;
-            max-width: 110px;
-            object-fit: contain;
-            display: block;
         }
 
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
+        }
+
+        @keyframes marqueeReverse {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
         }
 
         /* --- Shared Headings --- */
@@ -886,19 +895,19 @@
             .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background-color: white;}
             
             /* Typography & Layout Adjustments */
-            .top-bar { font-size: 0.75rem; padding: 10px 0; }
+            .top-bar { font-size: 0.7rem; padding: 10px 5px; }
             .brand-text { font-size: 1.1rem; }
             
             /* Hero Section Fixes */
             .hero { 
-                padding: 220px 15px 80px 15px; 
+                padding: 150px 15px 60px 15px; 
                 min-height: auto; 
                 background-position: center center; 
             }
             .hero-title-wrapper {
                 flex-direction: column;
                 align-items: center;
-                gap: 10px;
+                gap: 15px;
                 text-align: center;
             }
             
@@ -1024,35 +1033,46 @@
         </div>
     </section>
 
-    <!-- Brands Marquee with Reliable CDN Logos -->
+    <!-- Brands Marquee (2 Lines, Text Only) -->
     <section class="brands-section reveal">
         <div class="container">
             <div class="brands-title">Authorized / Expert Service For All Major Brands</div>
         </div>
-        <div class="marquee-container">
-            <!-- First Set -->
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/samsung.svg" alt="Samsung" class="brand-logo-img" style="filter: invert(18%) sepia(93%) saturate(3015%) hue-rotate(209deg) brightness(87%) contrast(98%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/lg.svg" alt="LG" class="brand-logo-img" style="filter: invert(15%) sepia(80%) saturate(4649%) hue-rotate(338deg) brightness(88%) contrast(94%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bosch.svg" alt="Bosch" class="brand-logo-img" style="filter: invert(19%) sepia(96%) saturate(3369%) hue-rotate(348deg) brightness(90%) contrast(97%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sony.svg" alt="Sony" class="brand-logo-img" style="filter: invert(10%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(10%) contrast(100%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/panasonic.svg" alt="Panasonic" class="brand-logo-img" style="filter: invert(14%) sepia(97%) saturate(3474%) hue-rotate(218deg) brightness(91%) contrast(101%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaomi.svg" alt="Xiaomi" class="brand-logo-img" style="filter: invert(48%) sepia(95%) saturate(2476%) hue-rotate(359deg) brightness(101%) contrast(106%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whirlpool.svg" alt="Whirlpool" class="brand-logo-img" style="filter: invert(63%) sepia(91%) saturate(1478%) hue-rotate(1deg) brightness(103%) contrast(104%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/philips.svg" alt="Philips" class="brand-logo-img" style="filter: invert(19%) sepia(94%) saturate(3132%) hue-rotate(206deg) brightness(91%) contrast(101%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/siemens.svg" alt="Siemens" class="brand-logo-img" style="filter: invert(41%) sepia(85%) saturate(1469%) hue-rotate(151deg) brightness(95%) contrast(101%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hitachi.svg" alt="Hitachi" class="brand-logo-img" style="filter: invert(19%) sepia(94%) saturate(3132%) hue-rotate(206deg) brightness(91%) contrast(101%);"></div>
+        
+        <!-- Row 1: Left Scroll -->
+        <div class="marquee-container-1">
+            <!-- Set 1 -->
+            <div class="brand-badge">SAMSUNG</div>
+            <div class="brand-badge">LG</div>
+            <div class="brand-badge">WHIRLPOOL</div>
+            <div class="brand-badge">BOSCH</div>
+            <div class="brand-badge">IFB</div>
+            <div class="brand-badge">GODREJ</div>
+            <!-- Duplicate Set 1 (for seamless loop) -->
+            <div class="brand-badge">SAMSUNG</div>
+            <div class="brand-badge">LG</div>
+            <div class="brand-badge">WHIRLPOOL</div>
+            <div class="brand-badge">BOSCH</div>
+            <div class="brand-badge">IFB</div>
+            <div class="brand-badge">GODREJ</div>
+        </div>
 
-            <!-- Repeated Set for Seamless Loop -->
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/samsung.svg" alt="Samsung" class="brand-logo-img" style="filter: invert(18%) sepia(93%) saturate(3015%) hue-rotate(209deg) brightness(87%) contrast(98%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/lg.svg" alt="LG" class="brand-logo-img" style="filter: invert(15%) sepia(80%) saturate(4649%) hue-rotate(338deg) brightness(88%) contrast(94%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bosch.svg" alt="Bosch" class="brand-logo-img" style="filter: invert(19%) sepia(96%) saturate(3369%) hue-rotate(348deg) brightness(90%) contrast(97%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sony.svg" alt="Sony" class="brand-logo-img" style="filter: invert(10%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(10%) contrast(100%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/panasonic.svg" alt="Panasonic" class="brand-logo-img" style="filter: invert(14%) sepia(97%) saturate(3474%) hue-rotate(218deg) brightness(91%) contrast(101%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xiaomi.svg" alt="Xiaomi" class="brand-logo-img" style="filter: invert(48%) sepia(95%) saturate(2476%) hue-rotate(359deg) brightness(101%) contrast(106%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whirlpool.svg" alt="Whirlpool" class="brand-logo-img" style="filter: invert(63%) sepia(91%) saturate(1478%) hue-rotate(1deg) brightness(103%) contrast(104%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/philips.svg" alt="Philips" class="brand-logo-img" style="filter: invert(19%) sepia(94%) saturate(3132%) hue-rotate(206deg) brightness(91%) contrast(101%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/siemens.svg" alt="Siemens" class="brand-logo-img" style="filter: invert(41%) sepia(85%) saturate(1469%) hue-rotate(151deg) brightness(95%) contrast(101%);"></div>
-            <div class="brand-badge"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hitachi.svg" alt="Hitachi" class="brand-logo-img" style="filter: invert(19%) sepia(94%) saturate(3132%) hue-rotate(206deg) brightness(91%) contrast(101%);"></div>
+        <!-- Row 2: Right Scroll -->
+        <div class="marquee-container-2">
+            <!-- Set 2 -->
+            <div class="brand-badge">HAIER</div>
+            <div class="brand-badge">VOLTAS</div>
+            <div class="brand-badge">PANASONIC</div>
+            <div class="brand-badge">KELVINATOR</div>
+            <div class="brand-badge">HISENSE</div>
+            <div class="brand-badge">SIEMENS</div>
+            <!-- Duplicate Set 2 (for seamless loop) -->
+            <div class="brand-badge">HAIER</div>
+            <div class="brand-badge">VOLTAS</div>
+            <div class="brand-badge">PANASONIC</div>
+            <div class="brand-badge">KELVINATOR</div>
+            <div class="brand-badge">HISENSE</div>
+            <div class="brand-badge">SIEMENS</div>
         </div>
     </section>
 
