@@ -221,7 +221,7 @@
             align-items: center;
         }
 
-        .hero-content { max-width: 850px; }
+        .hero-content { max-width: 900px; }
 
         .hero-title-wrapper {
             display: flex;
@@ -239,8 +239,17 @@
             animation: float 6s ease-in-out infinite;
         }
 
+        .hero-headings h4 {
+            color: var(--brand-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
         .hero h1 {
-            font-size: 4.2rem;
+            font-size: 4rem;
             line-height: 1.1;
             font-weight: 700;
             margin-bottom: 0;
@@ -254,8 +263,8 @@
         .hero p {
             color: var(--text-muted);
             font-size: 1.25rem;
-            margin-bottom: 45px;
-            max-width: 600px;
+            margin-bottom: 40px;
+            max-width: 650px;
         }
 
         /* Animations */
@@ -283,8 +292,16 @@
         }
 
         /* Buttons */
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            justify-content: center;
             padding: 16px 38px;
             background-color: var(--brand-gold);
             color: #000;
@@ -310,7 +327,6 @@
             background-color: transparent;
             color: var(--brand-gold);
             border: 2px solid var(--brand-gold);
-            margin-left: 20px;
             animation: none;
         }
 
@@ -318,6 +334,84 @@
             background-color: var(--brand-gold);
             color: #000;
             box-shadow: 0 10px 20px var(--brand-gold-glow);
+        }
+
+        /* Hero WhatsApp & Call Buttons */
+        .hero-contact-btns {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn-wa-hero {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 30px;
+            background-color: #25D366;
+            color: #fff;
+            font-weight: 700;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-wa-hero:hover {
+            background-color: #1ebe57;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+            color: #fff;
+        }
+
+        .btn-call-hero {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 30px;
+            background-color: transparent;
+            color: var(--brand-gold);
+            border: 2px solid var(--brand-gold);
+            font-weight: 700;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn-call-hero:hover {
+            background-color: var(--brand-gold);
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px var(--brand-gold-glow);
+        }
+
+        /* Trust Metrics Bar */
+        .trust-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            background: rgba(20, 27, 36, 0.6);
+            padding: 20px 25px;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .trust-metrics span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-light);
         }
 
         /* --- Floating CTAs --- */
@@ -780,27 +874,34 @@
             
             /* Hero Section Fixes */
             .hero { 
-                padding: 220px 15px 80px 15px; 
+                padding: 150px 15px 60px 15px; 
                 min-height: auto; 
                 background-position: center center; 
             }
             .hero-title-wrapper {
                 flex-direction: column;
                 align-items: center;
-                gap: 15px;
+                gap: 10px;
                 text-align: center;
             }
             
             /* REMOVED HERO LOGO ONLY ON MOBILE */
             .hero-logo { display: none; }
             
-            .hero h1 { font-size: 2.5rem; line-height: 1.15; }
-            .hero p { text-align: center; font-size: 1rem; margin-bottom: 30px; padding: 0 10px; }
+            .hero-headings h4 { font-size: 1rem; margin-bottom: 5px; }
+            .hero h1 { font-size: 2.2rem; line-height: 1.15; }
+            .hero p { text-align: center; font-size: 1rem; margin-bottom: 25px; padding: 0 10px; }
             
             /* Button Fixes */
             .hero-btns { display: flex; flex-direction: column; width: 100%; gap: 15px;}
-            .btn { width: 100%; text-align: center; }
+            .btn { width: 100%; text-align: center; justify-content: center; }
             .btn-outline { margin-left: 0; }
+            
+            .hero-contact-btns { display: flex; flex-direction: column; width: 100%; gap: 15px; margin-bottom: 25px; }
+            .btn-wa-hero, .btn-call-hero { width: 100%; text-align: center; justify-content: center; }
+            
+            /* Trust Metrics Fixes */
+            .trust-metrics { flex-direction: column; align-items: center; gap: 12px; padding: 15px; text-align: center; }
             
             /* Headings Fixes */
             .section-title { font-size: 2rem; line-height: 1.3; margin-bottom: 20px; }
@@ -867,15 +968,38 @@
         <div class="container hero-content">
             <div class="hero-title-wrapper">
                 <img src="oro.png" alt="ORO Logo" class="hero-logo">
-                <h1>Smart Choice.<br><span>Better Living.</span></h1>
+                <div class="hero-headings">
+                    <h4>Smart Choice. Better Living.</h4>
+                    <h1><span>ORO</span> HOME APPLIANCES</h1>
+                </div>
             </div>
             
             <!-- PHASE 1: Localized Hero Text -->
             <p>Redefining home services in Kolar District, Karnataka. We provide premium repairs, certified pre-owned sales, and trusted installations for your everyday appliances across Kolar, KGF, Malur, Bangarpet, Mulbagal, and Srinivaspur.</p>
             
+            <!-- Primary Action Buttons -->
             <div class="hero-btns">
                 <a href="#book" class="btn">Book a Technician</a>
                 <a href="#expert-services" class="btn btn-outline">Explore Services</a>
+            </div>
+            
+            <!-- New Dedicated Contact Buttons -->
+            <div class="hero-contact-btns">
+                <a href="https://wa.me/917019670198?text=Hi,%20I%20am%20looking%20for%20appliance%20repair%20services." target="_blank" rel="noopener noreferrer" class="btn-wa-hero">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg> WhatsApp Us
+                </a>
+                <a href="tel:+917019670198" class="btn-call-hero">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg> Call Now
+                </a>
+            </div>
+
+            <!-- New Trust Metrics Bar -->
+            <div class="trust-metrics">
+                <span>⭐ 4.8 Rated</span>
+                <span>🛠️ 1500+ Services Done</span>
+                <span>⚡ Quick Service Available</span>
+                <span>🤝 Trusted Partner for Kolar District</span>
+                <span>🏆 10+ Years in Industry</span>
             </div>
         </div>
     </section>
