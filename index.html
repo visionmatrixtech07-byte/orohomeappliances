@@ -4,39 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>ORO Home Appliances | Expert Repair Service in Kolar & Chintamani</title>
-    <meta name="description" content="Top-rated home appliance repair across Kolar and Chintamani. Fast, expert service for washing machines, refrigerators, TVs, and microwaves in Kolar, Chintamani, KGF, Malur, Bangarpet, Mulbagal, Srinivaspur, and Chikkbalpur.">
+    <!-- PHASE 1: Optimized Title & Meta Description -->
+    <title>ORO Home Appliances | Expert Repair Service in Kolar District</title>
+    <meta name="description" content="Top-rated home appliance repair in Kolar District, Karnataka. Fast, expert service for washing machines, refrigerators, TVs, and microwaves in Kolar, KGF, Malur, Bangarpet, Mulbagal, and Srinivaspur. Book a technician today.">
     
-    <!-- Google Fonts & FontAwesome -->
+    <!-- Performance Optimization: Preload Hero Background & Google Fonts -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+
+    <!-- PHASE 2: LocalBusiness Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "ORO Home Appliances",
+      "image": "https://oroservices.co.in/oro.png",
+      "description": "Premium home appliance repairs, certified pre-owned sales, and trusted installations across the Kolar district.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Near KSRTC Depot - Chikkbalpur and Chintamani Road, Tolgate Circle",
+        "addressLocality": "Kolar",
+        "addressRegion": "Karnataka",
+        "postalCode": "563101",
+        "addressCountry": "IN"
+      },
+      "areaServed": [
+        "Kolar",
+        "Bangarpet",
+        "Malur",
+        "Srinivaspur",
+        "Mulbagal",
+        "Kolar Gold Fields"
+      ],
+      "telephone": "+91 7019670198",
+      "email": "support@oroservices.co.in",
+      "url": "https://oroservices.co.in",
+      "priceRange": "₹₹",
+      "currenciesAccepted": "INR",
+      "paymentAccepted": "Cash, Credit Card, UPI",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "08:00",
+          "closes": "20:00"
+        }
+      ]
+    }
+    </script>
 
     <style>
+        /* Premium CSS Variables */
         :root {
             --bg-dark: #070b10;
-            --bg-card: rgba(20, 27, 36, 0.75);
+            --bg-card: rgba(20, 27, 36, 0.7);
             --text-light: #ffffff;
             --text-muted: #a0aec0;
             --brand-gold: #f59e0b;
             --brand-gold-hover: #d97706;
-            --brand-gold-glow: rgba(245, 158, 11, 0.35);
-            --glass-border: rgba(255, 255, 255, 0.12);
+            --brand-gold-glow: rgba(245, 158, 11, 0.3);
+            --glass-border: rgba(255, 255, 255, 0.08);
         }
 
-        /* Font-Based Location Highlighting (No Patches) */
-        .loc-yellow { color: #fde047; font-weight: 800; text-shadow: 0 0 10px rgba(253, 224, 71, 0.4); }
-        .loc-kgf { color: #22d3ee; font-weight: 800; text-shadow: 0 0 10px rgba(34, 211, 238, 0.4); }
-        .loc-malur { color: #4ade80; font-weight: 800; text-shadow: 0 0 10px rgba(74, 222, 128, 0.4); }
-        .loc-bangarpet { color: #fb923c; font-weight: 800; text-shadow: 0 0 10px rgba(251, 146, 60, 0.4); }
-        .loc-mulbagal { color: #f472b6; font-weight: 800; text-shadow: 0 0 10px rgba(244, 114, 182, 0.4); }
-        .loc-srinivaspur { color: #38bdf8; font-weight: 800; text-shadow: 0 0 10px rgba(56, 189, 248, 0.4); }
-        .loc-chikkbalpur { color: #c084fc; font-weight: 800; text-shadow: 0 0 10px rgba(192, 132, 252, 0.4); }
+        html {
+            scroll-behavior: smooth;
+        }
 
-        html { scroll-behavior: smooth; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
 
         body {
             background-color: var(--bg-dark);
@@ -44,36 +93,52 @@
             line-height: 1.6;
             overflow-x: hidden;
             width: 100%;
-            padding-bottom: 70px; /* Space for mobile bottom nav */
         }
 
-        section[id], footer[id] { scroll-margin-top: 100px; }
+        /* Prevent fixed header from covering section targets */
+        section[id], footer[id] {
+            scroll-margin-top: 110px;
+        }
 
-        a { text-decoration: none; color: var(--text-light); transition: all 0.3s ease; }
-        a:hover { color: var(--brand-gold); }
+        a {
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
 
-        .container { width: 92%; max-width: 1250px; margin: 0 auto; }
+        a:hover { 
+            color: var(--brand-gold); 
+            text-shadow: 0 0 8px var(--brand-gold-glow);
+        }
 
-        /* Header & Top Bar */
+        .container {
+            width: 90%;
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+
+        /* --- Header & Navigation --- */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(7, 11, 16, 0.92);
+            background: rgba(7, 11, 16, 0.95);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border-bottom: 2px solid var(--brand-gold);
             z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
         }
 
+        /* Yellow Top Announcement Bar - Scrolling Marquee */
         .top-bar {
             background: var(--brand-gold);
             color: #000;
-            padding: 8px 0;
-            font-size: 0.82rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
+            padding: 10px 0;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
             text-transform: uppercase;
             overflow: hidden;
             white-space: nowrap;
@@ -86,7 +151,9 @@
             animation: topBarMarquee 35s linear infinite;
         }
 
-        .top-bar-text { padding: 0 40px; }
+        .top-bar-text {
+            padding: 0 50px;
+        }
 
         @keyframes topBarMarquee {
             0% { transform: translateX(0); }
@@ -100,34 +167,59 @@
             padding: 12px 0;
         }
 
+        /* --- Logo + Brand Text Styling --- */
         .brand-logo-link {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
             text-decoration: none;
         }
 
-        .nav-logo { height: 44px; width: auto; object-fit: contain; filter: drop-shadow(0 0 8px var(--brand-gold-glow)); }
-        .footer-logo { height: 50px; width: auto; object-fit: contain; }
+        .brand-logo-link:hover {
+            transform: scale(1.02);
+        }
+
+        .nav-logo {
+            height: 48px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+            filter: drop-shadow(0 0 5px var(--brand-gold-glow));
+        }
+
+        .footer-logo {
+            height: 55px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
 
         .brand-text {
-            font-size: 1.25rem;
-            font-weight: 800;
-            letter-spacing: 1px;
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
             color: var(--text-light);
+            line-height: 1.1;
             text-transform: uppercase;
         }
-        .brand-text span { color: var(--brand-gold); }
+
+        .brand-text span {
+            color: var(--brand-gold);
+        }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 35px;
             font-weight: 600;
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             align-items: center;
         }
-
-        .nav-links a { position: relative; padding-bottom: 4px; }
+        
+        .nav-links a {
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -138,104 +230,109 @@
             background-color: var(--brand-gold);
             transition: width 0.3s ease;
         }
-        .nav-links a:hover::after { width: 100%; }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
+        /* Hamburger Menu Icon */
         .menu-toggle {
             display: none;
             flex-direction: column;
-            gap: 5px;
+            gap: 6px;
             cursor: pointer;
             z-index: 1001;
         }
+
         .menu-toggle .bar {
-            width: 28px;
+            width: 30px;
             height: 3px;
             background-color: var(--brand-gold);
             border-radius: 3px;
-            transition: all 0.4s ease;
+            transition: all 0.4s ease-in-out;
         }
 
-        /* Hero Section with Animations & Graphics */
+        /* --- Hero Banner --- */
         .hero {
-            background: linear-gradient(135deg, rgba(7,11,16,0.95) 20%, rgba(10,20,35,0.7) 100%), 
-                        url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
-            padding: 210px 0 100px 0;
+            background: linear-gradient(to right, rgba(7,11,16,0.95) 20%, rgba(7,11,16,0.6) 100%), 
+                        url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop') top center/cover no-repeat;
+            padding: 240px 0 120px 0;
             min-height: 85vh;
             display: flex;
             align-items: center;
-            position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, var(--brand-gold-glow) 0%, rgba(0,0,0,0) 70%);
-            top: -100px; right: -100px;
-            border-radius: 50%;
-            z-index: 1;
-            animation: pulseGlow 6s ease-in-out infinite;
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { transform: scale(1); opacity: 0.6; }
-            50% { transform: scale(1.2); opacity: 1; }
-        }
-
-        .hero-content { max-width: 900px; position: relative; z-index: 2; }
+        .hero-content { max-width: 900px; }
 
         .hero-title-wrapper {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 35px;
             margin-bottom: 25px;
         }
 
         .hero-logo {
-            height: 150px;
+            height: 170px;
             width: auto;
             object-fit: contain;
             flex-shrink: 0;
             filter: drop-shadow(0 15px 30px var(--brand-gold-glow));
-            animation: floatLogo 5s ease-in-out infinite;
-        }
-
-        @keyframes floatLogo {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(2deg); }
+            animation: float 6s ease-in-out infinite;
         }
 
         .hero-headings h4 {
             color: var(--brand-gold);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 8px;
-            font-size: 1.15rem;
-            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             line-height: 1.1;
-            font-weight: 800;
+            font-weight: 700;
             margin-bottom: 0;
         }
 
         .hero h1 span { 
             color: var(--brand-gold);
-            text-shadow: 0 0 25px var(--brand-gold-glow);
+            text-shadow: 0 0 20px var(--brand-gold-glow);
         }
 
         .hero p {
             color: var(--text-muted);
-            font-size: 1.2rem;
-            margin-bottom: 35px;
-            max-width: 750px;
-            line-height: 1.7;
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            max-width: 650px;
         }
 
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(245, 158, 11, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Buttons */
         .hero-btns {
             display: flex;
             gap: 15px;
@@ -245,46 +342,46 @@
 
         .btn {
             display: inline-flex;
-            align-items: center;
             justify-content: center;
-            gap: 10px;
-            padding: 16px 36px;
+            padding: 16px 38px;
             background-color: var(--brand-gold);
             color: #000;
-            font-weight: 800;
-            border-radius: 8px;
+            font-weight: 700;
+            border-radius: 6px;
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.95rem;
-            box-shadow: 0 8px 25px var(--brand-gold-glow);
+            animation: pulse 2.5s infinite;
         }
 
         .btn:hover {
             background-color: var(--brand-gold-hover);
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 15px 35px var(--brand-gold-glow);
-            color: #000;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 25px var(--brand-gold-glow);
+            animation: none;
         }
 
         .btn-outline {
             background-color: transparent;
             color: var(--brand-gold);
             border: 2px solid var(--brand-gold);
-            box-shadow: none;
+            animation: none;
         }
 
         .btn-outline:hover {
             background-color: var(--brand-gold);
             color: #000;
+            box-shadow: 0 10px 20px var(--brand-gold-glow);
         }
 
+        /* Hero WhatsApp & Call Buttons */
         .hero-contact-btns {
             display: flex;
             gap: 15px;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
         }
 
@@ -292,62 +389,122 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            padding: 14px 28px;
+            gap: 8px;
+            padding: 14px 30px;
             background-color: #25D366;
             color: #fff;
             font-weight: 700;
-            border-radius: 8px;
+            border-radius: 6px;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
         }
-        .btn-wa-hero:hover { background-color: #1ebe57; transform: translateY(-2px); color: #fff; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
+
+        .btn-wa-hero:hover {
+            background-color: #1ebe57;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+            color: #fff;
+        }
 
         .btn-call-hero {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            padding: 14px 28px;
+            gap: 8px;
+            padding: 14px 30px;
             background-color: transparent;
             color: var(--brand-gold);
             border: 2px solid var(--brand-gold);
             font-weight: 700;
-            border-radius: 8px;
+            border-radius: 6px;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.9rem;
         }
-        .btn-call-hero:hover { background-color: var(--brand-gold); color: #000; transform: translateY(-2px); }
 
+        .btn-call-hero:hover {
+            background-color: var(--brand-gold);
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px var(--brand-gold-glow);
+        }
+
+        /* Trust Metrics Bar */
         .trust-metrics {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            background: rgba(20, 27, 36, 0.7);
-            padding: 22px 25px;
-            border-radius: 10px;
+            background: rgba(20, 27, 36, 0.6);
+            padding: 20px 25px;
+            border-radius: 8px;
             border: 1px solid var(--glass-border);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .trust-metrics span {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--text-light);
         }
 
-        /* Brands Marquee Section */
+        /* --- Floating CTAs --- */
+        .floating-ctas {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .float-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            color: #fff;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+        }
+        
+        .whatsapp-btn:hover {
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .call-btn {
+            background-color: var(--brand-gold);
+            color: #000;
+        }
+        
+        .call-btn:hover {
+            box-shadow: 0 10px 25px var(--brand-gold-glow);
+            color: #000;
+        }
+
+        /* --- Brands Marquee (2 Lines, Text Only) --- */
         .brands-section {
-            padding: 45px 0;
+            padding: 40px 0;
             background: #0a0f16;
             border-bottom: 1px solid var(--glass-border);
             border-top: 1px solid var(--glass-border);
@@ -357,20 +514,26 @@
 
         .brands-title {
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--brand-gold);
             text-transform: uppercase;
             letter-spacing: 3px;
             margin-bottom: 25px;
-            font-weight: 700;
+            font-weight: 600;
         }
 
-        .marquee-container-1, .marquee-container-2 {
+        .marquee-container-1 {
             display: inline-flex;
             align-items: center;
+            animation: marquee 30s linear infinite;
+            margin-bottom: 20px;
         }
-        .marquee-container-1 { animation: marquee 30s linear infinite; margin-bottom: 20px; }
-        .marquee-container-2 { animation: marqueeReverse 30s linear infinite; }
+
+        .marquee-container-2 {
+            display: inline-flex;
+            align-items: center;
+            animation: marqueeReverse 30s linear infinite;
+        }
 
         .brand-badge {
             display: inline-flex;
@@ -382,30 +545,39 @@
             font-size: 1.1rem;
             letter-spacing: 1.5px;
             border-radius: 8px;
-            padding: 12px 30px;
+            padding: 10px 30px;
             margin: 0 15px;
             height: 55px;
             min-width: 160px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
         }
+
         .brand-badge:hover {
-            transform: scale(1.06);
+            transform: scale(1.05);
             background: var(--brand-gold);
             box-shadow: 0 10px 25px var(--brand-gold-glow);
         }
 
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        @keyframes marqueeReverse { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
 
-        /* Headings */
+        @keyframes marqueeReverse {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* --- Shared Headings --- */
         .section-title {
             text-align: center;
             font-size: 2.8rem;
             margin-bottom: 25px;
             position: relative;
-            font-weight: 800;
+            color: var(--text-light);
         }
+        
         .section-title::after {
             content: '';
             position: absolute;
@@ -416,8 +588,9 @@
             left: 50%;
             transform: translateX(-50%);
             border-radius: 2px;
-            box-shadow: 0 0 12px var(--brand-gold-glow);
+            box-shadow: 0 0 10px var(--brand-gold-glow);
         }
+
         .section-subtitle {
             text-align: center;
             color: var(--brand-gold);
@@ -425,35 +598,50 @@
             letter-spacing: 3px;
             font-size: 0.95rem;
             margin-bottom: 15px;
-            font-weight: 800;
+            font-weight: 700;
         }
 
-        /* Services Grid */
-        .appliances { padding: 110px 0; background-color: var(--bg-dark); }
+        /* --- Services Grid --- */
+        .appliances {
+            padding: 100px 0;
+            background-color: var(--bg-dark);
+        }
+
         .appliance-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
             margin-top: 60px;
         }
+
         .appliance-card {
             background: var(--bg-card);
             border: 1px solid var(--glass-border);
-            border-radius: 14px;
+            border-radius: 12px;
             overflow: hidden;
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            backdrop-filter: blur(12px);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
             padding-bottom: 30px;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             display: block;
+            cursor: pointer;
+            text-decoration: none;
         }
+        
+        /* Reset global anchor hover styles specifically for the cards */
+        a.appliance-card:hover {
+            color: var(--text-light);
+            text-shadow: none;
+        }
+
         .appliance-card:hover {
-            transform: translateY(-12px) scale(1.02);
+            transform: translateY(-15px);
             border-color: var(--brand-gold);
             background: rgba(20, 27, 36, 0.95);
-            box-shadow: 0 22px 50px var(--brand-gold-glow);
+            box-shadow: 0 20px 40px var(--brand-gold-glow);
         }
+
         .appliance-image {
             width: 100%;
             height: auto;
@@ -462,306 +650,586 @@
             border-bottom: 2px solid var(--glass-border);
             transition: transform 0.5s ease;
         }
-        .appliance-card:hover .appliance-image { border-bottom-color: var(--brand-gold); transform: scale(1.04); }
-        .appliance-card h3 { font-size: 1.45rem; font-weight: 700; padding: 0 20px; color: var(--text-light); }
-        .appliance-card:hover h3 { color: var(--brand-gold); }
-        .appliance-card p { color: var(--text-muted); font-size: 0.98rem; margin-top: 10px; padding: 0 20px; }
 
-        /* 3 Pillars Section */
-        .pillars-section { padding: 110px 0; background: #0a0f16; border-top: 1px solid var(--glass-border); }
-        .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; margin-top: 60px; }
+        .appliance-card:hover .appliance-image {
+            border-bottom-color: var(--brand-gold);
+            transform: scale(1.03);
+        }
+
+        .appliance-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 0 20px;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        .appliance-card:hover h3 {
+            color: var(--brand-gold);
+        }
+
+        .appliance-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 10px;
+            padding: 0 20px;
+        }
+
+        /* --- 3 Pillars --- */
+        .pillars-section {
+            padding: 100px 0;
+            background: #0a0f16;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin-top: 60px;
+        }
+
         .pillar-box {
-            padding: 45px 30px;
-            border-radius: 14px;
+            padding: 40px 30px;
+            border-radius: 12px;
             border: 1px solid var(--glass-border);
-            border-bottom: 5px solid var(--brand-gold);
-            background: linear-gradient(145deg, rgba(20, 27, 36, 0.85) 0%, rgba(7, 11, 16, 0.95) 100%);
+            border-bottom: 4px solid var(--brand-gold);
+            background: linear-gradient(145deg, rgba(20, 27, 36, 0.8) 0%, rgba(7, 11, 16, 0.9) 100%);
             transition: all 0.4s ease;
         }
+
         .pillar-box:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px var(--brand-gold-glow);
+            box-shadow: 0 15px 35px var(--brand-gold-glow);
             border-color: var(--brand-gold);
         }
+        
         .pillar-image {
             width: 100%;
             height: auto;
+            display: block;
             border-radius: 8px;
             margin-bottom: 25px;
             border: 1px solid var(--glass-border);
+            transition: transform 0.4s ease;
         }
-        .pillar-box h3 { font-size: 1.6rem; margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-weight: 700; }
-        .pillar-box p { color: var(--text-muted); line-height: 1.8; font-size: 1.02rem; }
 
-        /* Team & Expert Sections */
-        .team-section { padding: 110px 0; }
-        .team-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; margin-top: 60px; }
+        .pillar-box:hover .pillar-image {
+            transform: scale(1.02);
+            border-color: var(--brand-gold);
+        }
+
+        .pillar-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pillar-box p { color: var(--text-muted); line-height: 1.7; }
+
+        /* --- Team Section --- */
+        .team-section {
+            padding: 100px 0;
+        }
+        
+        .team-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 60px;
+        }
+        
         .team-image {
             width: 100%;
-            border-radius: 14px;
+            height: auto;
+            border-radius: 12px;
             border: 2px solid var(--glass-border);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+            display: block;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
             transition: all 0.4s ease;
         }
-        .team-image:hover { border-color: var(--brand-gold); transform: scale(1.02); }
-        .team-content h3 { font-size: 2.2rem; color: var(--brand-gold); margin-bottom: 20px; text-shadow: 0 0 15px var(--brand-gold-glow); }
-        .team-content p { color: var(--text-muted); font-size: 1.15rem; line-height: 1.8; margin-bottom: 20px; }
 
-        .expert-spotlight-section { padding: 0 0 110px 0; }
+        .team-image:hover {
+            border-color: var(--brand-gold);
+            box-shadow: 0 20px 50px var(--brand-gold-glow);
+            transform: scale(1.02);
+        }
+        
+        .team-content {
+            text-align: left;
+        }
+
+        .team-content h3 {
+            font-size: 2rem;
+            color: var(--brand-gold);
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--brand-gold-glow);
+        }
+
+        .team-content p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* --- Ali Irfan Lead Expert Spotlight Section --- */
+        .expert-spotlight-section {
+            padding: 0 0 100px 0;
+        }
+
         .spotlight-card {
-            background: linear-gradient(145deg, rgba(20, 27, 36, 0.9) 0%, rgba(10, 15, 22, 0.98) 100%);
+            background: linear-gradient(145deg, rgba(20, 27, 36, 0.85) 0%, rgba(10, 15, 22, 0.95) 100%);
             border: 1px solid var(--glass-border);
-            border-left: 6px solid var(--brand-gold);
+            border-left: 5px solid var(--brand-gold);
             border-radius: 16px;
             padding: 50px;
             margin-top: 60px;
             display: grid;
             grid-template-columns: 350px 1fr;
-            gap: 50px;
+            gap: 45px;
             align-items: center;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
             transition: all 0.4s ease;
         }
-        .spotlight-card:hover { border-color: var(--brand-gold); box-shadow: 0 30px 70px var(--brand-gold-glow); transform: translateY(-5px); }
-        .spotlight-image-wrapper { border-radius: 12px; overflow: hidden; border: 2px solid var(--glass-border); box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
-        .spotlight-image { width: 100%; height: 380px; object-fit: cover; object-position: top center; display: block; }
-        .spotlight-content h3 { font-size: 2.4rem; color: var(--text-light); margin-bottom: 8px; font-weight: 800; }
-        .spotlight-role { display: inline-block; color: var(--brand-gold); font-weight: 700; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
-        .spotlight-content p { color: var(--text-muted); font-size: 1.12rem; line-height: 1.8; margin-bottom: 18px; }
-        .spotlight-badges { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 25px; }
-        .spotlight-badge {
-            background: rgba(245, 158, 11, 0.15);
-            border: 1px solid rgba(245, 158, 11, 0.4);
-            color: var(--text-light);
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-size: 0.92rem;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+
+        .spotlight-card:hover {
+            border-color: var(--brand-gold);
+            box-shadow: 0 25px 60px var(--brand-gold-glow);
+            transform: translateY(-5px);
         }
 
-        /* Lead Gen Form Section */
+        .spotlight-image-wrapper {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--glass-border);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            transition: all 0.4s ease;
+        }
+
+        .spotlight-card:hover .spotlight-image-wrapper {
+            border-color: var(--brand-gold);
+            transform: scale(1.02);
+        }
+
+        .spotlight-image {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+
+        .spotlight-content h3 {
+            font-size: 2.2rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .spotlight-role {
+            display: inline-block;
+            color: var(--brand-gold);
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .spotlight-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .spotlight-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .spotlight-badge {
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: var(--text-light);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- Lead Gen Form --- */
         .booking-section {
             padding: 120px 0;
             background: linear-gradient(180deg, #0a0f16 0%, var(--bg-dark) 100%);
             border-top: 1px solid var(--glass-border);
             position: relative;
         }
+
         .lead-gen-container {
-            max-width: 850px;
+            max-width: 800px;
             margin: 0 auto;
             background: var(--bg-card);
             padding: 60px;
-            border-radius: 18px;
+            border-radius: 16px;
             border: 1px solid var(--glass-border);
-            border-top: 5px solid var(--brand-gold);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+            border-top: 4px solid var(--brand-gold);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
             position: relative;
             z-index: 2;
         }
-        form { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 40px; }
+
+        /* Glow effect behind form */
+        .lead-gen-container::before {
+            content: '';
+            position: absolute;
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
+            background: var(--brand-gold);
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
         .full-width { grid-column: span 2; }
+
         input, select, textarea {
             width: 100%;
             padding: 18px;
-            background-color: rgba(0,0,0,0.5);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            background-color: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             color: white;
-            border-radius: 10px;
+            border-radius: 8px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.02rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
         }
+
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--brand-gold);
-            box-shadow: 0 0 20px var(--brand-gold-glow);
-            background-color: rgba(0,0,0,0.7);
+            box-shadow: 0 0 15px var(--brand-gold-glow);
+            background-color: rgba(0,0,0,0.6);
         }
 
-        /* Footer */
-        footer { background-color: #05080c; padding: 90px 0 30px 0; border-top: 1px solid var(--glass-border); }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 60px; }
-        .footer-grid h4 { color: var(--text-light); margin-bottom: 25px; font-size: 1.25rem; position: relative; display: inline-block; font-weight: 700; }
-        .footer-grid h4::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 35px; height: 3px; background: var(--brand-gold); border-radius: 2px; }
+        /* --- Footer --- */
+        footer {
+            background-color: #05080c;
+            padding: 80px 0 20px 0;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-grid h4 {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-grid h4::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: -8px;
+            width: 30px; height: 3px;
+            background: var(--brand-gold);
+            border-radius: 2px;
+        }
+
         .footer-grid ul { list-style: none; }
         .footer-grid li { margin-bottom: 15px; }
-        .footer-grid li a { color: var(--text-muted); font-size: 0.98rem; }
+        .footer-grid li a { color: var(--text-muted); font-size: 0.95rem; }
         .footer-grid li a:hover { color: var(--brand-gold); padding-left: 5px; }
-        .footer-bottom { text-align: center; color: #718096; font-size: 0.98rem; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.06); }
-        .credit-link { color: var(--brand-gold); font-weight: 700; }
 
-        /* Real Colored Icons Styling */
-        .icon-whatsapp { color: #25D366 !important; font-size: 1.25rem; }
-        .icon-phone { color: #34d399 !important; font-size: 1.25rem; }
-        .icon-email { color: #f43f5e !important; font-size: 1.25rem; }
-        .icon-instagram { color: #e1306c !important; font-size: 1.25rem; }
-        .icon-map { color: #38bdf8 !important; font-size: 1.25rem; }
+        .footer-bottom {
+            text-align: center;
+            color: #4a5568;
+            font-size: 0.95rem;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
 
-        /* Floating CTAs (Desktop) */
-        .floating-ctas {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 9999;
-        }
-        .float-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.6);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            font-size: 1.5rem;
-        }
-        .float-btn:hover { transform: translateY(-5px) scale(1.1); color: #fff; }
-        .whatsapp-float { background-color: #25D366; }
-        .call-float { background-color: var(--brand-gold); color: #000; }
-        .instagram-float { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-
-        /* Mobile Bottom Navigation Bar (Mobile First Priority) */
-        .mobile-bottom-nav {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(7, 11, 16, 0.98);
-            backdrop-filter: blur(20px);
-            border-top: 2px solid var(--brand-gold);
-            z-index: 10000;
-            padding: 10px 0;
-            box-shadow: 0 -5px 25px rgba(0,0,0,0.8);
-            justify-content: space-around;
-            align-items: center;
-        }
-        .mobile-nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: var(--text-muted);
-            font-size: 0.72rem;
+        .credit-link {
+            color: var(--brand-gold);
             font-weight: 600;
-            text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
         }
-        .mobile-nav-item i { font-size: 1.25rem; margin-bottom: 3px; }
-        .mobile-nav-item:hover, .mobile-nav-item.active { color: var(--brand-gold); }
 
-        /* Welcome Popup */
+        .credit-link:hover {
+            text-shadow: 0 0 10px var(--brand-gold-glow);
+        }
+
+        /* --- Welcome Popup --- */
         .popup-overlay {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(7, 11, 16, 0.88);
-            backdrop-filter: blur(10px);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(7, 11, 16, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             z-index: 10000;
             display: flex;
             align-items: center;
             justify-content: center;
-            visibility: hidden;
             opacity: 0;
-            transition: all 0.4s ease;
+            visibility: hidden;
+            transition: all 0.5s ease;
         }
-        .popup-overlay.show { visibility: visible; opacity: 1; }
+
+        .popup-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
         .welcome-popup {
             background: var(--bg-dark);
             border: 1px solid var(--brand-gold);
-            border-top: 5px solid var(--brand-gold);
-            border-radius: 16px;
+            border-top: 4px solid var(--brand-gold);
+            border-radius: 12px;
             width: 90%;
-            max-width: 460px;
+            max-width: 450px;
             padding: 40px 30px;
             position: relative;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 35px var(--brand-gold-glow);
+            transform: translateY(30px) scale(0.95);
+            transition: all 0.5s ease;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 30px var(--brand-gold-glow);
             text-align: center;
         }
+
+        .popup-overlay.show .welcome-popup {
+            transform: translateY(0) scale(1);
+        }
+
         .close-popup {
             position: absolute;
-            top: 15px; right: 20px;
-            background: none; border: none;
-            color: var(--text-muted); font-size: 30px;
-            cursor: pointer; transition: color 0.3s;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 28px;
+            cursor: pointer;
+            transition: color 0.3s;
+            line-height: 1;
         }
-        .close-popup:hover { color: var(--brand-gold); }
 
-        /* Responsive Design */
+        .close-popup:hover {
+            color: var(--brand-gold);
+        }
+
+        /* --- Responsive Design (MOBILE FIXES) --- */
         @media (max-width: 900px) {
             .pillars { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-            .team-layout { grid-template-columns: 1fr; text-align: center; gap: 30px; }
-            .spotlight-card { grid-template-columns: 1fr; padding: 35px 25px; text-align: center; gap: 30px; }
+            .team-layout { grid-template-columns: 1fr; text-align: center; gap: 30px;}
+            .team-content { text-align: center; }
+            .spotlight-card { grid-template-columns: 1fr; padding: 30px 25px; text-align: center; gap: 30px; }
             .spotlight-image { height: 320px; }
             .spotlight-badges { justify-content: center; }
-            .floating-ctas { display: none; /* Replaced by bottom nav on mobile */ }
-            .mobile-bottom-nav { display: flex; }
         }
-
+        
         @media (max-width: 768px) {
+            /* Hero Section Fixes */
+            .hero { 
+                padding: 180px 15px 80px 15px; 
+                min-height: auto; 
+                text-align: center;
+            }
+            .hero-title-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            .hero-logo { 
+                display: block !important; 
+                height: 100px !important; 
+                margin: 0 auto 10px auto;
+            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .mobile-bottom-nav { display: flex; }
+            .floating-ctas { display: none !important; }
+
+            /* Mobile Nav Config */
             .menu-toggle { display: flex; }
             .nav-links {
                 position: absolute;
-                top: 100%; left: 0; width: 100%;
+                top: 100%;
+                left: 0;
+                width: 100%;
                 background: rgba(7, 11, 16, 0.98);
-                backdrop-filter: blur(20px);
+                backdrop-filter: blur(15px);
                 flex-direction: column;
                 padding: 30px 0;
-                gap: 22px;
+                gap: 25px;
                 text-align: center;
                 border-bottom: 3px solid var(--brand-gold);
                 clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
                 transition: clip-path 0.4s ease-in-out;
-                box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+                box-shadow: 0 20px 30px rgba(0,0,0,0.5);
             }
-            .nav-links.mobile-active { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+            .nav-links.mobile-active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
             
-            .hero { padding: 160px 15px 70px 15px; min-height: auto; text-align: center; }
-            .hero-title-wrapper { flex-direction: column; align-items: center; gap: 15px; }
-            .hero-logo { display: block; height: 120px; }
-            .hero h1 { font-size: 2.3rem; }
-            .hero p { font-size: 1.05rem; padding: 0 5px; }
-            .hero-btns, .hero-contact-btns { flex-direction: column; width: 100%; }
-            .btn, .btn-wa-hero, .btn-call-hero { width: 100%; text-align: center; justify-content: center; }
-            .trust-metrics { flex-direction: column; align-items: center; text-align: center; }
-            .section-title { font-size: 2.1rem; }
-            form { grid-template-columns: 1fr; gap: 18px; }
+            /* Hamburger Animations */
+            .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); background-color: white;}
+            .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+            .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background-color: white;}
+            
+            /* Typography & Layout Adjustments */
+            .top-bar { font-size: 0.7rem; padding: 10px 5px; }
+            .brand-text { font-size: 1.1rem; }
+            
+            /* Hero Section Fixes */
+            .hero { 
+                padding: 150px 15px 60px 15px; 
+                min-height: auto; 
+                background-position: center center; 
+            }
+            .hero-title-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            /* REMOVED HERO LOGO ONLY ON MOBILE */
+            .hero-logo { display: none; }
+            
+            .hero-headings h4 { font-size: 1rem; margin-bottom: 5px; }
+            .hero h1 { font-size: 2.2rem; line-height: 1.15; }
+            .hero p { text-align: center; font-size: 1rem; margin-bottom: 25px; padding: 0 10px; }
+            
+            /* Button Fixes */
+            .hero-btns { display: flex; flex-direction: column; width: 100%; gap: 15px;}
+            .btn { width: 100%; text-align: center; justify-content: center; }
+            .btn-outline { margin-left: 0; }
+            
+            .hero-contact-btns { display: flex; flex-direction: column; width: 100%; gap: 15px; margin-bottom: 25px; }
+            .btn-wa-hero, .btn-call-hero { width: 100%; text-align: center; justify-content: center; }
+            
+            /* Trust Metrics Fixes */
+            .trust-metrics { flex-direction: column; align-items: center; gap: 12px; padding: 15px; text-align: center; }
+            
+            /* Headings Fixes */
+            .section-title { font-size: 2rem; line-height: 1.3; margin-bottom: 20px; }
+            
+            /* Form & Grid Fixes */
+            form { grid-template-columns: 1fr; gap: 15px; }
             .full-width { grid-column: span 1; }
-            .lead-gen-container { padding: 35px 20px; }
+            .lead-gen-container { padding: 30px 20px; }
+            
+            /* Footer Fixes */
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .footer-grid h4::after { left: 50%; transform: translateX(-50%); }
+            
+            /* Mobile Floating CTAs */
+            .floating-ctas {
+                bottom: 15px;
+                right: 15px;
+                gap: 10px;
+            }
+            .float-btn {
+                width: 48px;
+                height: 48px;
+            }
+            .float-btn svg {
+                width: 20px;
+                height: 20px;
+            }
         }
+    
+        /* Font-Based Location Highlighting (No Patches) */
+        .loc-yellow { color: #fde047 !important; font-weight: 800 !important; text-shadow: 0 0 10px rgba(253, 224, 71, 0.4); }
+        .loc-kgf { color: #22d3ee !important; font-weight: 800 !important; }
+        .loc-malur { color: #4ade80 !important; font-weight: 800 !important; }
+        .loc-bangarpet { color: #fb923c !important; font-weight: 800 !important; }
+        .loc-mulbagal { color: #f472b6 !important; font-weight: 800 !important; }
+        .loc-srinivaspur { color: #38bdf8 !important; font-weight: 800 !important; }
+        .loc-chikkbalpur { color: #c084fc !important; font-weight: 800 !important; }
+
+        /* Real Colored Icons */
+        .icon-whatsapp { color: #25D366 !important; }
+        .icon-phone { color: #34d399 !important; }
+        .icon-email { color: #f43f5e !important; }
+        .icon-instagram { color: #e1306c !important; }
+        .icon-map { color: #38bdf8 !important; }
+
+        /* Mobile Bottom Nav (Mobile Priority) */
+        .mobile-bottom-nav { 
+            display: none; 
+            position: fixed; 
+            bottom: 0; left: 0; width: 100%; 
+            background: rgba(7, 11, 16, 0.98); 
+            backdrop-filter: blur(20px); 
+            border-top: 2px solid var(--brand-gold); 
+            z-index: 10000; 
+            padding: 10px 0; 
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.8); 
+            justify-content: space-around; 
+            align-items: center; 
+        }
+        .mobile-nav-item { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            color: var(--text-muted); 
+            font-size: 0.72rem; 
+            font-weight: 600; 
+            text-decoration: none; 
+        }
+        .mobile-nav-item i { font-size: 1.25rem; margin-bottom: 3px; }
+        .mobile-nav-item:hover, .mobile-nav-item.active { color: var(--brand-gold); }
     </style>
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">\n    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">\n</head>
 <body>
 
     <!-- Welcome Popup -->
-    <div class="popup-overlay show" id="welcomePopup" aria-hidden="true">
+    <div class="popup-overlay" id="welcomePopup" aria-hidden="true">
         <div class="welcome-popup" role="dialog" aria-labelledby="popupTitle" aria-describedby="popupDesc">
             <button class="close-popup" id="closePopup" aria-label="Close Popup">&times;</button>
             <div class="popup-content">
                 <h2 id="popupTitle" style="color: var(--brand-gold); margin-bottom: 10px; font-size: 1.8rem;">Welcome to ORO!</h2>
                 <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.2rem;">Thank you for visiting us.</h3>
-                <p id="popupDesc" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">
-                    <span class="loc-yellow">Kolar</span>'s most trusted experts for fast, reliable repair of Refrigerators, Washing Machines, Televisions, and Microwaves across <span class="loc-yellow">Kolar</span> and <span class="loc-yellow">Chintamani</span>.
-                </p>
+                <p id="popupDesc" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Kolar's most trusted experts for fast, reliable repair of Refrigerators, Washing Machines, Televisions, and Microwaves.</p>
                 
                 <div style="background: rgba(245, 158, 11, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(245, 158, 11, 0.3); margin-bottom: 25px;">
                     <p style="color: var(--brand-gold); font-weight: 700; margin-bottom: 5px; font-size: 1rem;">Unlock Exclusive Festive Offers! 🎉</p>
-                    <p style="color: var(--text-light); font-size: 0.88rem; margin-bottom: 0;">Drop your details below to claim your free checkup and stay updated on our latest discounts.</p>
+                    <p style="color: var(--text-light); font-size: 0.85rem; margin-bottom: 0;">Drop your details below to claim your free checkup and stay updated on our latest discounts.</p>
                 </div>
                 
+                <!-- Popup Form -->
                 <form id="popupForm" onsubmit="event.preventDefault(); closeWelcomePopup();" style="display: flex; flex-direction: column; gap: 15px; margin-top: 0;">
                     <input type="text" aria-label="Your Full Name" placeholder="Your Full Name" required style="width: 100%; padding: 15px; border-radius: 6px;">
                     <input type="tel" aria-label="Your Mobile Number" placeholder="Your Mobile Number" required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" style="width: 100%; padding: 15px; border-radius: 6px;">
-                    <button type="submit" class="btn" style="width: 100%; margin-top: 5px; justify-content: center;">Claim Offer</button>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px; justify-content: center;">Claim Offer</button>
                 </form>
             </div>
         </div>
@@ -771,8 +1239,8 @@
     <header id="main-header">
         <div class="top-bar">
             <div class="top-bar-scroll">
-                <span class="top-bar-text"><i class="fas fa-bolt"></i> Fast & Expert Appliance Repairs in <span class="loc-yellow">Kolar</span> & <span class="loc-yellow">Chintamani</span> | Call Now: <i class="fas fa-phone-alt"></i> +91 7019670198 &nbsp;&nbsp;|&nbsp;&nbsp; 🎉 Free checkup and home visit for this festive season hurry up. Offer valid Aug - Nov 2026. After that ₹499/- Visiting and checkups.</span>
-                <span class="top-bar-text" aria-hidden="true"><i class="fas fa-bolt"></i> Fast & Expert Appliance Repairs in <span class="loc-yellow">Kolar</span> & <span class="loc-yellow">Chintamani</span> | Call Now: +91 7019670198 &nbsp;&nbsp;|&nbsp;&nbsp; 🎉 Free checkup and home visit for this festive season hurry up. Offer valid Aug - Nov 2026. After that ₹499/- Visiting and checkups.</span>
+                <span class="top-bar-text">⚡ Fast & Expert Appliance Repairs | Call Now: +91 7019670198 &nbsp;&nbsp;|&nbsp;&nbsp; 🎉 Free checkup and home visit for this festive season hurry up. Offer valid from Aug - Nov 2026. After that 499/- Visiting and checkups.</span>
+                <span class="top-bar-text" aria-hidden="true">⚡ Fast & Expert Appliance Repairs | Call Now: +91 7019670198 &nbsp;&nbsp;|&nbsp;&nbsp; 🎉 Free checkup and home visit for this festive season hurry up. Offer valid from Aug - Nov 2026. After that 499/- Visiting and checkups.</span>
             </div>
         </div>
         <div class="container main-nav-container">
@@ -781,27 +1249,29 @@
                 <div class="brand-text"><span>ORO</span> HOME APPLIANCES</div>
             </a>
             
+            <!-- Mobile Hamburger Icon -->
             <div class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu" role="button" tabindex="0">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
             
+            <!-- Navigation Links -->
             <div class="nav-links" id="nav-links">
                 <a href="#expert-services">Services</a>
                 <a href="#pillars">Why ORO</a>
                 <a href="#team">Our Experts</a>
                 <a href="#ali-irfan">Leadership</a>
                 <a href="#contact">Contact</a>
-                <a href="#book" class="btn" style="padding: 10px 22px; font-size: 0.85rem;"><i class="fas fa-tools"></i> Book Repair</a>
+                <a href="#book" class="btn" style="padding: 10px 25px; animation: none; font-size: 0.85rem;">Book Repair</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" data-aos="fade">
+    <!-- Premium Hero Section -->
+    <section class="hero reveal">
         <div class="container hero-content">
-            <div class="hero-title-wrapper" data-aos="fade-up">
+            <div class="hero-title-wrapper">
                 <img src="oro.png" alt="ORO Logo" class="hero-logo">
                 <div class="hero-headings">
                     <h4>Smart Choice. Better Living.</h4>
@@ -809,47 +1279,52 @@
                 </div>
             </div>
             
-            <p data-aos="fade-up" data-aos-delay="100">
-                Redefining home services across <span class="loc-yellow">Kolar</span> District & <span class="loc-yellow">Chintamani</span>, Karnataka. We provide premium repairs, certified pre-owned sales, and trusted installations for your everyday appliances across <span class="loc-yellow">Kolar</span>, <span class="loc-yellow">Chintamani</span>, <span class="loc-kgf">KGF</span>, <span class="loc-malur">Malur</span>, <span class="loc-bangarpet">Bangarpet</span>, <span class="loc-mulbagal">Mulbagal</span>, <span class="loc-srinivaspur">Srinivaspur</span>, and <span class="loc-chikkbalpur">Chikkbalpur</span>.
-            </p>
+            <!-- PHASE 1: Localized Hero Text -->
+            <p>Redefining home services in Kolar District, Karnataka. We provide premium repairs, certified pre-owned sales, and trusted installations for your everyday appliances across Kolar, KGF, Malur, Bangarpet, Mulbagal, and Srinivaspur.</p>
             
-            <div class="hero-btns" data-aos="fade-up" data-aos-delay="200">
-                <a href="#book" class="btn"><i class="fas fa-wrench"></i> Book a Technician</a>
-                <a href="#expert-services" class="btn btn-outline"><i class="fas fa-compass"></i> Explore Services</a>
+            <!-- Primary Action Buttons -->
+            <div class="hero-btns">
+                <a href="#book" class="btn">Book a Technician</a>
+                <a href="#expert-services" class="btn btn-outline">Explore Services</a>
             </div>
             
-            <div class="hero-contact-btns" data-aos="fade-up" data-aos-delay="300">
+            <!-- Dedicated Contact Buttons -->
+            <div class="hero-contact-btns">
                 <a href="https://wa.me/917019670198?text=Hi,%20I%20am%20looking%20for%20appliance%20repair%20services." target="_blank" rel="noopener noreferrer" class="btn-wa-hero">
-                    <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> WhatsApp Us
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg> WhatsApp Us
                 </a>
                 <a href="tel:+917019670198" class="btn-call-hero">
-                    <i class="fas fa-phone-alt"></i> Call Now: +91 7019670198
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg> Call Now
                 </a>
             </div>
 
-            <div class="trust-metrics" data-aos="fade-up" data-aos-delay="400">
-                <span><i class="fas fa-star" style="color: var(--brand-gold);"></i> 4.8 Rated</span>
-                <span><i class="fas fa-check-circle" style="color: #22c55e;"></i> 1500+ Services Done</span>
-                <span><i class="fas fa-bolt" style="color: #38bdf8;"></i> Quick Service Available</span>
-                <span><i class="fas fa-shield-alt" style="color: #f43f5e;"></i> Trusted for <span class="loc-yellow">Kolar</span> & <span class="loc-yellow">Chintamani</span></span>
-                <span><i class="fas fa-award" style="color: var(--brand-gold);"></i> 10+ Years Experience</span>
+            <!-- Trust Metrics Bar -->
+            <div class="trust-metrics">
+                <span>⭐ 4.8 Rated</span>
+                <span>🛠️ 1500+ Services Done</span>
+                <span>⚡ Quick Service Available</span>
+                <span>🤝 Trusted Partner for Kolar District</span>
+                <span>🏆 10+ Years in Industry</span>
             </div>
         </div>
     </section>
 
-    <!-- Brands Marquee Section -->
-    <section class="brands-section">
+    <!-- Brands Marquee (2 Lines, Text Only) -->
+    <section class="brands-section reveal">
         <div class="container">
-            <div class="brands-title"><i class="fas fa-certificate"></i> Authorized / Expert Service For All Major Brands in <span class="loc-yellow">Kolar</span> & <span class="loc-yellow">Chintamani</span></div>
+            <div class="brands-title">Authorized / Expert Service For All Major Brands</div>
         </div>
         
+        <!-- Row 1: Left Scroll -->
         <div class="marquee-container-1">
+            <!-- Set 1 -->
             <div class="brand-badge">SAMSUNG</div>
             <div class="brand-badge">LG</div>
             <div class="brand-badge">WHIRLPOOL</div>
             <div class="brand-badge">BOSCH</div>
             <div class="brand-badge">IFB</div>
             <div class="brand-badge">GODREJ</div>
+            <!-- Duplicate Set 1 (for seamless loop) -->
             <div class="brand-badge" aria-hidden="true">SAMSUNG</div>
             <div class="brand-badge" aria-hidden="true">LG</div>
             <div class="brand-badge" aria-hidden="true">WHIRLPOOL</div>
@@ -858,13 +1333,16 @@
             <div class="brand-badge" aria-hidden="true">GODREJ</div>
         </div>
 
+        <!-- Row 2: Right Scroll -->
         <div class="marquee-container-2">
+            <!-- Set 2 -->
             <div class="brand-badge">HAIER</div>
             <div class="brand-badge">VOLTAS</div>
             <div class="brand-badge">PANASONIC</div>
             <div class="brand-badge">KELVINATOR</div>
             <div class="brand-badge">HISENSE</div>
             <div class="brand-badge">SIEMENS</div>
+            <!-- Duplicate Set 2 (for seamless loop) -->
             <div class="brand-badge" aria-hidden="true">HAIER</div>
             <div class="brand-badge" aria-hidden="true">VOLTAS</div>
             <div class="brand-badge" aria-hidden="true">PANASONIC</div>
@@ -874,26 +1352,26 @@
         </div>
     </section>
 
-    <!-- Services Grid -->
+    <!-- Specific Appliances Grid -->
     <section class="appliances container" id="expert-services">
-        <div class="section-subtitle" data-aos="fade-up">Our Expertise</div>
-        <h2 class="section-title" data-aos="fade-up">What We Repair & Service</h2>
+        <div class="section-subtitle reveal">Our Expertise</div>
+        <h2 class="section-title reveal">What We Repair & Service</h2>
         
         <div class="appliance-grid">
-            <a href="refrigerator.html" class="appliance-card" data-aos="fade-up" data-aos-delay="100">
+            <a href="refrigerator.html" class="appliance-card reveal">
                 <img src="assets/fridges.png" alt="Refrigerator Repair" class="appliance-image">
                 <h3>Refrigerators</h3>
-                <p>Single, Double Door & Side-by-Side expert diagnosis in <span class="loc-yellow">Kolar</span> & <span class="loc-yellow">Chintamani</span></p>
+                <p>Single, Double Door & Side-by-Side</p>
             </a>
-            <a href="washing-machine.html" class="appliance-card" data-aos="fade-up" data-aos-delay="200">
+            <a href="washing-machine.html" class="appliance-card reveal">
                 <img src="assets/washing.png" alt="Washing Machine Repair" class="appliance-image">
                 <h3>Washing Machines</h3>
-                <p>Front Load, Top Load & Semi-Auto doorstep repairs</p>
+                <p>Front Load, Top Load & Semi-Auto</p>
             </a>
-            <a href="tv-repair.html" class="appliance-card" data-aos="fade-up" data-aos-delay="300">
+            <a href="tv-repair.html" class="appliance-card reveal">
                 <img src="assets/tv.png" alt="Television Repair" class="appliance-image">
                 <h3>Televisions</h3>
-                <p>LED, OLED, QLED & Smart TVs professional servicing</p>
+                <p>LED, OLED, QLED & Smart TVs</p>
             </a>
         </div>
     </section>
@@ -901,23 +1379,23 @@
     <!-- The 3 Pillars Section -->
     <section class="pillars-section" id="pillars">
         <div class="container">
-            <div class="section-subtitle" data-aos="fade-up">The ORO Standard</div>
-            <h2 class="section-title" data-aos="fade-up">Built on 3 Core Pillars</h2>
+            <div class="section-subtitle reveal">The ORO Standard</div>
+            <h2 class="section-title reveal">Built on 3 Core Pillars</h2>
             
             <div class="pillars">
-                <div class="pillar-box" data-aos="fade-up" data-aos-delay="100">
+                <div class="pillar-box reveal">
                     <img src="assets/premiumservice.png" alt="Premium Service" class="pillar-image">
-                    <h3><span style="color: var(--brand-gold);"><i class="fas fa-cogs"></i></span> Premium Service</h3>
-                    <p>Fast, futuristic efficiency. Our certified technicians diagnose and resolve issues across <span class="loc-yellow">Kolar</span> and <span class="loc-yellow">Chintamani</span> with precision using genuine spare parts.</p>
+                    <h3><span style="color: var(--brand-gold);">⚙️</span> Premium Service</h3>
+                    <p>Fast, futuristic efficiency. Our certified technicians diagnose and resolve issues with precision using genuine spare parts to ensure longevity.</p>
                 </div>
-                <div class="pillar-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="pillar-box reveal">
                     <img src="assets/certified.png" alt="Certified Sales" class="pillar-image">
-                    <h3><span style="color: var(--brand-gold);"><i class="fas fa-tags"></i></span> Certified Sales</h3>
+                    <h3><span style="color: var(--brand-gold);">🏷️</span> Certified Sales</h3>
                     <p>Looking to buy? We offer a curated selection of fully-inspected, premium pre-owned appliances that fit your budget without compromising on quality.</p>
                 </div>
-                <div class="pillar-box" data-aos="fade-up" data-aos-delay="300">
+                <div class="pillar-box reveal">
                     <img src="assets/trust.png" alt="Unmatched Trust" class="pillar-image">
-                    <h3><span style="color: var(--brand-gold);"><i class="fas fa-shield-halved"></i></span> Unmatched Trust</h3>
+                    <h3><span style="color: var(--brand-gold);">🛡️</span> Unmatched Trust</h3>
                     <p>Verified, expert technicians you can confidently invite into your home. Background-checked professionals delivering reliability guaranteed.</p>
                 </div>
             </div>
@@ -926,39 +1404,37 @@
 
     <!-- Our Team Section -->
     <section class="container team-section" id="team">
-        <div class="section-subtitle" data-aos="fade-up">Our Experts</div>
-        <h2 class="section-title" data-aos="fade-up">Meet Our Technicians</h2>
+        <div class="section-subtitle reveal">Our Experts</div>
+        <h2 class="section-title reveal">Meet Our Technicians</h2>
         
-        <div class="team-layout">
-            <div data-aos="fade-right">
-                <img src="assets/myteam.png" alt="ORO Technicians Team" class="team-image">
-            </div>
-            <div class="team-content" data-aos="fade-left">
+        <div class="team-layout reveal">
+            <img src="assets/myteam.png" alt="ORO Technicians Team" class="team-image">
+            <div class="team-content">
                 <h3>Expert Care You Can Trust</h3>
-                <p>At ORO Home Appliances, we know that your home depends on perfectly functioning appliances. That is why our team consists of highly trained, certified, and experienced technicians equipped to handle any issue with precision across <span class="loc-yellow">Kolar</span>, <span class="loc-yellow">Chintamani</span>, <span class="loc-kgf">KGF</span>, <span class="loc-malur">Malur</span>, <span class="loc-bangarpet">Bangarpet</span>, <span class="loc-mulbagal">Mulbagal</span>, <span class="loc-srinivaspur">Srinivaspur</span>, and <span class="loc-chikkbalpur">Chikkbalpur</span>.</p>
-                <p>We treat your home and your appliances with utmost care, ensuring every repair is done right the first time with transparent doorstep service.</p>
+                <p>At ORO Home Appliances, we know that your home depends on perfectly functioning appliances. That is why our team consists of highly trained, certified, and experienced technicians equipped to handle any issue with precision.</p>
+                <p>We treat your home and your appliances with the utmost care, ensuring every repair is done right the first time. With our background-checked professionals, you can confidently rely on us to deliver honest, transparent, and high-quality service right at your doorstep.</p>
             </div>
         </div>
     </section>
 
     <!-- Lead Expert & Founder Spotlight Section (Ali Irfan) -->
     <section class="container expert-spotlight-section" id="ali-irfan">
-        <div class="section-subtitle" data-aos="fade-up">Leadership & Excellence</div>
-        <h2 class="section-title" data-aos="fade-up">Meet Our Lead Specialist</h2>
+        <div class="section-subtitle reveal">Leadership & Excellence</div>
+        <h2 class="section-title reveal">Meet Our Lead Specialist</h2>
         
-        <div class="spotlight-card" data-aos="fade-up">
+        <div class="spotlight-card reveal">
             <div class="spotlight-image-wrapper">
                 <img src="assets/aliirfan.jpeg" alt="Ali Irfan - Lead Technical Specialist & Founder of ORO Home Appliances" class="spotlight-image">
             </div>
             <div class="spotlight-content">
                 <h3>Ali Irfan</h3>
                 <span class="spotlight-role">Lead Technical Specialist & Founder</span>
-                <p>With years of specialized experience diagnosing and restoring modern household appliances across <span class="loc-yellow">Kolar</span> District & <span class="loc-yellow">Chintamani</span>, Ali Irfan leads ORO Home Appliances with an uncompromising dedication to technical precision, transparency, and customer satisfaction.</p>
-                <p>Under his leadership, every service procedure follows strict factory-grade standards—whether troubleshooting complex inverter refrigerator boards or calibrating front-load washing machines.</p>
+                <p>With years of specialized experience diagnosing and restoring modern household appliances across Kolar District, Ali Irfan leads ORO Home Appliances with an uncompromising dedication to technical precision, transparency, and customer satisfaction.</p>
+                <p>Under his leadership, every service procedure follows strict factory-grade standards—whether troubleshooting complex inverter refrigerator boards, calibrating front-load washing machines, or resolving intricate OLED display faults. Ali ensures that every customer receives honest assessments, genuine spare parts, and dependable doorstep service.</p>
                 <div class="spotlight-badges">
-                    <span class="spotlight-badge"><i class="fas fa-star" style="color:var(--brand-gold);"></i> Certified Lead Specialist</span>
-                    <span class="spotlight-badge"><i class="fas fa-tools" style="color:var(--brand-gold);"></i> Master Diagnostics Expert</span>
-                    <span class="spotlight-badge"><i class="fas fa-handshake" style="color:var(--brand-gold);"></i> Customer Trust Champion</span>
+                    <span class="spotlight-badge">⭐ Certified Lead Specialist</span>
+                    <span class="spotlight-badge">🛠️ Master Diagnostics Expert</span>
+                    <span class="spotlight-badge">🤝 Customer Trust Champion</span>
                 </div>
             </div>
         </div>
@@ -967,10 +1443,10 @@
     <!-- Premium Lead Gen Form -->
     <section class="booking-section" id="book">
         <div class="container">
-            <div class="lead-gen-container" data-aos="fade-up">
+            <div class="lead-gen-container reveal">
                 <div style="text-align: center;">
                     <h2 style="font-size: 2.5rem; margin-bottom: 10px; color: var(--brand-gold);">Request a Service</h2>
-                    <p style="color: var(--text-muted); font-size: 1.1rem;">Get a transparent estimate. Our technicians usually reach your location within hours in <span class="loc-yellow">Kolar</span> & <span class="loc-yellow">Chintamani</span>.</p>
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">Get a transparent estimate. Our technicians usually reach your location within hours.</p>
                 </div>
                 
                 <form action="#" method="POST">
@@ -1006,6 +1482,7 @@
                             <option value="panasonic">Panasonic</option>
                             <option value="kelvinator">Kelvinator</option>
                             <option value="hisense">Hisense</option>
+                            <!-- Typo Fix: Corrected "Simens" to "Siemens" -->
                             <option value="siemens">Siemens</option>
                             <option value="croma">Croma</option>
                             <option value="videocon">Videocon</option>
@@ -1026,7 +1503,7 @@
                         <textarea name="description" aria-label="Issue Description" rows="4" placeholder="Briefly describe the issue (e.g., 'Fridge not cooling', 'TV screen flickering')..."></textarea>
                     </div>
                     <div class="full-width" style="margin-top: 15px;">
-                        <button type="submit" class="btn" style="width: 100%; padding: 20px; font-size: 1.2rem; letter-spacing: 2px;"><i class="fas fa-paper-plane"></i> Submit Request</button>
+                        <button type="submit" class="btn" style="width: 100%; padding: 20px; font-size: 1.2rem; letter-spacing: 2px;">Submit Request</button>
                     </div>
                 </form>
             </div>
@@ -1035,42 +1512,36 @@
 
     <!-- Footer -->
     <footer id="contact">
-        <div class="container footer-grid">
+        <div class="container footer-grid reveal">
             <div class="footer-brand">
                 <a href="index.html" class="brand-logo-link" style="margin-bottom: 20px;">
                     <img src="oro.png" alt="ORO Logo" class="footer-logo">
                     <div class="brand-text"><span>ORO</span> HOME APPLIANCES</div>
                 </a>
                 <p style="color: var(--text-muted); margin-top: 15px; font-size: 0.95rem; line-height: 1.8;">
-                    Smart Choice. Better Living. Providing premium home appliance repairs, servicing, and certified pre-owned sales across <span class="loc-yellow">Kolar</span> & <span class="loc-yellow">Chintamani</span>.
+                    Smart Choice. Better Living. Providing premium home appliance repairs, servicing, and certified pre-owned sales across India.
                 </p>
                 <div style="margin-top: 25px;">
-                    <p style="color: var(--brand-gold); font-weight: 700; font-size: 1.2rem; margin-bottom: 5px;">
-                        <i class="fas fa-phone-alt icon-phone"></i> <a href="tel:+917019670198" style="color:var(--brand-gold);">+91 7019670198</a>
-                    </p>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">
-                        <i class="fas fa-envelope icon-email"></i> support@oroservices.co.in
-                    </p>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px;">
-                        <i class="fab fa-instagram icon-instagram"></i> <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style="color:var(--text-muted);">@oroservices</a>
-                    </p>
+                    <p style="color: var(--brand-gold); font-weight: 700; font-size: 1.2rem; margin-bottom: 5px;">📞 +91 7019670198</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px;">support@oroservices.co.in</p>
                     
-                    <p style="color: var(--text-light); font-weight: 600; margin-bottom: 10px; font-size: 1.1rem;">
-                        <i class="fas fa-map-marker-alt icon-map"></i> Location
-                    </p>
+                    <p style="color: var(--text-light); font-weight: 600; margin-bottom: 10px; font-size: 1.1rem;">📍 Location</p>
                     <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-                        Near KSRTC Depot - Chikkbalpur and Chintamani Road,<br>Tolgate Circle - <span class="loc-yellow">Kolar</span> 563101
+                        Near KSRTC Depot - Chikkbalpur and Chintamani Road,<br>Tolgate Circle - Kolar 563101
                     </p>
                     
+                    <!-- Embedded Google Map -->
                     <div style="margin-top: 20px; border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
                         <iframe 
                             title="Google Maps Location of ORO Home Appliances in Kolar"
                             src="https://maps.google.com/maps?q=Tolgate%20Circle,%20Kolar%20563101&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="180" 
+                            frameborder="0" 
                             style="border:0; display: block;" 
                             allowfullscreen="" 
-                            loading="lazy">
+                            aria-hidden="false" 
+                            tabindex="0">
                         </iframe>
                     </div>
                 </div>
@@ -1090,7 +1561,7 @@
                 <h4>Company</h4>
                 <ul>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="pre-owned-sales.html">Pre-Owned Sales</a></li>
+                    <li><a href="pre-owned-sales.html">Pre-Owned Appliance Sales</a></li>
                     <li><a href="technicians.html">Our Technicians</a></li>
                     <li><a href="#ali-irfan">Lead Specialist</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
@@ -1098,14 +1569,12 @@
             </div>
 
             <div>
-                <h4>Legal & Social</h4>
+                <h4>Legal</h4>
                 <ul>
                     <li><a href="faq.html">FAQ</a></li>
                     <li><a href="terms.html">Terms & Conditions</a></li>
                     <li><a href="payment-refunds.html">Payment & Refunds</a></li>
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="https://wa.me/917019670198" target="_blank"><i class="fab fa-whatsapp icon-whatsapp"></i> WhatsApp Chat</a></li>
-                    <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram icon-instagram"></i> Instagram</a></li>
                 </ul>
             </div>
         </div>
@@ -1115,34 +1584,111 @@
         </div>
     </footer>
 
-    <!-- Floating CTAs (Desktop) -->
+    <!-- Floating WhatsApp & Call Buttons -->
     <div class="floating-ctas">
-        <a href="https://wa.me/917019670198?text=Hi,%20I%20am%20looking%20for%20appliance%20repair%20services." target="_blank" rel="noopener noreferrer" class="float-btn whatsapp-float" aria-label="WhatsApp Us">
-            <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/917019670198?text=Hi,%20I%20am%20looking%20for%20appliance%20repair%20services." target="_blank" rel="noopener noreferrer" class="float-btn whatsapp-btn" aria-label="WhatsApp Us">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+            </svg>
         </a>
-        <a href="tel:+917019670198" class="float-btn call-float" aria-label="Call Us">
-            <i class="fas fa-phone-alt"></i>
-        </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="float-btn instagram-float" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
+        <a href="tel:+917019670198" class="float-btn call-btn" aria-label="Call Us">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+            </svg>
         </a>
     </div>
+
+    <!-- Interactive Scripts for Mobile Menu, Animations & Popup -->
+    <script>
+        // Mobile Menu Toggle Logic
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('is-active');
+            navLinks.classList.toggle('mobile-active');
+        });
+
+        // Close mobile menu when a link is clicked
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.remove('is-active');
+                navLinks.classList.remove('mobile-active');
+            });
+        });
+
+        // Scroll Reveal Animation Logic
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+        
+        revealElements.forEach(el => {
+            revealOnScroll.observe(el);
+        });
+
+        // Welcome Popup Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const popup = document.getElementById('welcomePopup');
+            const closeBtn = document.getElementById('closePopup');
+
+            // Check if user has already seen the popup in this session
+            if (!sessionStorage.getItem('oroPopupShown')) {
+                // Show popup after 2.5 seconds
+                setTimeout(() => {
+                    popup.classList.add('show');
+                    popup.setAttribute('aria-hidden', 'false');
+                }, 2500);
+            }
+
+            // Close popup function
+            window.closeWelcomePopup = function() {
+                popup.classList.remove('show');
+                popup.setAttribute('aria-hidden', 'true');
+                sessionStorage.setItem('oroPopupShown', 'true');
+            };
+
+            // Close on click 'X'
+            closeBtn.addEventListener('click', closeWelcomePopup);
+
+            // Close on click outside the box
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    closeWelcomePopup();
+                }
+            });
+        });
+    </script>
 
     <!-- Mobile Bottom Navigation Bar (Mobile First) -->
     <nav class="mobile-bottom-nav">
         <a href="index.html" class="mobile-nav-item active">
-            <i class="fas fa-home" style="color: var(--brand-gold);"></i>
+            <i class="fas fa-home"></i>
             <span>Home</span>
         </a>
         <a href="#expert-services" class="mobile-nav-item">
-            <i class="fas fa-tools" style="color: #38bdf8;"></i>
+            <i class="fas fa-tools"></i>
             <span>Services</span>
         </a>
         <a href="#book" class="mobile-nav-item">
-            <i class="fas fa-calendar-check" style="color: #22c55e;"></i>
+            <i class="fas fa-calendar-check"></i>
             <span>Book</span>
         </a>
-        <a href="https://wa.me/917019670198?text=Hi,%20I%20am%20looking%20for%20appliance%20repair%20services." target="_blank" class="mobile-nav-item">
+        <a href="https://wa.me/917019670198" target="_blank" class="mobile-nav-item">
             <i class="fab fa-whatsapp" style="color: #25D366;"></i>
             <span>WhatsApp</span>
         </a>
@@ -1151,32 +1697,5 @@
             <span>Call</span>
         </a>
     </nav>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 800, once: true });
-
-        // Mobile menu toggle
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.getElementById('nav-links');
-        if (mobileMenu) {
-            mobileMenu.addEventListener('click', () => {
-                navLinks.classList.toggle('mobile-active');
-                mobileMenu.classList.toggle('is-active');
-            });
-        }
-
-        // Close popup function
-        function closeWelcomePopup() {
-            const popup = document.getElementById('welcomePopup');
-            if (popup) popup.classList.remove('show');
-        }
-        
-        const closePopupBtn = document.getElementById('closePopup');
-        if (closePopupBtn) {
-            closePopupBtn.addEventListener('click', closeWelcomePopup);
-        }
-    </script>
-</body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>\n    <script>AOS.init({ duration: 800, once: true });</script>\n</body>
 </html>
