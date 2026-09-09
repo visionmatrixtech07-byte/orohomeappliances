@@ -1228,10 +1228,11 @@
                 </div>
                 
                 <!-- Popup Form -->
-                <form id="popupForm" onsubmit="event.preventDefault(); closeWelcomePopup();" style="display: flex; flex-direction: column; gap: 15px; margin-top: 0;">
-                    <input type="text" aria-label="Your Full Name" placeholder="Your Full Name" required style="width: 100%; padding: 15px; border-radius: 6px;">
-                    <input type="tel" aria-label="Your Mobile Number" placeholder="Your Mobile Number" required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" style="width: 100%; padding: 15px; border-radius: 6px;">
+                <form id="popupForm" style="display: flex; flex-direction: column; gap: 15px; margin-top: 0;">
+                    <input type="text" name="name" aria-label="Your Full Name" placeholder="Your Full Name" required style="width: 100%; padding: 15px; border-radius: 6px;">
+                    <input type="tel" name="phone" aria-label="Your Mobile Number" placeholder="Your Mobile Number" required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" style="width: 100%; padding: 15px; border-radius: 6px;">
                     <button type="submit" class="btn" style="width: 100%; margin-top: 10px; justify-content: center;">Claim Offer</button>
+                    <p class="lead-form-status" aria-live="polite" style="margin: 0; color: var(--text-light); font-size: 0.78rem;">WhatsApp will open with your details. Tap Send to complete your request.</p>
                 </form>
             </div>
         </div>
@@ -1451,7 +1452,7 @@
                     <p style="color: var(--text-muted); font-size: 1.1rem;">Get a transparent estimate. Our technicians usually reach your location within hours.</p>
                 </div>
                 
-                <form action="#" method="POST">
+                <form id="bookingForm">
                     <div>
                         <input type="text" name="name" aria-label="Full Name" placeholder="Full Name" required>
                     </div>
@@ -1507,6 +1508,7 @@
                     <div class="full-width" style="margin-top: 15px;">
                         <button type="submit" class="btn" style="width: 100%; padding: 20px; font-size: 1.2rem; letter-spacing: 2px;">Submit Request</button>
                     </div>
+                    <p class="lead-form-status full-width" aria-live="polite" style="margin: 0; color: var(--text-muted); text-align: center; font-size: 0.9rem;">WhatsApp will open with your service details. Tap Send to complete your booking.</p>
                 </form>
             </div>
         </div>
@@ -1672,6 +1674,63 @@
                 if (e.target === popup) {
                     closeWelcomePopup();
                 }
+            });
+
+            const whatsappNumber = '917019670198';
+
+            function cleanValue(value) {
+                return value.trim().replace(/\s+/g, ' ');
+            }
+
+            function getFormValue(form, fieldName) {
+                const field = form.elements.namedItem(fieldName);
+                return field ? cleanValue(field.value) : '';
+            }
+
+            function openWhatsAppLead(message, statusElement) {
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+                if (statusElement) {
+                    statusElement.textContent = 'WhatsApp opened. Tap Send there to complete your request.';
+                }
+            }
+
+            const popupForm = document.getElementById('popupForm');
+            popupForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const name = getFormValue(popupForm, 'name');
+                const phone = getFormValue(popupForm, 'phone');
+                const status = popupForm.querySelector('.lead-form-status');
+                const message = `Hello ORO Home Appliances, I want to claim the festive free-checkup offer.\n\nName: ${name}\nPhone: ${phone}\nSource: Website festive-offer popup`;
+                openWhatsAppLead(message, status);
+                closeWelcomePopup();
+                popupForm.reset();
+            });
+
+            const bookingForm = document.getElementById('bookingForm');
+            bookingForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const values = {
+                    name: getFormValue(bookingForm, 'name'),
+                    phone: getFormValue(bookingForm, 'phone'),
+                    appliance: getFormValue(bookingForm, 'appliance'),
+                    brand: getFormValue(bookingForm, 'brand'),
+                    serviceType: getFormValue(bookingForm, 'service_type'),
+                    description: getFormValue(bookingForm, 'description')
+                };
+                const message = [
+                    'Hello ORO Home Appliances, I need a service booking.',
+                    '',
+                    `Name: ${values.name}`,
+                    `Phone: ${values.phone}`,
+                    `Appliance: ${values.appliance}`,
+                    `Brand: ${values.brand}`,
+                    `Service needed: ${values.serviceType}`,
+                    `Issue: ${values.description || 'Not provided'}`,
+                    'Source: Website booking form'
+                ].join('\n');
+                openWhatsAppLead(message, bookingForm.querySelector('.lead-form-status'));
+                bookingForm.reset();
             });
         });
     </script>
