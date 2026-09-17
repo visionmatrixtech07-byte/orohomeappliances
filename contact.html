@@ -6,31 +6,51 @@
     
     <!-- PHASE 1: Optimized Title & Meta Description for Contact Page -->
     <title>Contact ORO Home Appliances | Service in Kolar, KGF & Malur</title>
-    <meta name="description" content="Contact ORO Home Appliances for expert repair services. Serving Kolar, Bangarpet, Malur, Srinivaspur, Mulbagal, and KGF. Book a technician today.">
+    <meta name="description" content="Contact ORO Home Appliances for expert appliance repair and installation in Kolar, Mulbagal, Chintamani, Malur, Bangarpet, Srinivaspura, Vemgal, and KGF. Book a technician today.">
+    <link rel="canonical" href="https://oroservices.co.in/contact.html">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ORO Home Appliances">
+    <meta property="og:title" content="Contact ORO Home Appliances | Kolar District Service">
+    <meta property="og:description" content="Call or book ORO Home Appliances for local appliance repair and installation across Kolar District.">
+    <meta property="og:url" content="https://oroservices.co.in/contact.html">
+    <meta property="og:image" content="https://oroservices.co.in/oro.png">
+    <meta property="og:image:alt" content="ORO Home Appliances logo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact ORO Home Appliances | Kolar District Service">
+    <meta name="twitter:description" content="Call or book ORO Home Appliances for local appliance repair and installation across Kolar District.">
+    <meta name="twitter:image" content="https://oroservices.co.in/oro.png">
+    <meta name="theme-color" content="#070b10">
+    <script>window.dataLayer = window.dataLayer || [];</script>
 
-    <!-- PHASE 2: Contact-Specific LocalBusiness Schema Markup -->
+    <!-- Local contact structured data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": "https://oroservices.co.in/#localbusiness",
       "name": "ORO Home Appliances",
-      "image": "oro.png",
+      "image": "https://oroservices.co.in/oro.png",
       "telephone": "+91-7019670198",
       "email": "support@oroservices.co.in",
       "url": "https://oroservices.co.in/contact.html",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Near KSRTC Depot - Chikkbalpur and Chintamani Road, Tolgate Circle",
         "addressLocality": "Kolar",
         "addressRegion": "Karnataka",
+        "postalCode": "563101",
         "addressCountry": "IN"
       },
       "areaServed": [
         "Kolar",
-        "Bangarpet",
-        "Malur",
-        "Srinivaspur",
         "Mulbagal",
-        "Kolar Gold Fields"
+        "Chintamani",
+        "Malur",
+        "Bangarpet",
+        "Srinivaspura",
+        "Vemgal",
+        "Kolar Gold Fields (KGF)"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
@@ -353,7 +373,7 @@
                 <li><span>📞</span> <strong>Phone:</strong> +91 7019670198</li>
                 <li><span>✉️</span> <strong>Email:</strong> support@oroservices.co.in</li>
                 <!-- PHASE 1: Corrected Local Service Area -->
-                <li><span>📍</span> <strong>Service Area:</strong> Kolar, KGF, Malur, Bangarpet, Mulbagal, & Srinivaspur</li>
+                <li><span>📍</span> <strong>Service Area:</strong> Kolar, Mulbagal, Chintamani, Malur, Bangarpet, Srinivaspura, Vemgal, KGF, &amp; nearby areas</li>
                 <li><span>🕒</span> <strong>Hours:</strong> Mon - Sat: 9 AM - 7 PM | Sun: Emergency Service Only</li>
             </ul>
 
@@ -445,6 +465,23 @@
             <p>&copy; 2026 ORO Home Appliances. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        document.addEventListener('click', (event) => {
+            const target = event.target instanceof Element ? event.target : null;
+            const link = target ? target.closest('a[href]') : null;
+            if (!link) return;
+            const href = link.getAttribute('href') || '';
+            const eventData = {
+                link_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80),
+                link_url: href,
+                page_location: window.location.href
+            };
+            if (href.startsWith('tel:')) window.dataLayer.push({ event: 'oro_phone_click', ...eventData });
+            if (href.includes('wa.me/')) window.dataLayer.push({ event: 'oro_whatsapp_click', ...eventData });
+        });
+    </script>
 
 </body>
 </html>
