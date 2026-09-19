@@ -1801,25 +1801,28 @@
     <script>AOS.init({ duration: 800, once: true });</script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        document.addEventListener('click', (event) => {
-            const target = event.target instanceof Element ? event.target : null;
-            const link = target ? target.closest('a[href]') : null;
-            if (!link) return;
+        if (!window.__oroClickTrackingBound) {
+            window.__oroClickTrackingBound = true;
+            document.addEventListener('click', (event) => {
+                const target = event.target instanceof Element ? event.target : null;
+                const link = target ? target.closest('a[href]') : null;
+                if (!link) return;
 
-            const href = link.getAttribute('href') || '';
-            const linkText = (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80);
-            const eventData = {
-                link_text: linkText,
-                link_url: href,
-                page_location: window.location.href
-            };
+                const href = link.getAttribute('href') || '';
+                const linkText = (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80);
+                const eventData = {
+                    link_text: linkText,
+                    link_url: href,
+                    page_location: window.location.href
+                };
 
-            if (href.startsWith('tel:')) {
-                window.dataLayer.push({ event: 'oro_phone_click', ...eventData });
-            } else if (href.includes('wa.me/')) {
-                window.dataLayer.push({ event: 'oro_whatsapp_click', ...eventData });
-            }
-        });
+                if (href.startsWith('tel:')) {
+                    window.dataLayer.push({ event: 'oro_phone_click', ...eventData });
+                } else if (href.includes('wa.me/')) {
+                    window.dataLayer.push({ event: 'oro_whatsapp_click', ...eventData });
+                }
+            });
+        }
     </script>
 </body>
 </html>

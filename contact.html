@@ -383,7 +383,7 @@
 
         <div class="contact-form-card">
             <h3>Send Us a Message</h3>
-            <form action="#" method="POST">
+            <form id="contactForm" action="#" method="POST">
                 <div>
                     <input type="text" name="name" placeholder="Full Name" required>
                 </div>
@@ -408,6 +408,7 @@
                 <div class="full-width">
                     <button type="submit" class="btn">Send Message</button>
                 </div>
+                <p class="contact-form-status full-width" role="status" aria-live="polite"></p>
             </form>
         </div>
     </section>
@@ -468,19 +469,69 @@
 
     <script>
         window.dataLayer = window.dataLayer || [];
-        document.addEventListener('click', (event) => {
-            const target = event.target instanceof Element ? event.target : null;
-            const link = target ? target.closest('a[href]') : null;
-            if (!link) return;
-            const href = link.getAttribute('href') || '';
-            const eventData = {
-                link_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80),
-                link_url: href,
-                page_location: window.location.href
-            };
-            if (href.startsWith('tel:')) window.dataLayer.push({ event: 'oro_phone_click', ...eventData });
-            if (href.includes('wa.me/')) window.dataLayer.push({ event: 'oro_whatsapp_click', ...eventData });
-        });
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const form = event.currentTarget;
+                const getValue = (name) => {
+                    const field = form.elements.namedItem(name);
+                    return field ? field.value.trim().replace(/\s+/g, ' ') : '';
+                };
+                const name = getValue('name');
+                const phone = getValue('phone');
+                const email = getValue('email');
+                const subjectField = form.elements.namedItem('subject');
+                const subject = subjectField && subjectField.selectedOptions[0]
+                    ? subjectField.selectedOptions[0].textContent.trim()
+                    : getValue('subject');
+                const messageText = getValue('message');
+                const status = form.querySelector('.contact-form-status');
+                const whatsappMessage = [
+                    'Hello ORO Home Appliances, I have an enquiry.',
+                    '',
+                    `Name: ${name}`,
+                    `Phone: ${phone}`,
+                    `Email: ${email}`,
+                    `Subject: ${subject}`,
+                    `Message: ${messageText || 'Not provided'}`,
+                    'Source: Website contact form'
+                ].join('\n');
+
+                window.dataLayer.push({
+                    event: 'oro_contact_form_submitted',
+                    form_id: form.id,
+                    subject: subject,
+                    page_location: window.location.href
+                });
+                window.dataLayer.push({
+                    event: 'oro_whatsapp_lead_initiated',
+                    form_id: form.id,
+                    page_location: window.location.href
+                });
+
+                window.open(`https://wa.me/917019670198?text=${encodeURIComponent(whatsappMessage)}`, '_blank', 'noopener,noreferrer');
+                if (status) status.textContent = 'WhatsApp opened. Tap Send there to complete your enquiry.';
+                form.reset();
+            });
+        }
+
+        if (!window.__oroClickTrackingBound) {
+            window.__oroClickTrackingBound = true;
+            document.addEventListener('click', (event) => {
+                const target = event.target instanceof Element ? event.target : null;
+                const link = target ? target.closest('a[href]') : null;
+                if (!link) return;
+                const href = link.getAttribute('href') || '';
+                const eventData = {
+                    link_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80),
+                    link_url: href,
+                    page_location: window.location.href
+                };
+                if (href.startsWith('tel:')) window.dataLayer.push({ event: 'oro_phone_click', ...eventData });
+                if (href.includes('wa.me/')) window.dataLayer.push({ event: 'oro_whatsapp_click', ...eventData });
+            });
+        }
     </script>
 
 </body>
