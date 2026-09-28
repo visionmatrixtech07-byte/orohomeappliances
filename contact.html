@@ -22,6 +22,7 @@
     <meta name="twitter:image" content="https://oroservices.co.in/oro.png">
     <meta name="theme-color" content="#070b10">
     <script>window.dataLayer = window.dataLayer || [];</script>
+    <script src="oro-tracking.js"></script>
 
     <!-- Local contact structured data -->
     <script type="application/ld+json">
@@ -31,7 +32,7 @@
       "@id": "https://oroservices.co.in/#localbusiness",
       "name": "ORO Home Appliances",
       "image": "https://oroservices.co.in/oro.png",
-      "telephone": "+91-7019670198",
+      "telephone": "+918062177668",
       "email": "support@oroservices.co.in",
       "url": "https://oroservices.co.in/contact.html",
       "address": {
@@ -54,7 +55,7 @@
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+91-7019670198",
+        "telephone": "+918062177668",
         "contactType": "customer service",
         "areaServed": "IN-KA",
         "availableLanguage": ["English", "Hindi", "Kannada"]
@@ -370,7 +371,7 @@
             <p>Whether you need an emergency appliance repair, have a question about our certified pre-owned inventory, or want post-service support, our customer care team is ready to help.</p>
 
             <ul class="info-list">
-                <li><span>📞</span> <strong>Phone:</strong> +91 7019670198</li>
+                <li><span>📞</span> <strong>Phone:</strong> 08062177668</li>
                 <li><span>✉️</span> <strong>Email:</strong> support@oroservices.co.in</li>
                 <!-- PHASE 1: Corrected Local Service Area -->
                 <li><span>📍</span> <strong>Service Area:</strong> Kolar, Mulbagal, Chintamani, Malur, Bangarpet, Srinivaspura, Vemgal, KGF, &amp; nearby areas</li>
@@ -426,7 +427,7 @@
                     Smart Choice. Better Living. Providing premium home appliance repairs, servicing, and certified pre-owned sales across the Kolar District.
                 </p>
                 <div style="margin-top: 20px;">
-                    <p style="color: var(--text-light); font-weight: 600;">📞 +91 7019670198</p>
+                    <p style="color: var(--text-light); font-weight: 600;">📞 08062177668</p>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">support@oroservices.co.in</p>
                 </div>
             </div>
@@ -498,14 +499,12 @@
                     'Source: Website contact form'
                 ].join('\n');
 
-                window.dataLayer.push({
-                    event: 'oro_contact_form_submitted',
+                window.oroTrack('oro_contact_form_submitted', {
                     form_id: form.id,
                     subject: subject,
                     page_location: window.location.href
                 });
-                window.dataLayer.push({
-                    event: 'oro_whatsapp_lead_initiated',
+                window.oroTrack('oro_whatsapp_lead_initiated', {
                     form_id: form.id,
                     page_location: window.location.href
                 });
@@ -528,8 +527,8 @@
                     link_url: href,
                     page_location: window.location.href
                 };
-                if (href.startsWith('tel:')) window.dataLayer.push({ event: 'oro_phone_click', ...eventData });
-                if (href.includes('wa.me/')) window.dataLayer.push({ event: 'oro_whatsapp_click', ...eventData });
+                if (href.startsWith('tel:')) window.oroTrack('oro_phone_click', Object.assign({ call_number: href.slice(4) }, eventData));
+                if (href.includes('wa.me/')) window.oroTrack('oro_whatsapp_click', eventData);
             });
         }
     </script>
