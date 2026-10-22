@@ -32,7 +32,410 @@
             --muted: #566274;
             --line: #dde3ea;
             --bg: #f3f5f8;
-            --card: #ffffff; 
+            --card: #ffffff;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; } 
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.5;
+            padding-bottom: 76px;
+            -webkit-text-size-adjust: 100%;
+        }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+        .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 16px; }
+        :focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+
+        /* ---------- Top bar ---------- */
+        .topbar {
+            position: sticky; top: 0; z-index: 50;
+            background: #fff;
+            border-bottom: 2px solid var(--orange);
+        }
+        .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 8px; padding-bottom: 8px; }
+        .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+        .brand img { height: 40px; width: auto; }
+        .brand b { font-size: 1.05rem; letter-spacing: .3px; line-height: 1.1; }
+        .brand b span { color: var(--orange); }
+        .brand small { display: block; font-size: .68rem; color: var(--muted); font-weight: 500; letter-spacing: 0; }
+
+        /* ---------- Buttons ---------- */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            min-height: 48px; padding: 0 18px;
+            border-radius: 8px; border: 2px solid transparent;
+            font: inherit; font-weight: 700; font-size: 1rem;
+            cursor: pointer; text-align: center; line-height: 1.15;
+        }
+        .btn svg { width: 18px; height: 18px; flex-shrink: 0; fill: currentColor; }
+        .btn-call { background: var(--blue); color: #fff; }
+        .btn-call:active { background: var(--blue-dark); }
+        .btn-wa { background: var(--green); color: #fff; }
+        .btn-outline { background: #fff; color: var(--blue); border-color: var(--blue); }
+        .btn-outline small { display: block; font-size: .72rem; font-weight: 600; color: var(--muted); }
+        .btn-sm { min-height: 40px; padding: 0 14px; font-size: .9rem; }
+
+        /* ---------- Hero ---------- */
+        .hero { background: #fff; padding: 22px 0 24px; border-bottom: 1px solid var(--line); }
+        .hero h1 { font-size: 1.65rem; line-height: 1.2; font-weight: 800; letter-spacing: -.2px; }
+        .hero p.sub { margin-top: 8px; color: var(--muted); font-size: 1rem; }
+        .rating { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; font-size: .9rem; font-weight: 600; }
+        .rating .score { background: var(--green); color: #fff; padding: 2px 8px; border-radius: 6px; font-weight: 800; }
+        .offer {
+            margin-top: 14px; padding: 12px 14px;
+            background: #fff4ec; border: 1px solid #ffd3b3; border-left: 5px solid var(--orange);
+            border-radius: 8px; font-size: .95rem;
+        }
+        .offer b { color: var(--orange-dark); }
+        .hero-actions { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 16px; }
+
+        /* ---------- Section heads ---------- */
+        section { padding: 26px 0 4px; }
+        h2 { font-size: 1.25rem; font-weight: 800; margin-bottom: 4px; }
+        .lead { color: var(--muted); font-size: .92rem; margin-bottom: 14px; }
+
+        /* ---------- Listing cards (Justdial style) ---------- */
+        .listing {
+            background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+            padding: 14px; margin-bottom: 14px;
+        }
+        .listing-top { display: grid; grid-template-columns: 96px 1fr; gap: 14px; align-items: start; }
+        .listing-top img { width: 96px; height: 96px; object-fit: contain; background: #f6f8fa; border-radius: 8px; border: 1px solid var(--line); }
+        .listing h3 { font-size: 1.1rem; line-height: 1.25; }
+        .listing .meta { margin-top: 6px; font-size: .86rem; color: var(--muted); }
+        .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+        .chip { font-size: .75rem; font-weight: 600; padding: 3px 9px; border-radius: 99px; background: #eef3fb; color: var(--blue-dark); }
+        .listing-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+
+        /* ---------- Town grid ---------- */
+        .towns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .town {
+            background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+            padding: 14px 12px; display: flex; flex-direction: column; gap: 10px;
+        }
+        .town h3 { font-size: 1.02rem; }
+        .town p { font-size: .8rem; color: var(--muted); margin-top: -6px; }
+        .town .btn { width: 100%; }
+
+        /* ---------- Trust ---------- */
+        .trust { list-style: none; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 6px 16px; }
+        .trust li { padding: 11px 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
+        .trust li:last-child { border-bottom: 0; }
+        .trust b { display: block; }
+        .trust span { color: var(--muted); font-size: .86rem; }
+
+        /* ---------- Form ---------- */
+        .form-card { background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--orange); border-radius: 12px; padding: 18px 16px; }
+        form { display: grid; gap: 12px; margin-top: 14px; }
+        label { font-size: .85rem; font-weight: 700; display: block; margin-bottom: 4px; }
+        input, select {
+            width: 100%; min-height: 48px; padding: 0 12px;
+            border: 1px solid #b9c3cf; border-radius: 8px; background: #fff;
+            font: inherit; font-size: 1rem; color: var(--ink);
+        }
+        input:focus, select:focus { outline: 3px solid rgba(255,107,0,.35); border-color: var(--orange); }
+        .form-note { font-size: .8rem; color: var(--muted); text-align: center; }
+
+        /* ---------- Footer ---------- */
+        footer { margin-top: 28px; background: #fff; border-top: 1px solid var(--line); padding: 22px 0; font-size: .86rem; color: var(--muted); }
+        footer p + p { margin-top: 6px; }
+        footer a.link { color: var(--blue); font-weight: 600; }
+
+        /* ---------- Sticky bottom bar ---------- */
+        .bottombar {
+            position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+            background: #fff; border-top: 2px solid var(--orange);
+            padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px));
+            box-shadow: 0 -4px 16px rgba(20, 32, 46, .12);
+        }
+        .bottombar .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0; }
+
+        @media (min-width: 640px) {
+            .hero h1 { font-size: 2.1rem; }
+            .hero-actions { grid-template-columns: 1fr 1fr; }
+            .towns { grid-template-columns: repeat(4, 1fr); }
+        }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNB6DVW6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Top bar -->
+    <header class="topbar">
+        <div class="wrap">
+            <div class="brand">
+                <img src="oro.png" alt="ORO Home Appliances logo" width="40" height="40">
+                <b><span>ORO</span> HOME APPLIANCES<small>Sales &amp; Service, Kolar</small></b>
+            </div>
+            <a href="tel:+918062177668" class="btn btn-call btn-sm" data-track="call" aria-label="Call 080 62177668">
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg>
+                Call
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <div class="hero">
+            <div class="wrap">
+                <h1>Washing Machine &amp; Fridge Repair in Kolar</h1>
+                <p class="sub">Home visit across Kolar district. Book by call or WhatsApp.</p>
+
+                <div class="rating">
+                    <span class="score">4.4 &#9733;</span>
+                    <span>on Justdial &middot; 39 ratings</span>
+                </div>
+
+                <div class="offer">
+                    <b>Free checkup and home visit</b> until Nov 2026. After that, &#8377;499 for visit and checkup.
+                </div>
+
+                <div class="hero-actions">
+                    <a href="tel:+918062177668" class="btn btn-call" data-track="call">
+                        <svg viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg>
+                        Call 080 62177668
+                    </a>
+                    <a href="https://wa.me/919966196013?text=Hi%20ORO%2C%20I%20need%20appliance%20repair%20in%20Kolar.%0ASource%3A%20Google%20Ads%20page" target="_blank" rel="noopener noreferrer" class="btn btn-wa" data-track="whatsapp">
+                        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                        WhatsApp us
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <section id="services">
+            <div class="wrap">
+                <h2>Choose your appliance</h2>
+                <p class="lead">Tap Call Now to talk to us, or Send Enquiry to message us on WhatsApp.</p>
+
+                <article class="listing">
+                    <div class="listing-top">
+                        <img src="assets/washing.png" alt="Washing machine repair" width="96" height="96" loading="lazy">
+                        <div>
+                            <h3>Washing Machine Repair &amp; Service</h3>
+                            <p class="meta">Front load, top load and semi-automatic</p>
+                            <div class="chips">
+                                <span class="chip">Home visit</span>
+                                <span class="chip">Free checkup</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listing-actions">
+                        <a href="tel:+918062177668" class="btn btn-call" data-track="call" data-item="washing_machine">Call Now</a>
+                        <a href="https://wa.me/919966196013?text=Hi%20ORO%2C%20I%20need%20washing%20machine%20repair.%0ASource%3A%20Google%20Ads%20page" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-track="whatsapp" data-item="washing_machine">
+                            <span>Send Enquiry<small>Responds in 10 mins</small></span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="listing">
+                    <div class="listing-top">
+                        <img src="assets/fridges.png" alt="Refrigerator repair" width="96" height="96" loading="lazy">
+                        <div>
+                            <h3>Refrigerator / Fridge Repair</h3>
+                            <p class="meta">Single door, double door and side-by-side</p>
+                            <div class="chips">
+                                <span class="chip">Home visit</span>
+                                <span class="chip">Free checkup</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listing-actions">
+                        <a href="tel:+918062177668" class="btn btn-call" data-track="call" data-item="refrigerator">Call Now</a>
+                        <a href="https://wa.me/919966196013?text=Hi%20ORO%2C%20I%20need%20refrigerator%20repair.%0ASource%3A%20Google%20Ads%20page" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-track="whatsapp" data-item="refrigerator">
+                            <span>Send Enquiry<small>Responds in 10 mins</small></span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Towns -->
+        <section id="towns">
+            <div class="wrap">
+                <h2>Service in your town</h2>
+                <p class="lead">Pick your town and send an enquiry. We reply on WhatsApp.</p>
+
+                <div class="towns">
+                    <div class="town">
+                        <h3>Kolar</h3><p>Washing machine &amp; fridge</p>
+                        <a href="https://wa.me/919966196013?text=Hi%20ORO%2C%20I%20need%20repair%20service%20in%20Kolar.%0ASource%3A%20Google%20Ads%20page" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-track="whatsapp" data-item="town_kolar">Send Enquiry</a>
+                    </div>
+                    <div class="town">
+                        <h3>Chintamani</h3><p>Washing machine &amp; fridge</p>
+                        <a href="https://wa.me/919966196013?text=Hi%20ORO%2C%20I%20need%20repair%20service%20in%20Chintamani.%0ASource%3A%20Google%20Ads%20page" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-track="whatsapp" data-item="town_chintamani">Send Enquiry</a>
+                    </div>
+                    <div class="town">
+                        <h3>Malur</h3><p>Washing machine &amp; fridge</p>
+                        <a href="https://wa.me/919966196013?text=Hi%20ORO%2C%20I%20need%20repair%20service%20in%20Malur.%0ASource%3A%20Google%20Ads%20page" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-track="whatsapp" data-item="town_malur">Send Enquiry</a>
+                    </div>
+                    <div class="town">
+                        <h3>Mulbagal</h3><p>Washing machine &amp; fridge</p>
+                        <a href="https://wa.me/919966196013?text=Hi%20ORO%2C%20I%20need%20repair%20service%20in%20Mulbagal.%0ASource%3A%20Google%20Ads%20page" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-track="whatsapp" data-item="town_mulbagal">Send Enquiry</a>
+                    </div>
+                    <div class="town">
+                        <h3>Bangarpet</h3><p>Washing machine &amp; fridge</p>
+                        <a href="https://wa.me/919966196013?text=Hi%20ORO%2C%20I%20need%20repair%20service%20in%20Bangarpet.%0ASource%3A%20Google%20Ads%20page" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-track="whatsapp" data-item="town_bangarpet">Send Enquiry</a>
+                    </div>
+                    <div class="town">
+                        <h3>Srinivaspura</h3><p>Washing machine &amp; fridge</p>
+                        <a href="https://wa.me/919966196013?text=Hi%20ORO%2C%20I%20need%20repair%20service%20in%20Srinivaspura.%0ASource%3A%20Google%20Ads%20page" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-track="whatsapp" data-item="town_srinivaspura">Send Enquiry</a>
+                    </div>
+                    <div class="town">
+                        <h3>Vemgal</h3><p>Washing machine &amp; fridge</p>
+                        <a href="https://wa.me/919966196013?text=Hi%20ORO%2C%20I%20need%20repair%20service%20in%20Vemgal.%0ASource%3A%20Google%20Ads%20page" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-track="whatsapp" data-item="town_vemgal">Send Enquiry</a>
+                    </div>
+                    <div class="town">
+                        <h3>KGF</h3><p>Washing machine &amp; fridge</p>
+                        <a href="https://wa.me/919966196013?text=Hi%20ORO%2C%20I%20need%20repair%20service%20in%20KGF.%0ASource%3A%20Google%20Ads%20page" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-track="whatsapp" data-item="town_kgf">Send Enquiry</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust -->
+        <section id="why">
+            <div class="wrap">
+                <h2>Why book with ORO</h2>
+                <ul class="trust">
+                    <li><b>Free checkup and home visit</b><span>Valid until Nov 2026. &#8377;499 after that.</span></li>
+                    <li><b>We reply within 10 minutes</b><span>On WhatsApp, during working hours.</span></li>
+                    <li><b>Genuine spare parts</b><span>Ask for the part and price before the repair starts.</span></li>
+                    <li><b>Local shop in Kolar</b><span>Tolgate Circle, near KSRTC Depot. Open Monday to Saturday, 9 am to 7 pm.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Form -->
+        <section id="book">
+            <div class="wrap">
+                <div class="form-card">
+                    <h2>Request a callback</h2>
+                    <p class="lead" style="margin-bottom:0;">Fill this in. WhatsApp opens with your details ready to send.</p>
+                    <form id="leadForm" novalidate>
+                        <div>
+                            <label for="f-name">Your name</label>
+                            <input id="f-name" name="name" type="text" autocomplete="name" required>
+                        </div>
+                        <div>
+                            <label for="f-phone">Mobile number</label>
+                            <input id="f-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="10" placeholder="10-digit number" required>
+                        </div>
+                        <div>
+                            <label for="f-appliance">Appliance</label>
+                            <select id="f-appliance" name="appliance" required>
+                                <option value="" disabled selected>Select appliance</option>
+                                <option>Washing Machine</option>
+                                <option>Refrigerator / Fridge</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="f-town">Your town</label>
+                            <select id="f-town" name="town" required>
+                                <option value="" disabled selected>Select town</option>
+                                <option>Kolar</option>
+                                <option>Chintamani</option>
+                                <option>Malur</option>
+                                <option>Mulbagal</option>
+                                <option>Bangarpet</option>
+                                <option>Srinivaspura</option>
+                                <option>Vemgal</option>
+                                <option>KGF</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-wa">Send on WhatsApp</button>
+                        <p class="form-note" id="formStatus" aria-live="polite">Tap Send in WhatsApp to complete your request.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <p><b>ORO Home Appliances</b><br>Near KSRTC Depot, Chikkaballapur and Chintamani Road, Tolgate Circle, Kolar 563101</p>
+            <p>Call: <a class="link" href="tel:+918062177668" data-track="call">080 62177668</a> &middot; <a class="link" href="https://maps.google.com/maps?q=Tolgate%20Circle%2C%20Kolar%20563101" target="_blank" rel="noopener noreferrer">Open in Maps</a></p>
+            <p>&copy; 2026 ORO Home Appliances &middot; Powered by <a class="link" href="https://visionmatrixtech.com" target="_blank" rel="noopener noreferrer">Vision Matrix Tech</a></p>
+        </div>
+    </footer>
+
+    <!-- Sticky bottom bar -->
+    <nav class="bottombar" aria-label="Contact">
+        <div class="wrap">
+            <a href="tel:+918062177668" class="btn btn-call" data-track="call" data-item="sticky_bar">
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg>
+                Call Now
+            </a>
+            <a href="https://wa.me/919966196013?text=Hi%20ORO%2C%20I%20need%20appliance%20repair%20in%20Kolar.%0ASource%3A%20Google%20Ads%20page" target="_blank" rel="noopener noreferrer" class="btn btn-wa" data-track="whatsapp" data-item="sticky_bar">
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        (function () {
+            var WA = '919966196013';
+            var PAGE = 'ads_landing';
+
+            /* Click tracking for every call / WhatsApp button */
+            document.addEventListener('click', function (e) {
+                var el = e.target instanceof Element ? e.target.closest('[data-track]') : null;
+                if (!el) return;
+                var type = el.getAttribute('data-track');
+                window.oroTrack(type === 'call' ? 'oro_ads_phone_click' : 'oro_ads_whatsapp_click', {
+                    item: el.getAttribute('data-item') || 'general',
+                    page: PAGE,
+                    page_location: window.location.href
+                });
+            });
+
+            /* Callback form -> WhatsApp */
+            var form = document.getElementById('leadForm');
+            var status = document.getElementById('formStatus');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var name = form.elements['name'].value.trim().replace(/\s+/g, ' ');
+                var phone = form.elements['phone'].value.trim();
+                var appliance = form.elements['appliance'].value;
+                var town = form.elements['town'].value;
+
+                if (!name || !appliance || !town) {
+                    status.textContent = 'Please fill in your name, appliance and town.';
+                    return;
+                }
+                if (!/^[6-9][0-9]{9}$/.test(phone)) {
+                    status.textContent = 'Enter a valid 10-digit mobile number.';
+                    form.elements['phone'].focus();
+                    return;
+                }
+
+                var msg = 'Hello ORO Home Appliances, please call me back.\n\n' +
+                    'Name: ' + name + '\n' +
+                    'Phone: ' + phone + '\n' +
+                    'Appliance: ' + appliance + '\n' +
+                    'Town: ' + town + '\n' +
+                    'Source: Google Ads page';
+
+                window.oroTrack('oro_ads_form_submitted', {
+                    appliance: appliance,
+                    town: town,
+                    page: PAGE,
+                    page_location: window.location.href
+                });
+                window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
+                status.textContent = 'WhatsApp opened. Tap Send there to complete your request.';
+                form.reset();
+            });
+        })();
+    </script>
+</body>
+</html>
