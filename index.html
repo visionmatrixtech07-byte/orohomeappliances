@@ -24,7 +24,7 @@
     <meta name="twitter:title" content="ORO Home Appliances | Expert Repair Service in Kolar District">
     <meta name="twitter:description" content="Fast home appliance repair and service across Kolar District, Karnataka.">
     <meta name="twitter:image" content="https://oroservices.co.in/oro.png">
-    <meta name="theme-color" content="#070b10">
+    <meta name="theme-color" content="#ffffff">
     <script>window.dataLayer = window.dataLayer || [];</script>
     <script src="oro-tracking.js"></script>
     
@@ -86,16 +86,18 @@
     </script>
 
     <style>
-        /* Premium CSS Variables */
+        /* Premium CSS Variables - White & Orange Corporate Theme */
         :root {
-            --bg-dark: #070b10;
-            --bg-card: rgba(20, 27, 36, 0.7);
-            --text-light: #ffffff;
-            --text-muted: #a0aec0;
-            --brand-gold: #f59e0b;
-            --brand-gold-hover: #d97706;
-            --brand-gold-glow: rgba(245, 158, 11, 0.3);
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --bg-dark: #ffffff;
+            --bg-alt: #f8fafc;
+            --bg-card: #ffffff;
+            --text-light: #0f172a;
+            --text-muted: #475569;
+            --brand-gold: #ff6b00;
+            --brand-gold-hover: #ea580c;
+            --brand-gold-glow: rgba(255, 107, 0, 0.22);
+            --glass-border: #e2e8f0;
+            --corp-highlight: #1e40af;
         }
 
         html {
@@ -144,19 +146,19 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(7, 11, 16, 0.95);
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border-bottom: 2px solid var(--brand-gold);
             z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
             transition: all 0.3s ease;
         }
 
-        /* Yellow Top Announcement Bar - Scrolling Marquee */
+        /* Orange Top Announcement Bar - Scrolling Marquee */
         .top-bar {
             background: var(--brand-gold);
-            color: #000;
+            color: #ffffff;
             padding: 10px 0;
             font-size: 0.85rem;
             font-weight: 700;
@@ -179,7 +181,7 @@
 
         @keyframes topBarMarquee {
             0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+            100% { transform: translateX(-50%); }
         }
 
         .main-nav-container {
@@ -206,7 +208,7 @@
             width: auto;
             display: block;
             object-fit: contain;
-            filter: drop-shadow(0 0 5px var(--brand-gold-glow));
+            filter: drop-shadow(0 2px 6px rgba(15, 23, 42, 0.12));
         }
 
         .footer-logo {
@@ -276,7 +278,7 @@
 
         /* --- Hero Banner --- */
         .hero {
-            background: linear-gradient(to right, rgba(7,11,16,0.95) 20%, rgba(7,11,16,0.6) 100%), 
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.96) 25%, rgba(255, 255, 255, 0.80) 100%), 
                         url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop') top center/cover no-repeat;
             padding: 240px 0 120px 0;
             min-height: 85vh;
@@ -298,7 +300,7 @@
             width: auto;
             object-fit: contain;
             flex-shrink: 0;
-            filter: drop-shadow(0 15px 30px var(--brand-gold-glow));
+            filter: drop-shadow(0 15px 30px rgba(15, 23, 42, 0.15));
             animation: float 6s ease-in-out infinite;
         }
 
@@ -316,11 +318,12 @@
             line-height: 1.1;
             font-weight: 700;
             margin-bottom: 0;
+            color: var(--text-light);
         }
 
         .hero h1 span { 
             color: var(--brand-gold);
-            text-shadow: 0 0 20px var(--brand-gold-glow);
+            text-shadow: 0 4px 15px var(--brand-gold-glow);
         }
 
         .hero p {
@@ -338,9 +341,9 @@
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(245, 158, 11, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 107, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0); }
         }
 
         .reveal {
@@ -367,7 +370,7 @@
             justify-content: center;
             padding: 16px 38px;
             background-color: var(--brand-gold);
-            color: #000;
+            color: #ffffff;
             font-weight: 700;
             border-radius: 6px;
             border: none;
@@ -381,6 +384,7 @@
 
         .btn:hover {
             background-color: var(--brand-gold-hover);
+            color: #ffffff;
             transform: translateY(-3px) scale(1.02);
             box-shadow: 0 15px 25px var(--brand-gold-glow);
             animation: none;
@@ -395,7 +399,7 @@
 
         .btn-outline:hover {
             background-color: var(--brand-gold);
-            color: #000;
+            color: #ffffff;
             box-shadow: 0 10px 20px var(--brand-gold-glow);
         }
 
@@ -421,7 +425,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
         }
 
         .btn-wa-hero:hover {
@@ -437,7 +441,7 @@
             justify-content: center;
             gap: 8px;
             padding: 14px 30px;
-            background-color: transparent;
+            background-color: #ffffff;
             color: var(--brand-gold);
             border: 2px solid var(--brand-gold);
             font-weight: 700;
@@ -450,7 +454,7 @@
 
         .btn-call-hero:hover {
             background-color: var(--brand-gold);
-            color: #000;
+            color: #ffffff;
             transform: translateY(-2px);
             box-shadow: 0 10px 20px var(--brand-gold-glow);
         }
@@ -460,10 +464,11 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            background: rgba(20, 27, 36, 0.6);
+            background: rgba(255, 255, 255, 0.92);
             padding: 20px 25px;
             border-radius: 8px;
             border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
@@ -496,7 +501,7 @@
             align-items: center;
             justify-content: center;
             color: #fff;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 5px 20px rgba(15, 23, 42, 0.25);
             transition: all 0.3s ease;
             text-decoration: none;
         }
@@ -516,18 +521,18 @@
 
         .call-btn {
             background-color: var(--brand-gold);
-            color: #000;
+            color: #ffffff;
         }
         
         .call-btn:hover {
             box-shadow: 0 10px 25px var(--brand-gold-glow);
-            color: #000;
+            color: #ffffff;
         }
 
         /* --- Brands Marquee (2 Lines, Text Only) --- */
         .brands-section {
             padding: 40px 0;
-            background: #0a0f16;
+            background: var(--bg-alt);
             border-bottom: 1px solid var(--glass-border);
             border-top: 1px solid var(--glass-border);
             overflow: hidden;
@@ -541,7 +546,7 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             margin-bottom: 25px;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .marquee-container-1 {
@@ -562,7 +567,8 @@
             align-items: center;
             justify-content: center;
             background: #ffffff;
-            color: #070b10;
+            color: var(--text-light);
+            border: 1px solid var(--glass-border);
             font-weight: 800;
             font-size: 1.1rem;
             letter-spacing: 1.5px;
@@ -571,13 +577,15 @@
             margin: 0 15px;
             height: 55px;
             min-width: 160px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
             transition: all 0.3s ease;
         }
 
         .brand-badge:hover {
             transform: scale(1.05);
             background: var(--brand-gold);
+            color: #ffffff;
+            border-color: var(--brand-gold);
             box-shadow: 0 10px 25px var(--brand-gold-glow);
         }
 
@@ -643,9 +651,8 @@
             overflow: hidden;
             text-align: center;
             transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
             padding-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
             display: block;
             cursor: pointer;
             text-decoration: none;
@@ -660,7 +667,7 @@
         .appliance-card:hover {
             transform: translateY(-15px);
             border-color: var(--brand-gold);
-            background: rgba(20, 27, 36, 0.95);
+            background: #ffffff;
             box-shadow: 0 20px 40px var(--brand-gold-glow);
         }
 
@@ -700,7 +707,7 @@
         /* --- 3 Pillars --- */
         .pillars-section {
             padding: 100px 0;
-            background: #0a0f16;
+            background: var(--bg-alt);
             border-top: 1px solid var(--glass-border);
         }
 
@@ -716,7 +723,8 @@
             border-radius: 12px;
             border: 1px solid var(--glass-border);
             border-bottom: 4px solid var(--brand-gold);
-            background: linear-gradient(145deg, rgba(20, 27, 36, 0.8) 0%, rgba(7, 11, 16, 0.9) 100%);
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
             transition: all 0.4s ease;
         }
 
@@ -747,6 +755,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            color: var(--text-light);
         }
 
         .pillar-box p { color: var(--text-muted); line-height: 1.7; }
@@ -770,7 +779,7 @@
             border-radius: 12px;
             border: 2px solid var(--glass-border);
             display: block;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1);
             transition: all 0.4s ease;
         }
 
@@ -788,7 +797,6 @@
             font-size: 2rem;
             color: var(--brand-gold);
             margin-bottom: 20px;
-            text-shadow: 0 0 10px var(--brand-gold-glow);
         }
 
         .team-content p {
@@ -804,7 +812,7 @@
         }
 
         .spotlight-card {
-            background: linear-gradient(145deg, rgba(20, 27, 36, 0.85) 0%, rgba(10, 15, 22, 0.95) 100%);
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
             border: 1px solid var(--glass-border);
             border-left: 5px solid var(--brand-gold);
             border-radius: 16px;
@@ -814,7 +822,7 @@
             grid-template-columns: 350px 1fr;
             gap: 45px;
             align-items: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
             transition: all 0.4s ease;
         }
 
@@ -829,7 +837,7 @@
             border-radius: 12px;
             overflow: hidden;
             border: 2px solid var(--glass-border);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
             transition: all 0.4s ease;
         }
 
@@ -878,8 +886,8 @@
         }
 
         .spotlight-badge {
-            background: rgba(245, 158, 11, 0.12);
-            border: 1px solid rgba(245, 158, 11, 0.35);
+            background: rgba(255, 107, 0, 0.08);
+            border: 1px solid rgba(255, 107, 0, 0.3);
             color: var(--text-light);
             padding: 8px 18px;
             border-radius: 50px;
@@ -893,7 +901,7 @@
         /* --- Lead Gen Form --- */
         .booking-section {
             padding: 120px 0;
-            background: linear-gradient(180deg, #0a0f16 0%, var(--bg-dark) 100%);
+            background: linear-gradient(180deg, var(--bg-alt) 0%, #ffffff 100%);
             border-top: 1px solid var(--glass-border);
             position: relative;
         }
@@ -901,12 +909,12 @@
         .lead-gen-container {
             max-width: 800px;
             margin: 0 auto;
-            background: var(--bg-card);
+            background: #ffffff;
             padding: 60px;
             border-radius: 16px;
             border: 1px solid var(--glass-border);
             border-top: 4px solid var(--brand-gold);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.08);
             position: relative;
             z-index: 2;
         }
@@ -918,7 +926,7 @@
             top: -20px; left: -20px; right: -20px; bottom: -20px;
             background: var(--brand-gold);
             filter: blur(100px);
-            opacity: 0.1;
+            opacity: 0.08;
             z-index: -1;
             border-radius: 20px;
         }
@@ -935,25 +943,29 @@
         input, select, textarea {
             width: 100%;
             padding: 18px;
-            background-color: rgba(0,0,0,0.4);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: white;
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            color: var(--text-light);
             border-radius: 8px;
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
             transition: all 0.3s ease;
         }
 
+        input::placeholder, textarea::placeholder {
+            color: #64748b;
+        }
+
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--brand-gold);
             box-shadow: 0 0 15px var(--brand-gold-glow);
-            background-color: rgba(0,0,0,0.6);
+            background-color: #ffffff;
         }
 
         /* --- Footer --- */
         footer {
-            background-color: #05080c;
+            background-color: var(--bg-alt);
             padding: 80px 0 20px 0;
             border-top: 1px solid var(--glass-border);
         }
@@ -989,10 +1001,10 @@
 
         .footer-bottom {
             text-align: center;
-            color: #4a5568;
+            color: #64748b;
             font-size: 0.95rem;
             padding-top: 25px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid var(--glass-border);
         }
 
         .credit-link {
@@ -1012,7 +1024,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(7, 11, 16, 0.85);
+            background: rgba(15, 23, 42, 0.65);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             z-index: 10000;
@@ -1030,7 +1042,7 @@
         }
 
         .welcome-popup {
-            background: var(--bg-dark);
+            background: #ffffff;
             border: 1px solid var(--brand-gold);
             border-top: 4px solid var(--brand-gold);
             border-radius: 12px;
@@ -1040,7 +1052,7 @@
             position: relative;
             transform: translateY(30px) scale(0.95);
             transition: all 0.5s ease;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 30px var(--brand-gold-glow);
+            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.25), 0 0 30px var(--brand-gold-glow);
             text-align: center;
         }
 
@@ -1105,7 +1117,7 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: rgba(7, 11, 16, 0.98);
+                background: rgba(255, 255, 255, 0.98);
                 backdrop-filter: blur(15px);
                 flex-direction: column;
                 padding: 30px 0;
@@ -1114,16 +1126,16 @@
                 border-bottom: 3px solid var(--brand-gold);
                 clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
                 transition: clip-path 0.4s ease-in-out;
-                box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+                box-shadow: 0 20px 30px rgba(15, 23, 42, 0.12);
             }
             .nav-links.mobile-active {
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             }
             
             /* Hamburger Animations */
-            .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); background-color: white;}
+            .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); background-color: var(--text-light);}
             .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
-            .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background-color: white;}
+            .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background-color: var(--text-light);}
             
             /* Typography & Layout Adjustments */
             .top-bar { font-size: 0.7rem; padding: 10px 5px; }
@@ -1188,33 +1200,37 @@
             }
         }
     
-        /* Font-Based Location Highlighting (No Patches) */
-        .loc-yellow { color: #fde047 !important; font-weight: 800 !important; text-shadow: 0 0 10px rgba(253, 224, 71, 0.4); }
-        .loc-kgf { color: #22d3ee !important; font-weight: 800 !important; }
-        .loc-malur { color: #4ade80 !important; font-weight: 800 !important; }
-        .loc-bangarpet { color: #fb923c !important; font-weight: 800 !important; }
-        .loc-mulbagal { color: #f472b6 !important; font-weight: 800 !important; }
-        .loc-srinivaspur { color: #38bdf8 !important; font-weight: 800 !important; }
-        .loc-chikkbalpur { color: #c084fc !important; font-weight: 800 !important; }
+        /* Unified Corporate Location Highlighting */
+        .loc-yellow,
+        .loc-kgf,
+        .loc-malur,
+        .loc-bangarpet,
+        .loc-mulbagal,
+        .loc-srinivaspur,
+        .loc-chikkbalpur {
+            color: var(--corp-highlight) !important;
+            font-weight: 700 !important;
+            text-shadow: none;
+        }
 
         /* Real Colored Icons */
         .icon-whatsapp { color: #25D366 !important; }
-        .icon-phone { color: #34d399 !important; }
+        .icon-phone { color: #ff6b00 !important; }
         .icon-email { color: #f43f5e !important; }
         .icon-instagram { color: #e1306c !important; }
-        .icon-map { color: #38bdf8 !important; }
+        .icon-map { color: #0284c7 !important; }
 
         /* Mobile Bottom Nav (Mobile Priority) */
         .mobile-bottom-nav { 
             display: none; 
             position: fixed; 
             bottom: 0; left: 0; width: 100%; 
-            background: rgba(7, 11, 16, 0.98); 
+            background: rgba(255, 255, 255, 0.98); 
             backdrop-filter: blur(20px); 
             border-top: 2px solid var(--brand-gold); 
             z-index: 10000; 
             padding: 10px 0; 
-            box-shadow: 0 -5px 25px rgba(0,0,0,0.8); 
+            box-shadow: 0 -5px 25px rgba(15, 23, 42, 0.12); 
             justify-content: space-around; 
             align-items: center; 
         }
@@ -1244,10 +1260,10 @@
             <button class="close-popup" id="closePopup" aria-label="Close Popup">&times;</button>
             <div class="popup-content">
                 <h2 id="popupTitle" style="color: var(--brand-gold); margin-bottom: 10px; font-size: 1.8rem;">Welcome to ORO!</h2>
-                <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.2rem;">Thank you for visiting us.</h3>
+                <h3 style="color: var(--text-light); margin-bottom: 15px; font-size: 1.2rem;">Thank you for visiting us.</h3>
                 <p id="popupDesc" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Kolar's most trusted experts for fast, reliable repair of Refrigerators, Washing Machines, Televisions, and Microwaves.</p>
                 
-                <div style="background: rgba(245, 158, 11, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(245, 158, 11, 0.3); margin-bottom: 25px;">
+                <div style="background: rgba(255, 107, 0, 0.08); padding: 15px; border-radius: 8px; border: 1px solid rgba(255, 107, 0, 0.25); margin-bottom: 25px;">
                     <p style="color: var(--brand-gold); font-weight: 700; margin-bottom: 5px; font-size: 1rem;">Unlock Exclusive Festive Offers! 🎉</p>
                     <p style="color: var(--text-light); font-size: 0.85rem; margin-bottom: 0;">Drop your details below to claim your free checkup and stay updated on our latest discounts.</p>
                 </div>
@@ -1257,7 +1273,7 @@
                     <input type="text" name="name" aria-label="Your Full Name" placeholder="Your Full Name" required style="width: 100%; padding: 15px; border-radius: 6px;">
                     <input type="tel" name="phone" aria-label="Your Mobile Number" placeholder="Your Mobile Number" required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" style="width: 100%; padding: 15px; border-radius: 6px;">
                     <button type="submit" class="btn" style="width: 100%; margin-top: 10px; justify-content: center;">Claim Offer</button>
-                    <p class="lead-form-status" aria-live="polite" style="margin: 0; color: var(--text-light); font-size: 0.78rem;">WhatsApp will open with your details. Tap Send to complete your request.</p>
+                    <p class="lead-form-status" aria-live="polite" style="margin: 0; color: var(--text-muted); font-size: 0.78rem;">WhatsApp will open with your details. Tap Send to complete your request.</p>
                 </form>
             </div>
         </div>
@@ -1560,7 +1576,7 @@
                     </p>
                     
                     <!-- Embedded Google Map -->
-                    <div style="margin-top: 20px; border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+                    <div style="margin-top: 20px; border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);">
                         <iframe 
                             title="Google Maps Location of ORO Home Appliances in Kolar"
                             src="https://maps.google.com/maps?q=Tolgate%20Circle,%20Kolar%20563101&t=&z=15&ie=UTF8&iwloc=&output=embed" 
@@ -1787,11 +1803,11 @@
             <span>Book Now</span>
         </a>
         <a href="https://maps.google.com/maps?q=Tolgate%20Circle,%20Kolar%20563101" target="_blank" rel="noopener noreferrer" class="mobile-nav-item">
-            <i class="fas fa-map-marker-alt" style="color: #38bdf8;"></i>
+            <i class="fas fa-map-marker-alt" style="color: #0284c7;"></i>
             <span>Map</span>
         </a>
         <a href="tel:+918062177668" class="mobile-nav-item">
-            <i class="fas fa-phone-alt" style="color: #f59e0b;"></i>
+            <i class="fas fa-phone-alt" style="color: #ff6b00;"></i>
             <span>Call</span>
         </a>
         <a href="mailto:support@oroservices.co.in" class="mobile-nav-item">
