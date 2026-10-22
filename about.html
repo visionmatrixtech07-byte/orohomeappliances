@@ -21,22 +21,25 @@
     <meta name="twitter:title" content="About ORO Home Appliances | Kolar District, Karnataka">
     <meta name="twitter:description" content="Learn about ORO Home Appliances and its local appliance repair standards across Kolar District.">
     <meta name="twitter:image" content="https://oroservices.co.in/oro.png">
-    <meta name="theme-color" content="#070b10">
+    <meta name="theme-color" content="#ffffff">
     <script>window.dataLayer = window.dataLayer || [];</script>
     <script src="oro-tracking.js"></script>
     <style>
         /* Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-        /* Premium CSS Variables */
+        /* Premium CSS Variables - White & Orange Corporate Theme */
         :root {
-            --bg-dark: #070b10;
-            --bg-card: rgba(20, 27, 36, 0.7);
-            --text-light: #ffffff;
-            --text-muted: #a0aec0;
-            --brand-gold: #f59e0b;
-            --brand-gold-hover: #d97706;
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --bg-dark: #ffffff;
+            --bg-alt: #f8fafc;
+            --bg-card: #ffffff;
+            --text-light: #0f172a;
+            --text-muted: #475569;
+            --brand-gold: #ff6b00;
+            --brand-gold-hover: #ea580c;
+            --brand-gold-glow: rgba(255, 107, 0, 0.22);
+            --glass-border: #e2e8f0;
+            --corp-highlight: #1e40af;
         }
 
         * {
@@ -73,10 +76,11 @@
             top: 0;
             width: 100%;
             padding: 15px 0;
-            background: rgba(7, 11, 16, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 2px solid var(--brand-gold);
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
             z-index: 1000;
         }
 
@@ -99,6 +103,7 @@
             width: auto;
             display: block;
             object-fit: contain;
+            filter: drop-shadow(0 2px 6px rgba(15, 23, 42, 0.12));
         }
 
         .footer-logo {
@@ -124,14 +129,14 @@
         .nav-links {
             display: flex;
             gap: 30px;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.95rem;
         }
 
         /* --- Subpage Banner --- */
         .page-header {
             padding: 160px 0 60px 0;
-            background: linear-gradient(to bottom, rgba(20,27,36,0.8), rgba(7,11,16,1)),
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.88), rgba(248, 250, 252, 0.98)),
                         url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
             border-bottom: 1px solid var(--glass-border);
             text-align: center;
@@ -140,11 +145,13 @@
         .page-header h1 {
             font-size: 3rem;
             margin-bottom: 10px;
+            color: var(--text-light);
         }
 
         .page-header p {
             color: var(--brand-gold);
             font-size: 1.1rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
@@ -179,9 +186,18 @@
         .pillar-item {
             background: var(--bg-card);
             border: 1px solid var(--glass-border);
+            border-bottom: 4px solid var(--brand-gold);
             padding: 30px;
             border-radius: 8px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .pillar-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--brand-gold);
+            box-shadow: 0 15px 35px var(--brand-gold-glow);
         }
 
         .pillar-item h3 {
@@ -195,9 +211,15 @@
             margin-bottom: 0;
         }
 
+        /* Unified Corporate Location Highlighting */
+        .loc-city {
+            color: var(--corp-highlight);
+            font-weight: 700;
+        }
+
         /* --- Footer --- */
         footer {
-            background-color: #05080c;
+            background-color: var(--bg-alt);
             padding: 60px 0 20px 0;
             border-top: 1px solid var(--glass-border);
             margin-top: 60px;
@@ -223,10 +245,10 @@
 
         .footer-bottom {
             text-align: center;
-            color: #4a5568;
+            color: #64748b;
             font-size: 0.9rem;
             padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid var(--glass-border);
         }
 
         @media (max-width: 900px) {
@@ -273,8 +295,8 @@
 
     <!-- Content Area -->
     <section class="container page-content">
-        <h2>Redefining Home Services in Kolar District</h2>
-        <p>ORO Home Appliances was founded on a singular, uncompromising vision: <strong>Smart Choice. Better Living.</strong> We recognized that local appliance repair and the second-hand market can be affected by opacity, unreliable freelance technicians, and unpredictable pricing. We set out to build a professional, standardized service for homeowners across Kolar, Mulbagal, Chintamani, Malur, Bangarpet, Srinivaspura, Vemgal, and KGF.</p>
+        <h2>Redefining Home Services in <span class="loc-city">Kolar</span> District</h2>
+        <p>ORO Home Appliances was founded on a singular, uncompromising vision: <strong>Smart Choice. Better Living.</strong> We recognized that local appliance repair and the second-hand market can be affected by opacity, unreliable freelance technicians, and unpredictable pricing. We set out to build a professional, standardized service for homeowners across <span class="loc-city">Kolar</span>, <span class="loc-city">Mulbagal</span>, <span class="loc-city">Chintamani</span>, <span class="loc-city">Malur</span>, <span class="loc-city">Bangarpet</span>, <span class="loc-city">Srinivaspura</span>, <span class="loc-city">Vemgal</span>, and <span class="loc-city">KGF</span>.</p>
 
         <h2>Built on 3 Core Pillars</h2>
         <p>Every decision we make—from how we vet our engineers to how we inspect our pre-owned inventory—is guided by our three core pillars:</p>
@@ -313,7 +335,7 @@
                     Smart Choice. Better Living. Providing premium home appliance repairs, servicing, and certified pre-owned sales across Kolar District, Karnataka.
                 </p>
                 <div style="margin-top: 20px;">
-                    <p style="color: var(--text-light); font-weight: 600;">📞 08062177668</p>
+                    <p style="color: var(--brand-gold); font-weight: 700;">📞 08062177668</p>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">support@oroservices.co.in</p>
                 </div>
             </div>
