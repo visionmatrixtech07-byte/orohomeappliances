@@ -21,7 +21,7 @@
     <meta name="twitter:title" content="Appliance Repair FAQ | ORO Home Appliances Kolar">
     <meta name="twitter:description" content="Answers about ORO appliance repair visits, diagnostic fees, warranties, brands, payments, and pre-owned appliances.">
     <meta name="twitter:image" content="https://oroservices.co.in/oro.png">
-    <meta name="theme-color" content="#070b10">
+    <meta name="theme-color" content="#ffffff">
     <script>window.dataLayer = window.dataLayer || [];</script>
     <script src="oro-tracking.js"></script>
     <script type="application/ld+json">
@@ -81,25 +81,33 @@
     }
     </script>
     <style>
-        /* Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
         /* Premium CSS Variables */
         :root {
-            --bg-dark: #070b10;
-            --bg-card: rgba(20, 27, 36, 0.7);
-            --text-light: #ffffff;
-            --text-muted: #a0aec0;
-            --brand-gold: #f59e0b;
-            --brand-gold-hover: #d97706;
-            --glass-border: rgba(255, 255, 255, 0.08);
+            /* ORO theme - same palette as ads.html */
+            --orange: #ff6b00; --orange-dark: #e25e00;
+            --blue: #0b5ed7; --blue-dark: #094db1;
+            --green: #1fa855;
+            --ink: #14202e; --muted: #566274; --line: #dde3ea;
+            --bg: #f3f5f8; --card: #ffffff;
+            /* legacy names used by this page, mapped to the palette */
+            --bg-dark: #f3f5f8;
+            --bg-alt: #ffffff;
+            --bg-card: #ffffff;
+            --text-light: #14202e;
+            --text-muted: #566274;
+            --brand-gold: #ff6b00;
+            --brand-gold-hover: #e25e00;
+            --brand-gold-glow: rgba(255, 107, 0, 0.18);
+            --glass-border: #dde3ea;
+            --corp-highlight: #0b5ed7;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
         body {
@@ -129,10 +137,10 @@
             top: 0;
             width: 100%;
             padding: 15px 0;
-            background: rgba(7, 11, 16, 0.85);
+            background: #ffffff;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
+            border-bottom: 2px solid var(--orange);
             z-index: 1000;
         }
 
@@ -187,7 +195,7 @@
         /* --- Subpage Banner --- */
         .page-header {
             padding: 160px 0 60px 0;
-            background: linear-gradient(to bottom, rgba(20,27,36,0.8), rgba(7,11,16,1)),
+            background: linear-gradient(to bottom, rgba(255,255,255,0.93), rgba(243,245,248,1)),
                         url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
             border-bottom: 1px solid var(--glass-border);
             text-align: center;
@@ -234,7 +242,7 @@
 
         /* --- Footer --- */
         footer {
-            background-color: #05080c;
+            background-color: #ffffff;
             padding: 60px 0 20px 0;
             border-top: 1px solid var(--glass-border);
             margin-top: 60px;
@@ -260,10 +268,10 @@
 
         .footer-bottom {
             text-align: center;
-            color: #4a5568;
+            color: var(--muted);
             font-size: 0.9rem;
             padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid var(--line);
         }
 
         @media (max-width: 900px) {

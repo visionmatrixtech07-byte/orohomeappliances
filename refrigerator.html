@@ -23,7 +23,7 @@
     <meta name="twitter:title" content="Refrigerator Repair in Kolar District | ORO">
     <meta name="twitter:description" content="Fast, expert refrigerator repair and maintenance across Kolar District, Karnataka.">
     <meta name="twitter:image" content="https://oroservices.co.in/oro.png">
-    <meta name="theme-color" content="#070b10">
+    <meta name="theme-color" content="#ffffff">
     <script>window.dataLayer = window.dataLayer || [];</script>
     <script src="oro-tracking.js"></script>
 
@@ -56,19 +56,26 @@
     </script>
 
     <style>
-        /* Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
         /* Premium CSS Variables */
         :root {
-            --bg-dark: #070b10;
-            --bg-card: rgba(20, 27, 36, 0.7);
-            --text-light: #ffffff;
-            --text-muted: #a0aec0;
-            --brand-gold: #f59e0b;
-            --brand-gold-hover: #d97706;
-            --brand-gold-glow: rgba(245, 158, 11, 0.3);
-            --glass-border: rgba(255, 255, 255, 0.08);
+            /* ORO theme - same palette as ads.html */
+            --orange: #ff6b00; --orange-dark: #e25e00;
+            --blue: #0b5ed7; --blue-dark: #094db1;
+            --green: #1fa855;
+            --ink: #14202e; --muted: #566274; --line: #dde3ea;
+            --bg: #f3f5f8; --card: #ffffff;
+            /* legacy names used by this page, mapped to the palette */
+            --bg-dark: #f3f5f8;
+            --bg-alt: #ffffff;
+            --bg-card: #ffffff;
+            --text-light: #14202e;
+            --text-muted: #566274;
+            --brand-gold: #ff6b00;
+            --brand-gold-hover: #e25e00;
+            --brand-gold-glow: rgba(255, 107, 0, 0.18);
+            --glass-border: #dde3ea;
+            --corp-highlight: #0b5ed7;
         }
 
         html {
@@ -79,7 +86,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
         body {
@@ -98,7 +105,6 @@
 
         a:hover { 
             color: var(--brand-gold); 
-            text-shadow: 0 0 8px var(--brand-gold-glow);
         }
 
         .container {
@@ -112,19 +118,19 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(7, 11, 16, 0.95);
+            background: #ffffff;
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border-bottom: 2px solid var(--brand-gold);
             z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 30px rgba(20, 32, 46, 0.12);
             transition: all 0.3s ease;
         }
 
         /* Yellow Top Announcement Bar - Scrolling Marquee */
         .top-bar {
             background: var(--brand-gold);
-            color: #000;
+            color: #fff;
             padding: 10px 0;
             font-size: 0.85rem;
             font-weight: 700;
@@ -245,7 +251,7 @@
         /* --- Subpage Banner --- */
         .page-header {
             padding: 220px 0 80px 0;
-            background: linear-gradient(to bottom, rgba(20,27,36,0.8), rgba(7,11,16,1)),
+            background: linear-gradient(to bottom, rgba(255,255,255,0.93), rgba(243,245,248,1)),
                         url('https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
             border-bottom: 1px solid var(--glass-border);
             text-align: center;
@@ -294,7 +300,7 @@
         .features-list {
             list-style: none;
             margin-bottom: 40px;
-            background: rgba(255,255,255,0.02);
+            background: #ffffff;
             border-radius: 8px;
             padding: 20px;
             border: 1px solid var(--glass-border);
@@ -331,7 +337,7 @@
             height: fit-content;
             position: sticky;
             top: 150px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 40px rgba(20, 32, 46, 0.12);
         }
 
         .sidebar-card h3 {
@@ -350,7 +356,7 @@
             display: inline-block;
             padding: 18px 35px;
             background-color: var(--brand-gold);
-            color: #000;
+            color: #fff;
             font-weight: 700;
             border-radius: 6px;
             border: none;
@@ -388,7 +394,7 @@
             align-items: center;
             justify-content: center;
             color: #fff;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 5px 20px rgba(20, 32, 46, 0.12);
             transition: all 0.3s ease;
             text-decoration: none;
         }
@@ -399,26 +405,26 @@
         }
 
         .whatsapp-btn {
-            background-color: #25D366;
+            background-color: #1fa855;
         }
         
         .whatsapp-btn:hover {
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 10px 25px rgba(31, 168, 85, 0.5);
         }
 
         .call-btn {
-            background-color: var(--brand-gold);
-            color: #000;
+            background-color: var(--blue);
+            color: #fff;
         }
         
         .call-btn:hover {
-            box-shadow: 0 10px 25px var(--brand-gold-glow);
-            color: #000;
+            box-shadow: 0 10px 25px rgba(11, 94, 215, 0.35);
+            color: #fff;
         }
 
         /* --- Footer --- */
         footer {
-            background-color: #05080c;
+            background-color: #ffffff;
             padding: 80px 0 20px 0;
             border-top: 1px solid var(--glass-border);
         }
@@ -454,10 +460,10 @@
 
         .footer-bottom {
             text-align: center;
-            color: #4a5568;
+            color: var(--muted);
             font-size: 0.95rem;
             padding-top: 25px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid var(--line);
         }
 
         .credit-link {
@@ -467,7 +473,6 @@
         }
 
         .credit-link:hover {
-            text-shadow: 0 0 10px var(--brand-gold-glow);
         }
 
         @media (max-width: 900px) {
@@ -484,7 +489,7 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: rgba(7, 11, 16, 0.98);
+                background: #ffffff;
                 backdrop-filter: blur(15px);
                 flex-direction: column;
                 padding: 30px 0;
@@ -493,16 +498,16 @@
                 border-bottom: 3px solid var(--brand-gold);
                 clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
                 transition: clip-path 0.4s ease-in-out;
-                box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+                box-shadow: 0 20px 30px rgba(20, 32, 46, 0.12);
             }
             .nav-links.mobile-active {
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             }
             
             /* Hamburger Animations */
-            .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); background-color: white;}
+            .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); background-color: var(--ink);}
             .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
-            .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background-color: white;}
+            .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background-color: var(--ink);}
             
             /* Typography & Layout Adjustments */
             .top-bar { font-size: 0.7rem; padding: 10px 0; }
@@ -635,7 +640,7 @@
                     </p>
                     
                     <!-- Embedded Google Map -->
-                    <div style="margin-top: 20px; border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+                    <div style="margin-top: 20px; border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 10px 20px rgba(20, 32, 46, 0.12);">
                         <iframe 
                             src="https://maps.google.com/maps?q=Tolgate%20Circle,%20Kolar%20563101&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 

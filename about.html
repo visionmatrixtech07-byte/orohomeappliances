@@ -25,28 +25,33 @@
     <script>window.dataLayer = window.dataLayer || [];</script>
     <script src="oro-tracking.js"></script>
     <style>
-        /* Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
         /* Premium CSS Variables - White & Orange Corporate Theme */
         :root {
-            --bg-dark: #ffffff;
-            --bg-alt: #f8fafc;
+            /* ORO theme - same palette as ads.html */
+            --orange: #ff6b00; --orange-dark: #e25e00;
+            --blue: #0b5ed7; --blue-dark: #094db1;
+            --green: #1fa855;
+            --ink: #14202e; --muted: #566274; --line: #dde3ea;
+            --bg: #f3f5f8; --card: #ffffff;
+            /* legacy names used by this page, mapped to the palette */
+            --bg-dark: #f3f5f8;
+            --bg-alt: #ffffff;
             --bg-card: #ffffff;
-            --text-light: #0f172a;
-            --text-muted: #475569;
+            --text-light: #14202e;
+            --text-muted: #566274;
             --brand-gold: #ff6b00;
-            --brand-gold-hover: #ea580c;
-            --brand-gold-glow: rgba(255, 107, 0, 0.22);
-            --glass-border: #e2e8f0;
-            --corp-highlight: #1e40af;
+            --brand-gold-hover: #e25e00;
+            --brand-gold-glow: rgba(255, 107, 0, 0.18);
+            --glass-border: #dde3ea;
+            --corp-highlight: #0b5ed7;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
         body {
@@ -80,7 +85,7 @@
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border-bottom: 2px solid var(--brand-gold);
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 4px 20px rgba(20, 32, 46, 0.08);
             z-index: 1000;
         }
 
@@ -103,7 +108,7 @@
             width: auto;
             display: block;
             object-fit: contain;
-            filter: drop-shadow(0 2px 6px rgba(15, 23, 42, 0.12));
+            filter: drop-shadow(0 2px 6px rgba(20, 32, 46, 0.12));
         }
 
         .footer-logo {
@@ -190,7 +195,7 @@
             padding: 30px;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+            box-shadow: 0 10px 30px rgba(20, 32, 46, 0.06);
             transition: all 0.3s ease;
         }
 
@@ -245,7 +250,7 @@
 
         .footer-bottom {
             text-align: center;
-            color: #64748b;
+            color: #566274;
             font-size: 0.9rem;
             padding-top: 20px;
             border-top: 1px solid var(--glass-border);

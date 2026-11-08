@@ -30,9 +30,6 @@
     
     <!-- Performance Optimization: Preload Hero Background & Google Fonts -->
     <link rel="preload" as="image" href="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
 
     <!-- Local business structured data -->
     <script type="application/ld+json">
@@ -88,16 +85,23 @@
     <style>
         /* Premium CSS Variables - White & Orange Corporate Theme */
         :root {
-            --bg-dark: #ffffff;
-            --bg-alt: #f8fafc;
+            /* ORO theme - same palette as ads.html */
+            --orange: #ff6b00; --orange-dark: #e25e00;
+            --blue: #0b5ed7; --blue-dark: #094db1;
+            --green: #1fa855;
+            --ink: #14202e; --muted: #566274; --line: #dde3ea;
+            --bg: #f3f5f8; --card: #ffffff;
+            /* legacy names used by this page, mapped to the palette */
+            --bg-dark: #f3f5f8;
+            --bg-alt: #ffffff;
             --bg-card: #ffffff;
-            --text-light: #0f172a;
-            --text-muted: #475569;
+            --text-light: #14202e;
+            --text-muted: #566274;
             --brand-gold: #ff6b00;
-            --brand-gold-hover: #ea580c;
-            --brand-gold-glow: rgba(255, 107, 0, 0.22);
-            --glass-border: #e2e8f0;
-            --corp-highlight: #1e40af;
+            --brand-gold-hover: #e25e00;
+            --brand-gold-glow: rgba(255, 107, 0, 0.18);
+            --glass-border: #dde3ea;
+            --corp-highlight: #0b5ed7;
         }
 
         html {
@@ -108,7 +112,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
         body {
@@ -151,7 +155,7 @@
             -webkit-backdrop-filter: blur(15px);
             border-bottom: 2px solid var(--brand-gold);
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 4px 20px rgba(20, 32, 46, 0.08);
             transition: all 0.3s ease;
         }
 
@@ -208,7 +212,7 @@
             width: auto;
             display: block;
             object-fit: contain;
-            filter: drop-shadow(0 2px 6px rgba(15, 23, 42, 0.12));
+            filter: drop-shadow(0 2px 6px rgba(20, 32, 46, 0.12));
         }
 
         .footer-logo {
@@ -300,7 +304,7 @@
             width: auto;
             object-fit: contain;
             flex-shrink: 0;
-            filter: drop-shadow(0 15px 30px rgba(15, 23, 42, 0.15));
+            filter: drop-shadow(0 15px 30px rgba(20, 32, 46, 0.15));
             animation: float 6s ease-in-out infinite;
         }
 
@@ -417,7 +421,7 @@
             justify-content: center;
             gap: 8px;
             padding: 14px 30px;
-            background-color: #25D366;
+            background-color: #1fa855;
             color: #fff;
             font-weight: 700;
             border-radius: 6px;
@@ -425,13 +429,13 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+            box-shadow: 0 4px 15px rgba(31, 168, 85, 0.25);
         }
 
         .btn-wa-hero:hover {
-            background-color: #1ebe57;
+            background-color: #178a46;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 10px 20px rgba(31, 168, 85, 0.4);
             color: #fff;
         }
 
@@ -468,7 +472,7 @@
             padding: 20px 25px;
             border-radius: 8px;
             border: 1px solid var(--glass-border);
-            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+            box-shadow: 0 10px 25px rgba(20, 32, 46, 0.06);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
@@ -501,7 +505,7 @@
             align-items: center;
             justify-content: center;
             color: #fff;
-            box-shadow: 0 5px 20px rgba(15, 23, 42, 0.25);
+            box-shadow: 0 5px 20px rgba(20, 32, 46, 0.25);
             transition: all 0.3s ease;
             text-decoration: none;
         }
@@ -512,11 +516,11 @@
         }
 
         .whatsapp-btn {
-            background-color: #25D366;
+            background-color: #1fa855;
         }
         
         .whatsapp-btn:hover {
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 10px 25px rgba(31, 168, 85, 0.5);
         }
 
         .call-btn {
@@ -577,7 +581,7 @@
             margin: 0 15px;
             height: 55px;
             min-width: 160px;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+            box-shadow: 0 4px 12px rgba(20, 32, 46, 0.06);
             transition: all 0.3s ease;
         }
 
@@ -652,7 +656,7 @@
             text-align: center;
             transition: all 0.4s ease;
             padding-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+            box-shadow: 0 10px 30px rgba(20, 32, 46, 0.06);
             display: block;
             cursor: pointer;
             text-decoration: none;
@@ -724,7 +728,7 @@
             border: 1px solid var(--glass-border);
             border-bottom: 4px solid var(--brand-gold);
             background: #ffffff;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+            box-shadow: 0 10px 30px rgba(20, 32, 46, 0.05);
             transition: all 0.4s ease;
         }
 
@@ -779,7 +783,7 @@
             border-radius: 12px;
             border: 2px solid var(--glass-border);
             display: block;
-            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1);
+            box-shadow: 0 15px 40px rgba(20, 32, 46, 0.1);
             transition: all 0.4s ease;
         }
 
@@ -822,7 +826,7 @@
             grid-template-columns: 350px 1fr;
             gap: 45px;
             align-items: center;
-            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 20px 50px rgba(20, 32, 46, 0.08);
             transition: all 0.4s ease;
         }
 
@@ -837,7 +841,7 @@
             border-radius: 12px;
             overflow: hidden;
             border: 2px solid var(--glass-border);
-            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
+            box-shadow: 0 15px 35px rgba(20, 32, 46, 0.12);
             transition: all 0.4s ease;
         }
 
@@ -914,7 +918,7 @@
             border-radius: 16px;
             border: 1px solid var(--glass-border);
             border-top: 4px solid var(--brand-gold);
-            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 25px 50px rgba(20, 32, 46, 0.08);
             position: relative;
             z-index: 2;
         }
@@ -944,16 +948,16 @@
             width: 100%;
             padding: 18px;
             background-color: #f8fafc;
-            border: 1px solid #cbd5e1;
+            border: 1px solid #b9c3cf;
             color: var(--text-light);
             border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             font-size: 1rem;
             transition: all 0.3s ease;
         }
 
         input::placeholder, textarea::placeholder {
-            color: #64748b;
+            color: #566274;
         }
 
         input:focus, select:focus, textarea:focus {
@@ -1001,7 +1005,7 @@
 
         .footer-bottom {
             text-align: center;
-            color: #64748b;
+            color: #566274;
             font-size: 0.95rem;
             padding-top: 25px;
             border-top: 1px solid var(--glass-border);
@@ -1024,7 +1028,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 23, 42, 0.65);
+            background: rgba(20, 32, 46, 0.65);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             z-index: 10000;
@@ -1052,7 +1056,7 @@
             position: relative;
             transform: translateY(30px) scale(0.95);
             transition: all 0.5s ease;
-            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.25), 0 0 30px var(--brand-gold-glow);
+            box-shadow: 0 25px 50px rgba(20, 32, 46, 0.25), 0 0 30px var(--brand-gold-glow);
             text-align: center;
         }
 
@@ -1126,7 +1130,7 @@
                 border-bottom: 3px solid var(--brand-gold);
                 clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
                 transition: clip-path 0.4s ease-in-out;
-                box-shadow: 0 20px 30px rgba(15, 23, 42, 0.12);
+                box-shadow: 0 20px 30px rgba(20, 32, 46, 0.12);
             }
             .nav-links.mobile-active {
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -1214,7 +1218,7 @@
         }
 
         /* Real Colored Icons */
-        .icon-whatsapp { color: #25D366 !important; }
+        .icon-whatsapp { color: #1fa855 !important; }
         .icon-phone { color: #ff6b00 !important; }
         .icon-email { color: #f43f5e !important; }
         .icon-instagram { color: #e1306c !important; }
@@ -1230,7 +1234,7 @@
             border-top: 2px solid var(--brand-gold); 
             z-index: 10000; 
             padding: 10px 0; 
-            box-shadow: 0 -5px 25px rgba(15, 23, 42, 0.12); 
+            box-shadow: 0 -5px 25px rgba(20, 32, 46, 0.12); 
             justify-content: space-around; 
             align-items: center; 
         }
@@ -1576,7 +1580,7 @@
                     </p>
                     
                     <!-- Embedded Google Map -->
-                    <div style="margin-top: 20px; border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);">
+                    <div style="margin-top: 20px; border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 10px 20px rgba(20, 32, 46, 0.08);">
                         <iframe 
                             title="Google Maps Location of ORO Home Appliances in Kolar"
                             src="https://maps.google.com/maps?q=Tolgate%20Circle,%20Kolar%20563101&t=&z=15&ie=UTF8&iwloc=&output=embed" 
@@ -1795,7 +1799,7 @@
     <!-- Mobile Bottom Navigation Bar (Mobile First) -->
     <nav class="mobile-bottom-nav">
         <a href="https://wa.me/917019670198?text=Hi,%20I%20am%20looking%20for%20appliance%20repair%20services." target="_blank" rel="noopener noreferrer" class="mobile-nav-item">
-            <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+            <i class="fab fa-whatsapp" style="color: #1fa855;"></i>
             <span>WhatsApp</span>
         </a>
         <a href="#book" class="mobile-nav-item active">
