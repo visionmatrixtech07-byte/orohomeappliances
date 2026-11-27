@@ -241,3 +241,16 @@ footer .legal{margin-top:34px;padding-top:18px;border-top:1px solid #2E3A48;font
 .mnav{background:none;border:0;padding:0;margin:0;border-radius:0}
 .mnav summary{padding:0}
 .mnav summary::after{content:none!important}
+
+/* v3 fixes */
+.brand img{width:52px;height:52px;object-fit:contain;background:#fff;flex:none}
+.burger{display:block;width:20px;height:2px;background:var(--ink);position:relative;border-radius:2px}
+.burger::before,.burger::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--ink);border-radius:2px}
+.burger::before{top:-6px}.burger::after{top:6px}
+.mbar{transform:translateZ(0);will-change:transform}
+@media (max-width:620px){
+  .hero .cta-row,.pagehead .cta-row,.ctaband .cta-row{flex-direction:column;align-items:stretch}
+  .hero .cta-row .btn,.pagehead .cta-row .btn,.ctaband .cta-row .btn{width:100%}
+  .head-cta{display:none}
+  .brand b{font-size:1.05rem}
+}
